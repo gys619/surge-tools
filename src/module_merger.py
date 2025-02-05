@@ -216,7 +216,7 @@ class ModuleMerger:
     
     def merge_modules(self, module_name: str) -> Dict:
         module_config = self.config['modules']['sources'][module_name]
-        sections: Dict[str, Set[str]] = {}
+        sections = {}  # 改用 Dict[str, List[str]] 而不是 Dict[str, Set[str]]
         
         # 获取排除规则
         exclude_rules = set(module_config.get('exclude_rules', []))
@@ -231,10 +231,6 @@ class ModuleMerger:
                 current_module_name = self.parser.get_module_name(content)
                 logging.info(f"\n处理模块: {url}")
                 
-                # 打印行号和内容
-                for i, line in enumerate(content.splitlines()[:20], 1):  # 显示前20行
-                    logging.info(f"行 {i}: {line}")
-                
                 parsed_sections = self.parser.parse_section(
                     content,
                     current_module_name,
@@ -242,13 +238,12 @@ class ModuleMerger:
                 )
                 
                 for section, lines in parsed_sections.items():
-                    # 检查是否需要排除整个段落
                     if self.parser.should_exclude_section(section, current_module_name, exclude_sections):
-                        logging.info(f"排除段落: {section} 从模块: {current_module_name}")  # 添加日志
+                        logging.info(f"排除段落: {section} 从模块: {current_module_name}")
                         continue
                         
                     if section not in sections:
-                        sections[section] = set()
+                        sections[section] = []
                     
                     for line in lines:
                         should_exclude, new_line = self.parser.should_exclude(
@@ -257,10 +252,10 @@ class ModuleMerger:
                             section
                         )
                         if not should_exclude:
-                            if new_line:
-                                sections[section].add(new_line)
-                            else:
-                                sections[section].add(line)
+                            if new_line and new_line not in sections[section]:
+                                sections[section].append(new_line)
+                            elif not new_line and line not in sections[section]:
+                                sections[section].append(line)
         
         # 如果没有成功获取任何模块，返回 None
         if not success:

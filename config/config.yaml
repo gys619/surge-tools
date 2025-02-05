@@ -108,7 +108,7 @@ modules:
         - "ExampleScript.js"
         - "UnwantedScript.js"
       exclude_module_sets:
-        - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%F0%9F%8D%9F%20%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97.official.sgmodule"
+        - ""
       section_preference:
         - "Script"
         - "MITM"
@@ -126,8 +126,8 @@ modules:
         - "api.gotokeep.com"    # 排除特定主机名
       exclude_sections:         
         "中国联通 去广告":      
-          - "Map Local"         # 排除整个段落
-          - "line:16-18"        # 排除第17到18行
+          - "Body Rewrite"         # 排除整个段落
+          - "line:19"        # 排除第17到18行
       section_preference:
         - "General"
         - "Host"
