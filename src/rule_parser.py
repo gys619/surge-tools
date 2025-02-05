@@ -4,11 +4,19 @@ from datetime import datetime
 from typing import List, Dict, Set
 from urllib.parse import urlparse
 
-@dataclass
+@dataclass(frozen=True)
 class Rule:
     type: str
     content: str
     original: str
+
+    def __hash__(self):
+        return hash((self.type, self.content))
+    
+    def __eq__(self, other):
+        if not isinstance(other, Rule):
+            return False
+        return self.type == other.type and self.content == other.content
 
 class RuleParser:
     def __init__(self):

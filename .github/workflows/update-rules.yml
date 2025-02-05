@@ -22,13 +22,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Update rules
+    - name: Update rules and modules
       run: python -m src.main
     
     - name: Commit changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add rules/
-        git commit -m "Update rules" || echo "No changes to commit"
+        git add rules/ modules/
+        git commit -m "Update rules and modules" || echo "No changes to commit"
         git push 
