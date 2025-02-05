@@ -127,7 +127,7 @@ modules:
         - "api.gotokeep.com"    # 排除特定主机名
       exclude_sections:         
         "中国联通 去广告":     
-          - "line:19"       # 排除第17到18行 
+          - "line:21"       # 排除第17到18行 
           - "Body Rewrite"         # 排除整个段落
 
       section_preference:
