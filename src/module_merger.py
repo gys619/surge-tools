@@ -27,8 +27,11 @@ class ModuleParser:
         content = line.replace(f"{config_type} = ", "")
         # 移除所有 %APPEND%, %INSERT% 等标记
         content = re.sub(r'%\w+%\s*', '', content)
-        # 分割并清理值
-        return [item.strip() for item in content.split(',') if item.strip()]
+        # 移除 hostname-disabled = 部分
+        content = content.replace('hostname-disabled = ', '')
+        # 分割并清理值，移除带减号的值
+        return [item.strip() for item in content.split(',') 
+                if item.strip() and not item.strip().startswith('-')]
     
     def merge_config_lines(self, lines: List[str], config_type: str, prefix: str) -> str:
         """合并配置行"""
@@ -38,8 +41,10 @@ class ModuleParser:
             all_values.update(values)
         
         if all_values:
-            # 排序并合并所有值
-            return f"{config_type} = {prefix} {', '.join(sorted(all_values))}"
+            # 排序并合并所有值，确保没有空值
+            values = sorted([v for v in all_values if v])
+            if values:
+                return f"{config_type} = {prefix} {', '.join(values)}"
         return ""
 
     def parse_section(self, content: str, module_name: str, exclude_sections: dict) -> Dict[str, List[str]]:
@@ -51,6 +56,11 @@ class ModuleParser:
         for line in content.splitlines():
             line_number += 1
             line = line.strip()
+            
+            # 检查是否应该排除这一行
+            if self.should_exclude_line(line, line_number, module_name, exclude_sections):
+                logging.info(f"排除行 {line_number}: {line}")
+                continue
             
             # 跳过元数据行和注释
             if not line or line.startswith('#'):
@@ -70,7 +80,8 @@ class ModuleParser:
                             if merged_line:
                                 if current_section not in sections:
                                     sections[current_section] = []
-                                sections[current_section] = [merged_line]
+                                if merged_line not in sections[current_section]:
+                                    sections[current_section] = [merged_line]
                 
                 current_section = line[1:-1]
                 sections[current_section] = []
@@ -89,7 +100,7 @@ class ModuleParser:
                             break
                 
                 # 如果不是需要合并的配置，正常处理
-                if not is_merge_config and not self.should_exclude_line(line, line_number, module_name, exclude_sections):
+                if not is_merge_config:
                     sections[current_section].append(line)
         
         # 处理最后一个段落的配置合并
@@ -161,17 +172,17 @@ class ModuleParser:
         for exclude in module_excludes:
             if exclude.startswith('line:'):
                 try:
-                    # 处理范围格式 (例如: line:17-18)
+                    # 处理范围格式 (例如: line:16-18)
                     if '-' in exclude:
                         start, end = map(int, exclude.replace('line:', '').split('-'))
                         if start <= line_number <= end:
-                            logging.info(f"排除第 {line_number} 行: {line}")
+                            logging.info(f"排除第 {line_number} 行: {line}")  # 添加日志
                             return True
                     # 处理单行格式 (例如: line:17)
                     else:
                         excluded_line = int(exclude.split(':')[1])
                         if line_number == excluded_line:
-                            logging.info(f"排除第 {line_number} 行: {line}")
+                            logging.info(f"排除第 {line_number} 行: {line}")  # 添加日志
                             return True
                 except ValueError:
                     continue
