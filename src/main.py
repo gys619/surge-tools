@@ -25,10 +25,10 @@ def generate_rule_file(merged_data: dict, output_path: str):
             for rule in sorted(rules[rule_type], key=lambda x: x.content):
                 f.write(f"{rule.original}\n")
 
-def generate_module_file(merged_data: dict, output_path: str):
+def generate_module_file(merged_data: dict, module_merger: ModuleMerger, output_path: str):
     """生成模块文件"""
     with open(output_path, 'w', encoding='utf-8') as f:
-        module_content = merged_data['merger'].format_module_content(merged_data)
+        module_content = module_merger.format_module_content(merged_data)
         f.write(module_content)
 
 def main():
@@ -60,7 +60,7 @@ def main():
                     module_merger.config['modules']['output_dir'],
                     f"{module_name}.sgmodule"
                 )
-                generate_module_file(merged_data, output_path)
+                generate_module_file(merged_data, module_merger, output_path)
                 logging.info(f"成功生成模块文件: {module_name}.sgmodule")
 
 if __name__ == "__main__":
