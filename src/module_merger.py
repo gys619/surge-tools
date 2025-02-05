@@ -78,7 +78,8 @@ class ModuleParser:
                     self._merge_section_configs(sections, current_section, config_lines)
                 
                 current_section = line[1:-1]
-                sections[current_section] = []
+                if current_section not in sections:
+                    sections[current_section] = []
                 # 重置配置行
                 config_lines = {config: [] for config in self.merge_configs}
                 continue
@@ -97,7 +98,8 @@ class ModuleParser:
                 if not is_merge_config:
                     if current_section not in sections:
                         sections[current_section] = []
-                    sections[current_section].append(line)
+                    if line not in sections[current_section]:  # 确保不重复添加
+                        sections[current_section].append(line)
         
         # 处理最后一个段落的配置合并
         if current_section:
