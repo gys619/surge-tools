@@ -8,18 +8,125 @@ import logging
 class ModuleParser:
     def __init__(self):
         self.section_types = {
-            'MITM', 'URL-REGEX', 'General', 'Script', 'Host', 'Body Rewrite', 'Map Local'
+            'MITM', 'URL-REGEX', 'General', 'Script', 'Host'
+        }
+        # 需要合并的特殊配置项
+        self.merge_configs = {
+            'hostname': {'prefix': '%APPEND%', 'section': 'MITM'},
+            'always-real-ip': {'prefix': '%APPEND%', 'section': 'General'},
+            'skip-proxy': {'prefix': '%APPEND%', 'section': 'General'},
+            'tun-excluded-routes': {'prefix': '%APPEND%', 'section': 'General'}
         }
     
-    def parse_mitm_hostnames(self, line: str) -> List[str]:
-        """解析 MITM 主机名列表"""
-        if line.startswith('hostname'):
-            # 移除 hostname = 和 %APPEND% 
-            content = line.replace('hostname = ', '').replace('%APPEND% ', '')
-            # 分割并清理主机名
-            return [host.strip() for host in content.split(',')]
-        return []
+    def parse_config_line(self, line: str, config_type: str) -> List[str]:
+        """解析配置行"""
+        if not line.startswith(config_type):
+            return []
+            
+        # 移除配置名和等号
+        content = line.replace(f"{config_type} = ", "")
+        # 移除所有 %APPEND%, %INSERT% 等标记
+        content = re.sub(r'%\w+%\s*', '', content)
+        # 分割并清理值
+        return [item.strip() for item in content.split(',') if item.strip()]
     
+    def merge_config_lines(self, lines: List[str], config_type: str, prefix: str) -> str:
+        """合并配置行"""
+        all_values = set()
+        for line in lines:
+            values = self.parse_config_line(line, config_type)
+            all_values.update(values)
+        
+        if all_values:
+            # 排序并合并所有值
+            return f"{config_type} = {prefix} {', '.join(sorted(all_values))}"
+        return ""
+
+    def parse_section(self, content: str, module_name: str, exclude_sections: dict) -> Dict[str, List[str]]:
+        sections = {}
+        current_section = None
+        line_number = 0
+        config_lines = {config: [] for config in self.merge_configs}
+        
+        for line in content.splitlines():
+            line_number += 1
+            line = line.strip()
+            
+            # 跳过元数据行和注释
+            if not line or line.startswith('#'):
+                continue
+                
+            # 检查是否是段落标记
+            if line.startswith('[') and line.endswith(']'):
+                # 处理之前段落的配置合并
+                if current_section:
+                    for config_type, lines in config_lines.items():
+                        if lines and self.merge_configs[config_type]['section'] == current_section:
+                            merged_line = self.merge_config_lines(
+                                lines, 
+                                config_type, 
+                                self.merge_configs[config_type]['prefix']
+                            )
+                            if merged_line:
+                                if current_section not in sections:
+                                    sections[current_section] = []
+                                sections[current_section] = [merged_line]
+                
+                current_section = line[1:-1]
+                sections[current_section] = []
+                # 重置配置行
+                config_lines = {config: [] for config in self.merge_configs}
+                continue
+                
+            if current_section:
+                # 检查是否是需要合并的配置
+                is_merge_config = False
+                for config_type in self.merge_configs:
+                    if line.startswith(config_type):
+                        if self.merge_configs[config_type]['section'] == current_section:
+                            config_lines[config_type].append(line)
+                            is_merge_config = True
+                            break
+                
+                # 如果不是需要合并的配置，正常处理
+                if not is_merge_config and not self.should_exclude_line(line, line_number, module_name, exclude_sections):
+                    sections[current_section].append(line)
+        
+        # 处理最后一个段落的配置合并
+        if current_section:
+            for config_type, lines in config_lines.items():
+                if lines and self.merge_configs[config_type]['section'] == current_section:
+                    merged_line = self.merge_config_lines(
+                        lines, 
+                        config_type, 
+                        self.merge_configs[config_type]['prefix']
+                    )
+                    if merged_line:
+                        if current_section not in sections:
+                            sections[current_section] = []
+                        sections[current_section] = [merged_line]
+                
+        return sections
+
+    def get_module_name(self, content: str) -> str:
+        """从模块内容中获取模块名称"""
+        for line in content.splitlines():
+            if line.startswith('#!name='):
+                name = line.replace('#!name=', '').strip()
+                logging.info(f"找到模块名称: {name}")  # 添加日志
+                return name
+        logging.warning(f"未找到模块名称")  # 添加日志
+        return None
+    
+    def should_exclude_section(self, section: str, module_name: str, exclude_sections: dict) -> bool:
+        """判断是否应该排除整个段落"""
+        if not exclude_sections or not module_name:
+            return False
+        
+        # 获取该模块需要排除的段落
+        module_excludes = exclude_sections.get(module_name, [])
+        return section in module_excludes
+
     def should_exclude(self, line: str, exclude_rules: List[str], section: str = None) -> bool:
         """
         判断是否应该排除某行
@@ -30,7 +137,7 @@ class ModuleParser:
         """
         # 处理 MITM 段落
         if section == 'MITM' and line.startswith('hostname'):
-            hostnames = self.parse_mitm_hostnames(line)
+            hostnames = self.parse_config_line(line, 'hostname')
             # 过滤掉需要排除的主机名
             filtered_hosts = [h for h in hostnames if h not in exclude_rules]
             if filtered_hosts:
@@ -69,51 +176,6 @@ class ModuleParser:
                 except ValueError:
                     continue
         return False
-
-    def parse_section(self, content: str, module_name: str, exclude_sections: dict) -> Dict[str, List[str]]:
-        sections = {}
-        current_section = None
-        line_number = 0
-        
-        for line in content.splitlines():
-            line_number += 1
-            line = line.strip()
-            
-            # 跳过元数据行和注释
-            if not line or line.startswith('#'):
-                continue
-                
-            # 检查是否是段落标记
-            if line.startswith('[') and line.endswith(']'):
-                current_section = line[1:-1]
-                sections[current_section] = []
-                continue
-                
-            if current_section:
-                # 检查是否应该排除这一行
-                if not self.should_exclude_line(line, line_number, module_name, exclude_sections):
-                    sections[current_section].append(line)
-                
-        return sections
-
-    def get_module_name(self, content: str) -> str:
-        """从模块内容中获取模块名称"""
-        for line in content.splitlines():
-            if line.startswith('#!name='):
-                name = line.replace('#!name=', '').strip()
-                logging.info(f"找到模块名称: {name}")  # 添加日志
-                return name
-        logging.warning(f"未找到模块名称")  # 添加日志
-        return None
-    
-    def should_exclude_section(self, section: str, module_name: str, exclude_sections: dict) -> bool:
-        """判断是否应该排除整个段落"""
-        if not exclude_sections or not module_name:
-            return False
-        
-        # 获取该模块需要排除的段落
-        module_excludes = exclude_sections.get(module_name, [])
-        return section in module_excludes
 
 class ModuleMerger:
     def __init__(self, config_path: str):

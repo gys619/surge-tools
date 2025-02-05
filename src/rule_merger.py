@@ -25,7 +25,7 @@ class RuleMerger:
         
     def merge_rules(self, rule_set_name: str) -> Dict:
         rule_config = self.config['rules']['sources'][rule_set_name]
-        rules: Dict[str, Set[Rule]] = {
+        rules: Dict[str, Set[str]] = {  # 使用 Set 而不是 List 来存储规则
             'DOMAIN': set(),
             'DOMAIN-SUFFIX': set(),
             'DOMAIN-KEYWORD': set(),
@@ -46,17 +46,16 @@ class RuleMerger:
                     exclude_rules.add(rule.content)
         
         # 合并规则
-        success = False  # 标记是否有成功获取的规则
+        success = False
         for url in rule_config['urls']:
             lines = self.fetch_rules(url)
-            if lines:  # 如果获取到规则
+            if lines:
                 success = True
                 for line in lines:
                     rule = self.parser.parse_line(line)
                     if rule and not self.parser.should_exclude(rule, exclude_rules):
-                        rules[rule.type].add(rule)
+                        rules[rule.type].add(rule.original)  # 存储原始行，而不是 Rule 对象
         
-        # 如果没有成功获取任何规则，返回 None
         if not success:
             logging.warning(f"规则集 {rule_set_name} 所有源获取失败")
             return None
@@ -67,6 +66,20 @@ class RuleMerger:
             logging.warning(f"规则集 {rule_set_name} 合并后为空")
             return None
         
+        # 按照优先级排序规则
+        rule_preference = rule_config.get('rule_preference', [])
+        ordered_rules = {}
+        
+        # 首先添加有优先级的规则类型
+        for rule_type in rule_preference:
+            if rule_type in rules and rules[rule_type]:
+                ordered_rules[rule_type] = sorted(rules[rule_type])  # 对规则进行排序
+        
+        # 然后添加其他规则类型
+        for rule_type in rules:
+            if rule_type not in ordered_rules and rules[rule_type]:
+                ordered_rules[rule_type] = sorted(rules[rule_type])
+        
         return {
             'metadata': {
                 'name': rule_config['name'],
@@ -75,5 +88,5 @@ class RuleMerger:
                 'updated': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                 'description': rule_config['description'],
             },
-            'rules': rules
+            'rules': ordered_rules
         } 
