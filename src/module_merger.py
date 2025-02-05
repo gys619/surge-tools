@@ -74,20 +74,7 @@ class ModuleParser:
             if line.startswith('[') and line.endswith(']'):
                 # 处理之前段落的配置合并
                 if current_section:
-                    for config_type, lines in config_lines.items():
-                        if lines and self.merge_configs[config_type]['section'] == current_section:
-                            merged_line = self.merge_config_lines(
-                                lines, 
-                                config_type, 
-                                self.merge_configs[config_type]['prefix']
-                            )
-                            if merged_line:
-                                if current_section not in sections:
-                                    sections[current_section] = []
-                                sections[current_section] = [merged_line] + [
-                                    l for l in sections.get(current_section, [])
-                                    if not any(l.startswith(c) for c in self.merge_configs)
-                                ]
+                    self._merge_section_configs(sections, current_section, config_lines)
                 
                 current_section = line[1:-1]
                 sections[current_section] = []
@@ -113,22 +100,27 @@ class ModuleParser:
         
         # 处理最后一个段落的配置合并
         if current_section:
-            for config_type, lines in config_lines.items():
-                if lines and self.merge_configs[config_type]['section'] == current_section:
-                    merged_line = self.merge_config_lines(
-                        lines, 
-                        config_type, 
-                        self.merge_configs[config_type]['prefix']
-                    )
-                    if merged_line:
-                        if current_section not in sections:
-                            sections[current_section] = []
-                        sections[current_section] = [merged_line] + [
-                            l for l in sections.get(current_section, [])
-                            if not any(l.startswith(c) for c in self.merge_configs)
-                        ]
+            self._merge_section_configs(sections, current_section, config_lines)
                 
         return sections
+    
+    def _merge_section_configs(self, sections: Dict[str, List[str]], section: str, config_lines: Dict[str, List[str]]):
+        """合并段落内的配置项"""
+        for config_type, lines in config_lines.items():
+            if lines and self.merge_configs[config_type]['section'] == section:
+                merged_line = self.merge_config_lines(
+                    lines, 
+                    config_type, 
+                    self.merge_configs[config_type]['prefix']
+                )
+                if merged_line:
+                    if section not in sections:
+                        sections[section] = []
+                    # 确保合并的配置行在段落的开始
+                    sections[section] = [merged_line] + [
+                        l for l in sections.get(section, [])
+                        if not any(l.startswith(c) for c in self.merge_configs)
+                    ]
 
     def get_module_name(self, content: str) -> str:
         """从模块内容中获取模块名称"""

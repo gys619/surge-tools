@@ -104,6 +104,7 @@ modules:
       urls:
         - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/General/General.sgmodule"
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%F0%9F%8D%9F%20%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97.official.sgmodule"
+        - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E6%8B%A6%E6%88%AAHTTPDNS.official.sgmodule"
       exclude_rules:     # 排除特定的脚本
         - "ExampleScript.js"
         - "UnwantedScript.js"
@@ -125,9 +126,10 @@ modules:
       exclude_rules:    
         - "api.gotokeep.com"    # 排除特定主机名
       exclude_sections:         
-        "中国联通 去广告":      
+        "中国联通 去广告":     
+          - "line:19"       # 排除第17到18行 
           - "Body Rewrite"         # 排除整个段落
-          - "line:19"        # 排除第17到18行
+
       section_preference:
         - "General"
         - "Host"
