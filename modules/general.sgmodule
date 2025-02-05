@@ -2,16 +2,11 @@
 #!desc=通用设置模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-02-05 15:17:45
+#!updated=2025-02-05 15:27:42
 
 [General]
 
 force-http-engine-hosts = %APPEND% m.client.10010.com
-
-[MITM]
-
-hostname = %APPEND% kad.gotokeep.com
-hostname = %APPEND% m.client.10010.com
 
 [Rule]
 
@@ -32,3 +27,10 @@ K-Ad = type= http-response,pattern=https:\/\/kad\.gotokeep\.com\/op-engine-webap
 K-Basic = type=http-response,pattern=https:\/\/api\.gotokeep\.com\/config\/v3/basic,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/basic.js
 K-Course = type=http-response,pattern=^https?:\/\/api\.gotokeep\.com\/athena\/v7\/people\/course\/(practiced|general),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/course.js
 K-My = type=http-response,pattern=https:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/my.js
+
+[MITM]
+
+hostname = %APPEND% api.gotokeep.com, kad.gotokeep.com, m.client.10010.com
+
+[Map Local]
+
