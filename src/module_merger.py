@@ -8,15 +8,77 @@ import logging
 class ModuleParser:
     def __init__(self):
         self.section_types = {
-            'MITM', 'URL-REGEX', 'General', 'Script', 'Host'
+            'MITM', 'URL-REGEX', 'General', 'Script', 'Host', 'Body Rewrite', 'Map Local'
         }
     
-    def parse_section(self, content: str) -> Dict[str, List[str]]:
+    def parse_mitm_hostnames(self, line: str) -> List[str]:
+        """解析 MITM 主机名列表"""
+        if line.startswith('hostname'):
+            # 移除 hostname = 和 %APPEND% 
+            content = line.replace('hostname = ', '').replace('%APPEND% ', '')
+            # 分割并清理主机名
+            return [host.strip() for host in content.split(',')]
+        return []
+    
+    def should_exclude(self, line: str, exclude_rules: List[str], section: str = None) -> bool:
+        """
+        判断是否应该排除某行
+        支持:
+        1. 完整行匹配
+        2. MITM 主机名匹配
+        3. 通配符匹配
+        """
+        # 处理 MITM 段落
+        if section == 'MITM' and line.startswith('hostname'):
+            hostnames = self.parse_mitm_hostnames(line)
+            # 过滤掉需要排除的主机名
+            filtered_hosts = [h for h in hostnames if h not in exclude_rules]
+            if filtered_hosts:
+                # 重建 hostname 行
+                return False, f"hostname = %APPEND% {', '.join(filtered_hosts)}"
+            return True, None
+            
+        # 其他段落的普通匹配
+        for exclude in exclude_rules:
+            if exclude in line:
+                return True, None
+                
+        return False, None
+
+    def should_exclude_line(self, line: str, line_number: int, module_name: str, exclude_sections: dict) -> bool:
+        """判断是否应该排除某一行"""
+        if not exclude_sections or not module_name:
+            return False
+        
+        module_excludes = exclude_sections.get(module_name, [])
+        for exclude in module_excludes:
+            if exclude.startswith('line:'):
+                try:
+                    # 处理范围格式 (例如: line:17-18)
+                    if '-' in exclude:
+                        start, end = map(int, exclude.replace('line:', '').split('-'))
+                        if start <= line_number <= end:
+                            logging.info(f"排除第 {line_number} 行: {line}")
+                            return True
+                    # 处理单行格式 (例如: line:17)
+                    else:
+                        excluded_line = int(exclude.split(':')[1])
+                        if line_number == excluded_line:
+                            logging.info(f"排除第 {line_number} 行: {line}")
+                            return True
+                except ValueError:
+                    continue
+        return False
+
+    def parse_section(self, content: str, module_name: str, exclude_sections: dict) -> Dict[str, List[str]]:
         sections = {}
         current_section = None
+        line_number = 0
         
         for line in content.splitlines():
+            line_number += 1
             line = line.strip()
+            
             # 跳过元数据行和注释
             if not line or line.startswith('#'):
                 continue
@@ -28,15 +90,30 @@ class ModuleParser:
                 continue
                 
             if current_section:
-                sections[current_section].append(line)
+                # 检查是否应该排除这一行
+                if not self.should_exclude_line(line, line_number, module_name, exclude_sections):
+                    sections[current_section].append(line)
                 
         return sections
+
+    def get_module_name(self, content: str) -> str:
+        """从模块内容中获取模块名称"""
+        for line in content.splitlines():
+            if line.startswith('#!name='):
+                name = line.replace('#!name=', '').strip()
+                logging.info(f"找到模块名称: {name}")  # 添加日志
+                return name
+        logging.warning(f"未找到模块名称")  # 添加日志
+        return None
     
-    def should_exclude(self, line: str, exclude_rules: List[str]) -> bool:
-        for exclude in exclude_rules:
-            if exclude in line:
-                return True
-        return False
+    def should_exclude_section(self, section: str, module_name: str, exclude_sections: dict) -> bool:
+        """判断是否应该排除整个段落"""
+        if not exclude_sections or not module_name:
+            return False
+        
+        # 获取该模块需要排除的段落
+        module_excludes = exclude_sections.get(module_name, [])
+        return section in module_excludes
 
 class ModuleMerger:
     def __init__(self, config_path: str):
@@ -59,29 +136,47 @@ class ModuleMerger:
         
         # 获取排除规则
         exclude_rules = set(module_config.get('exclude_rules', []))
-        
-        # 获取需要排除的模块集
-        for exclude_url in module_config.get('exclude_module_sets', []):
-            exclude_content = self.fetch_module(exclude_url)
-            exclude_sections = self.parser.parse_section(exclude_content)
-            for section_content in exclude_sections.values():
-                exclude_rules.update(section_content)
+        exclude_sections = module_config.get('exclude_sections', {})
         
         # 合并模块
-        success = False  # 标记是否有成功获取的模块
+        success = False
         for url in module_config['urls']:
             content = self.fetch_module(url)
-            if content:  # 如果获取到内容
+            if content:
                 success = True
-                parsed_sections = self.parser.parse_section(content)
+                current_module_name = self.parser.get_module_name(content)
+                logging.info(f"\n处理模块: {url}")
+                
+                # 打印行号和内容
+                for i, line in enumerate(content.splitlines()[:20], 1):  # 显示前20行
+                    logging.info(f"行 {i}: {line}")
+                
+                parsed_sections = self.parser.parse_section(
+                    content,
+                    current_module_name,
+                    exclude_sections
+                )
                 
                 for section, lines in parsed_sections.items():
+                    # 检查是否需要排除整个段落
+                    if self.parser.should_exclude_section(section, current_module_name, exclude_sections):
+                        logging.info(f"排除段落: {section} 从模块: {current_module_name}")  # 添加日志
+                        continue
+                        
                     if section not in sections:
                         sections[section] = set()
                     
                     for line in lines:
-                        if not self.parser.should_exclude(line, exclude_rules):
-                            sections[section].add(line)
+                        should_exclude, new_line = self.parser.should_exclude(
+                            line, 
+                            exclude_rules, 
+                            section
+                        )
+                        if not should_exclude:
+                            if new_line:
+                                sections[section].add(new_line)
+                            else:
+                                sections[section].add(line)
         
         # 如果没有成功获取任何模块，返回 None
         if not success:

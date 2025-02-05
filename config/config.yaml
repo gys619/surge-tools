@@ -121,9 +121,13 @@ modules:
       repo: "https://github.com/gys619/surge-tools"
       urls:
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/Keep%20%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule"
-      exclude_rules:    # 排除特定的设置项
-        - "api.gotokeep.com"
-        - "always-real-ip"
+        - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule"
+      exclude_rules:    
+        - "api.gotokeep.com"    # 排除特定主机名
+      exclude_sections:         
+        "中国联通 去广告":      
+          - "Map Local"         # 排除整个段落
+          - "line:17-18"        # 排除第17到18行
       section_preference:
         - "General"
         - "Host"
