@@ -25,17 +25,10 @@ def generate_rule_file(merged_data: dict, output_path: str):
                 f.write(f"{rule.original}\n")
 
 def generate_module_file(merged_data: dict, output_path: str):
+    """生成模块文件"""
     with open(output_path, 'w', encoding='utf-8') as f:
-        # 写入元数据
-        meta = merged_data['metadata']
-        f.write(f"#!name={meta['name']}\n")
-        f.write(f"#!desc={meta['desc']}\n")
-        f.write(f"#!author={meta['author']}\n")
-        f.write(f"#!repo={meta['repo']}\n")
-        f.write(f"#!updated={meta['updated']}\n\n")
-        
-        # 写入模块内容
-        f.write(merged_data['content'])
+        module_content = merged_data['merger'].format_module_content(merged_data)
+        f.write(module_content)
 
 def main():
     merger = RuleMerger('config/config.yaml')

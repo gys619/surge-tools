@@ -1,30 +1,130 @@
 rules:
-  output_dir: "./rules"
+  output_dir: "./rules"    # 规则文件输出目录
   sources:
-    advertising:
-      name: "Advertising"
-      author: "gys619"
-      repo: "https://github.com/gys619/surge"
-      description: "分流规则中含有URL-REGEX类型，建议搭配MITM使用"
-      urls:
+    advertising:           # 广告规则集配置
+      name: "Advertising"  # 规则集名称
+      author: "gys619"     # 作者
+      repo: "https://github.com/gys619/surge-tools"  # 仓库地址
+      description: "分流规则中含有URL-REGEX类型，建议搭配MITM使用"  # 规则集描述
+      urls:  # 需要合并的规则源
         - "https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/AdBlock.list"
         - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list"
-      exclude_rules:
+      exclude_rules:  # 需要排除的单条规则
         - "0.myikas.com"
-      exclude_rule_sets:
+      exclude_rule_sets:  # 需要排除的规则集
         - "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge.list"
-      rule_preference:
+      rule_preference:  # 规则优先级顺序
         - "DOMAIN"
         - "DOMAIN-SUFFIX"
         - "DOMAIN-KEYWORD"
 
-modules:
-  output_dir: "./modules"
-  sources:
-    advertising_mitm:
-      name: "Advertising MITM"
-      desc: "分流规则中含有URL-REGEX类型的MITM模块"
+    netflix:              # Netflix 规则集配置
+      name: "Netflix"     # 规则集名称
       author: "gys619"
-      repo: "https://github.com/gys619/surge"
+      repo: "https://github.com/gys619/surge-tools"
+      description: "Netflix 分流规则"
       urls:
-        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule" 
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list"
+      exclude_rules: []   # 空数组表示没有需要排除的规则
+      rule_preference:
+        - "DOMAIN"
+        - "DOMAIN-SUFFIX"
+        - "IP-CIDR"
+
+    youtube:              # YouTube 规则集配置
+      name: "YouTube"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge-tools"
+      description: "YouTube 分流规则"
+      urls:
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list"
+        - "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
+      exclude_rules: []
+      rule_preference:
+        - "DOMAIN-SUFFIX"
+        - "DOMAIN"
+        - "IP-CIDR"
+
+    telegram:             # Telegram 规则集配置
+      name: "Telegram"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge-tools"
+      description: "Telegram 分流规则"
+      urls:
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list"
+        - "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Telegram/Telegram.list"
+      exclude_rules: []
+      rule_preference:
+        - "DOMAIN-SUFFIX"
+        - "DOMAIN-KEYWORD"
+        - "IP-CIDR"
+        - "IP-CIDR6"
+
+    apple:                # Apple 服务规则集配置
+      name: "Apple"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge-tools"
+      description: "Apple 分流规则，包含 App Store、Apple Music 等服务"
+      urls:
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list"
+        - "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list"
+      exclude_rules: []
+      rule_preference:
+        - "DOMAIN"
+        - "DOMAIN-SUFFIX"
+        - "DOMAIN-KEYWORD"
+        - "IP-CIDR"
+
+modules:
+  output_dir: "./modules"  # 模块文件输出目录
+  sources:
+    advertising_mitm:      # MITM 模块配置
+      name: "Advertising MITM"  # 模块名称
+      desc: "分流规则中含有URL-REGEX类型的MITM模块"  # 模块描述
+      author: "gys619"      # 作者
+      repo: "https://github.com/gys619/surge-tools"  # 仓库地址
+      urls:  # 模块源
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule"
+      exclude_rules:  # 排除特定的 MITM 主机名或规则
+        - "*.example.com"
+        - "api.example.com"
+      exclude_module_sets:  # 排除其他模块文件中的规则
+        - "https://example.com/other-mitm-rules.sgmodule"
+      section_preference:  # 模块段落优先级
+        - "MITM"         # MITM 配置段
+        - "URL-REGEX"    # URL 正则表达式段
+        - "General"      # 通用配置段
+        - "Script"       # 脚本段
+
+    scripts:              # 脚本模块配置
+      name: "CommonScripts"
+      desc: "常用脚本合集"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge-tools"
+      urls:
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/General/General.sgmodule"
+        - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%F0%9F%8D%9F%20%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97.official.sgmodule"
+      exclude_rules:     # 排除特定的脚本
+        - "ExampleScript.js"
+        - "UnwantedScript.js"
+      exclude_module_sets:
+        - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%F0%9F%8D%9F%20%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97.official.sgmodule"
+      section_preference:
+        - "Script"
+        - "MITM"
+        - "General"
+
+    general:             # 通用设置模块配置
+      name: "GeneralSettings"
+      desc: "通用设置模块"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge-tools"
+      urls:
+        - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/Keep%20%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule"
+      exclude_rules:    # 排除特定的设置项
+        - "api.gotokeep.com"
+        - "always-real-ip"
+      section_preference:
+        - "General"
+        - "Host"
+        - "MITM"

@@ -1,43 +1,53 @@
-name: Update Surge Rules
+name: Update Surge Rules  # 工作流名称
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天运行
-  workflow_dispatch:      # 允许手动触发
+    - cron: '0 0 * * *'  # 定时任务，每天 UTC 0点运行（北京时间早上8点）
+  workflow_dispatch:      # 允许手动在 GitHub 网页上触发
 
 permissions:
-  contents: write      # 添加写入权限
+  contents: write        # 给予写入仓库的权限
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    # 在最新版本的 Ubuntu 系统上运行
     
     steps:
-    - uses: actions/checkout@v3  # 更新到 v3
+    # 步骤1: 检出代码
+    - uses: actions/checkout@v3  # 获取仓库代码
     
+    # 步骤2: 设置 Python 环境
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.x'   # 使用最新的 Python 3.x 版本
     
+    # 步骤3: 安装项目依赖
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        python -m pip install --upgrade pip  # 更新 pip
+        pip install -r requirements.txt      # 安装项目依赖
     
+    # 步骤4: 运行规则更新脚本
     - name: Update rules and modules
-      run: python -m src.main
+      run: python -m src.main   # 运行主程序，更新规则和模块
     
+    # 步骤5: 提交更改
     - name: Commit changes
       run: |
+        # 配置 Git 用户信息
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
+        # 添加生成的规则和模块文件
         git add rules/ modules/
+        # 提交更改，如果没有更改则输出提示信息
         git commit -m "Update rules and modules" || echo "No changes to commit"
+        # 推送到远程仓库
         git push
-    
+
+    # 步骤6: 使用专门的 action 推送更改（如果上面的推送失败，这个作为备份）
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }} 
+        github_token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 自动提供的 token
+        branch: ${{ github.ref }}                  # 推送到当前分支 
