@@ -127,7 +127,7 @@ modules:
       exclude_sections:         
         "中国联通 去广告":      
           - "Map Local"         # 排除整个段落
-          - "line:17-18"        # 排除第17到18行
+          - "line:16-18"        # 排除第17到18行
       section_preference:
         - "General"
         - "Host"

@@ -20,10 +20,10 @@ def generate_rule_file(merged_data: dict, output_path: str):
             f.write(f"# {rule_type}: {len(rules[rule_type])}\n")
         f.write(f"# TOTAL: {total}\n\n")
         
-        # 写入规则
+        # 写入规则 - 规则已经是排序后的字符串列表
         for rule_type in rules:
-            for rule in sorted(rules[rule_type], key=lambda x: x.content):
-                f.write(f"{rule.original}\n")
+            for rule in rules[rule_type]:  # 直接写入规则字符串
+                f.write(f"{rule}\n")
 
 def generate_module_file(merged_data: dict, module_merger: ModuleMerger, output_path: str):
     """生成模块文件"""
