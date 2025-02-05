@@ -4,11 +4,12 @@ import yaml
 from datetime import datetime
 from typing import Dict, List, Set
 import logging
+import os
 
 class ModuleParser:
     def __init__(self):
         self.section_types = {
-            'MITM', 'URL-REGEX', 'General', 'Script', 'Host'
+            'MITM', 'URL-REGEX', 'General', 'Script', 'Host', 'Rule'
         }
         # 需要合并的特殊配置项
         self.merge_configs = {
@@ -191,6 +192,26 @@ class ModuleParser:
                     continue
         return False
 
+    def extract_rules(self, content: str) -> List[str]:
+        """从模块中提取规则"""
+        rules = []
+        in_rule_section = False
+        
+        for line in content.splitlines():
+            line = line.strip()
+            
+            if line == '[Rule]':
+                in_rule_section = True
+                continue
+            elif line.startswith('['):
+                in_rule_section = False
+                continue
+                
+            if in_rule_section and line and not line.startswith('#'):
+                rules.append(line)
+                
+        return rules
+
 class ModuleMerger:
     def __init__(self, config_path: str):
         with open(config_path, 'r', encoding='utf-8') as f:
@@ -208,7 +229,9 @@ class ModuleMerger:
     
     def merge_modules(self, module_name: str) -> Dict:
         module_config = self.config['modules']['sources'][module_name]
-        sections = {}  # 改用 Dict[str, List[str]] 而不是 Dict[str, Set[str]]
+        sections = {}
+        all_hostnames = set()
+        extracted_rules = []  # 用于存储提取的规则
         
         # 获取排除规则
         exclude_rules = set(module_config.get('exclude_rules', []))
@@ -244,10 +267,38 @@ class ModuleMerger:
                             section
                         )
                         if not should_exclude:
-                            if new_line and new_line not in sections[section]:
+                            if section == 'MITM' and line.startswith('hostname'):
+                                # 收集 hostname
+                                hostnames = self.parser.parse_config_line(line, 'hostname')
+                                all_hostnames.update(hostnames)
+                            elif new_line and new_line not in sections[section]:
                                 sections[section].append(new_line)
                             elif not new_line and line not in sections[section]:
                                 sections[section].append(line)
+                
+                # 提取规则
+                rules = self.parser.extract_rules(content)
+                extracted_rules.extend(rules)
+        
+        # 如果有收集到 hostname，添加到 MITM 段落
+        if all_hostnames:
+            if 'MITM' not in sections:
+                sections['MITM'] = []
+            # 添加合并后的 hostname 行
+            sections['MITM'] = [f"hostname = %APPEND% {', '.join(sorted(all_hostnames))}"] + [
+                line for line in sections.get('MITM', [])
+                if not line.startswith('hostname')
+            ]
+        
+        # 如果有提取到规则，保存到文件
+        if extracted_rules:
+            rules_dir = self.config.get('rules', {}).get('output_dir', './rules')
+            os.makedirs(rules_dir, exist_ok=True)
+            rules_file = os.path.join(rules_dir, f"{module_name}_from_modules.list")
+            
+            with open(rules_file, 'w', encoding='utf-8') as f:
+                f.write("\n".join(sorted(set(extracted_rules))))
+                logging.info(f"从模块提取的规则已保存到: {rules_file}")
         
         # 如果没有成功获取任何模块，返回 None
         if not success:
