@@ -3,6 +3,7 @@ import requests
 import yaml
 from datetime import datetime
 from typing import Dict, List, Set
+import logging
 
 class ModuleParser:
     def __init__(self):
@@ -44,9 +45,13 @@ class ModuleMerger:
         self.parser = ModuleParser()
     
     def fetch_module(self, url: str) -> str:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.text
+        try:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            return response.text
+        except requests.exceptions.RequestException as e:
+            logging.warning(f"获取模块失败: {url}, 错误: {str(e)}")
+            return ""
     
     def merge_modules(self, module_name: str) -> Dict:
         module_config = self.config['modules']['sources'][module_name]
@@ -63,17 +68,30 @@ class ModuleMerger:
                 exclude_rules.update(section_content)
         
         # 合并模块
+        success = False  # 标记是否有成功获取的模块
         for url in module_config['urls']:
             content = self.fetch_module(url)
-            parsed_sections = self.parser.parse_section(content)
-            
-            for section, lines in parsed_sections.items():
-                if section not in sections:
-                    sections[section] = set()
+            if content:  # 如果获取到内容
+                success = True
+                parsed_sections = self.parser.parse_section(content)
                 
-                for line in lines:
-                    if not self.parser.should_exclude(line, exclude_rules):
-                        sections[section].add(line)
+                for section, lines in parsed_sections.items():
+                    if section not in sections:
+                        sections[section] = set()
+                    
+                    for line in lines:
+                        if not self.parser.should_exclude(line, exclude_rules):
+                            sections[section].add(line)
+        
+        # 如果没有成功获取任何模块，返回 None
+        if not success:
+            logging.warning(f"模块 {module_name} 所有源获取失败")
+            return None
+            
+        # 如果所有段落都为空，返回 None
+        if not any(sections.values()):
+            logging.warning(f"模块 {module_name} 合并后为空")
+            return None
         
         # 按照优先级排序段落
         section_preference = module_config.get('section_preference', [])

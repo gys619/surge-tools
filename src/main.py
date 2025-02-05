@@ -1,6 +1,7 @@
 import os
 from .rule_merger import RuleMerger
 from .module_merger import ModuleMerger
+import logging
 
 def generate_rule_file(merged_data: dict, output_path: str):
     with open(output_path, 'w', encoding='utf-8') as f:
@@ -39,11 +40,13 @@ def main():
     # 处理每个规则集
     for rule_set_name in merger.config['rules']['sources']:
         merged_data = merger.merge_rules(rule_set_name)
-        output_path = os.path.join(
-            merger.config['rules']['output_dir'],
-            f"{rule_set_name}.list"
-        )
-        generate_rule_file(merged_data, output_path)
+        if merged_data:  # 只有在成功获取规则时才生成文件
+            output_path = os.path.join(
+                merger.config['rules']['output_dir'],
+                f"{rule_set_name}.list"
+            )
+            generate_rule_file(merged_data, output_path)
+            logging.info(f"成功生成规则文件: {rule_set_name}.list")
     
     # 处理模块
     if 'modules' in merger.config:
@@ -52,11 +55,13 @@ def main():
         
         for module_name in module_merger.config['modules']['sources']:
             merged_data = module_merger.merge_modules(module_name)
-            output_path = os.path.join(
-                module_merger.config['modules']['output_dir'],
-                f"{module_name}.sgmodule"
-            )
-            generate_module_file(merged_data, output_path)
+            if merged_data:  # 只有在成功获取模块时才生成文件
+                output_path = os.path.join(
+                    module_merger.config['modules']['output_dir'],
+                    f"{module_name}.sgmodule"
+                )
+                generate_module_file(merged_data, output_path)
+                logging.info(f"成功生成模块文件: {module_name}.sgmodule")
 
 if __name__ == "__main__":
     main() 
