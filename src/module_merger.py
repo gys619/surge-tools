@@ -48,11 +48,18 @@ class ModuleParser:
                 return f"{config_type} = {prefix} {', '.join(values)}"
         return ""
 
+    def normalize_url_rewrite_rule(self, line: str) -> str:
+        """标准化 URL Rewrite 规则，使相似的规则可以被正确比较"""
+        # 移除可选的问号 (?), 统一使用 https
+        line = line.replace('https?:', 'https:')
+        return line
+
     def parse_section(self, content: str, module_name: str, exclude_sections: dict) -> Dict[str, List[str]]:
         sections = {}
         current_section = None
         line_number = 0
         config_lines = {config: [] for config in self.merge_configs}
+        url_rewrite_rules = set()  # 用于存储标准化的规则
         
         for line in content.splitlines():
             line_number += 1
@@ -98,8 +105,16 @@ class ModuleParser:
                 if not is_merge_config:
                     if current_section not in sections:
                         sections[current_section] = []
-                    if line not in sections[current_section]:  # 确保不重复添加
-                        sections[current_section].append(line)
+                    
+                    # 特殊处理 URL Rewrite 段落
+                    if current_section == 'URL Rewrite':
+                        normalized_line = self.normalize_url_rewrite_rule(line)
+                        if normalized_line not in url_rewrite_rules:
+                            url_rewrite_rules.add(normalized_line)
+                            sections[current_section].append(line)  # 添加原始行
+                    else:
+                        if line not in sections[current_section]:  # 确保不重复添加
+                            sections[current_section].append(line)
         
         # 处理最后一个段落的配置合并
         if current_section:
