@@ -1,0 +1,16 @@
+surge-tools/
+├── .github/
+│   └── workflows/
+│       └── update-rules.yml
+├── rules/
+├── modules/
+├── config/
+│   └── config.yaml
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── rule_merger.py
+│   ├── rule_parser.py
+│   └── utils.py
+├── requirements.txt
+└── README.md 

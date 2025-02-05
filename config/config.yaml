@@ -1,0 +1,30 @@
+rules:
+  output_dir: "./rules"
+  sources:
+    advertising:
+      name: "Advertising"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge"
+      description: "分流规则中含有URL-REGEX类型，建议搭配MITM使用"
+      urls:
+        - "https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/AdBlock.list"
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list"
+      exclude_rules:
+        - "0.myikas.com"
+      exclude_rule_sets:
+        - "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Surge.list"
+      rule_preference:
+        - "DOMAIN"
+        - "DOMAIN-SUFFIX"
+        - "DOMAIN-KEYWORD"
+
+modules:
+  output_dir: "./modules"
+  sources:
+    advertising_mitm:
+      name: "Advertising MITM"
+      desc: "分流规则中含有URL-REGEX类型的MITM模块"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge"
+      urls:
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule" 
