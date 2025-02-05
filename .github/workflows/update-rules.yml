@@ -11,6 +11,9 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}  # 使用 GITHUB_TOKEN
+        fetch-depth: 0  # 获取完整历史
     
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -27,8 +30,13 @@ jobs:
     
     - name: Commit changes
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
         git add rules/ modules/
         git commit -m "Update rules and modules" || echo "No changes to commit"
-        git push 
+    
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }} 
