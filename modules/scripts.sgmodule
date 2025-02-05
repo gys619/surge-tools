@@ -1,0 +1,20 @@
+#!name=CommonScripts
+#!desc=常用脚本合集
+#!author=gys619
+#!repo=https://github.com/gys619/surge-tools
+#!updated=2025-02-05 14:39:09
+
+[MITM]
+# 不可 MitM 也不应该被打断连接的域名
+hostname = %APPEND% buy.itunes.apple.com, gateway.icloud.com, gateway.icloud.com.cn, ios.chat.openai.com, weather-data.apple.com
+
+[General]
+
+# (macOS 版本中，如果启用了 Set as System Proxy, 这些值会被写入到系统网络代理设置.)
+# > Always Real IP Hosts
+# > 跳过代理
+# DNS 数据包将被转发到上游 DNS 服务器。
+# 当 Surge VIF 处理 DNS 问题时，此选项要求 Surge 返回一个真正的 IP 地址，而不是一个假 IP 地址。
+# 跳过某个域名或者 IP 段，这些目标主机将不会由 Surge Proxy 处理。
+skip-proxy = %APPEND% *.local, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, captive.apple.com, e.crashlytics.com, fe80::/10, gate.lagou.com, localhost, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, passenger.t3go.cn, www.abchina.com.cn, www.baidu.com, wxh.wo.cn, yunbusiness.ccb.com
+tun-excluded-routes = %APPEND% 239.255.255.250/32

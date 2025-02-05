@@ -1,0 +1,8 @@
+#!name=Advertising MITM
+#!desc=分流规则中含有URL-REGEX类型的MITM模块
+#!author=gys619
+#!repo=https://github.com/gys619/surge-tools
+#!updated=2025-02-05 14:39:09
+
+[MITM]
+hostname = %APPEND% *.beacon.qq.com, *.gdt.qq.com, *.l.qq.com, ad*.sina.com, ad*.sina.com.cn, app.58.com, cdn-1rtb.caiyunapp.com, d*.sinaimg.cn, goblin.hupu.com, sa*.tuisong.baidu.com, sax*.sina.com.cn, update.pan.baidu.com
