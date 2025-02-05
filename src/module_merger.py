@@ -57,13 +57,17 @@ class ModuleParser:
             line_number += 1
             line = line.strip()
             
+            # 跳过元数据行和注释
+            if not line or line.startswith('#'):
+                if current_section:  # 如果在段落内，保留注释
+                    if current_section not in sections:
+                        sections[current_section] = []
+                    sections[current_section].append(line)
+                continue
+            
             # 检查是否应该排除这一行
             if self.should_exclude_line(line, line_number, module_name, exclude_sections):
                 logging.info(f"排除行 {line_number}: {line}")
-                continue
-            
-            # 跳过元数据行和注释
-            if not line or line.startswith('#'):
                 continue
                 
             # 检查是否是段落标记
@@ -80,8 +84,10 @@ class ModuleParser:
                             if merged_line:
                                 if current_section not in sections:
                                     sections[current_section] = []
-                                if merged_line not in sections[current_section]:
-                                    sections[current_section] = [merged_line]
+                                sections[current_section] = [merged_line] + [
+                                    l for l in sections.get(current_section, [])
+                                    if not any(l.startswith(c) for c in self.merge_configs)
+                                ]
                 
                 current_section = line[1:-1]
                 sections[current_section] = []
@@ -101,6 +107,8 @@ class ModuleParser:
                 
                 # 如果不是需要合并的配置，正常处理
                 if not is_merge_config:
+                    if current_section not in sections:
+                        sections[current_section] = []
                     sections[current_section].append(line)
         
         # 处理最后一个段落的配置合并
@@ -115,7 +123,10 @@ class ModuleParser:
                     if merged_line:
                         if current_section not in sections:
                             sections[current_section] = []
-                        sections[current_section] = [merged_line]
+                        sections[current_section] = [merged_line] + [
+                            l for l in sections.get(current_section, [])
+                            if not any(l.startswith(c) for c in self.merge_configs)
+                        ]
                 
         return sections
 
