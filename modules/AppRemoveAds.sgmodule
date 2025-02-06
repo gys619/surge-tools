@@ -1,0 +1,43 @@
+#!name=AppRemoveAds
+#!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒)
+#!author=gys619
+#!repo=https://github.com/gys619/surge-tools
+#!updated=2025-02-06 09:15:16
+
+[Rule]
+
+DOMAIN,httpdns.calorietech.com,REJECT,extended-matching
+
+[URL Rewrite]
+
+# 动态相册
+^https:\/\/api\.gotokeep\.com\/anno\/v1\/upgrade\/check$ _ reject
+^https:\/\/api\.gotokeep\.com\/athena\/v1\/people\/my\/entry _ reject
+^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/tool\/v1\/jump\/popup$ - reject
+^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/ad _ reject
+^https:\/\/api\.gotokeep\.com\/training\/box\/config _ reject
+^https?:\/\/api.gotokeep.com/cauchy/growth/init _ reject
+
+[Script]
+
+K-Ad = type= http-response,pattern=https:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v1\/ad,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/kad.js
+K-Basic = type=http-response,pattern=https:\/\/api\.gotokeep\.com\/config\/v3/basic,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/basic.js
+K-Course = type=http-response,pattern=^https?:\/\/api\.gotokeep\.com\/athena\/v7\/people\/course\/(practiced|general),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/course.js
+K-My = type=http-response,pattern=https:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/my.js
+
+[MITM]
+
+hostname = %APPEND% api.gotokeep.com, kad.gotokeep.com, m.client.10010.com
+
+[General]
+
+force-http-engine-hosts = %APPEND% m.client.10010.com
+
+[Body Rewrite]
+
+# http-response-jq ^https?:\/\/m\.client\.10010\.com\/mobileserviceNine\/api\/v1\/index\/queryIndexExclusiveOffers\/ 'walk(if type == "array" then [] else . end)'
+# http-response-jq ^https?:\/\/m\.client\.10010\.com\/mobileserviceNine\/api\/v1\/index\/queryIndexWaterfall\/ 'walk(if type == "array" then [] else . end)'
+
+[Map Local]
+
+^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm data-type=text data='{"imgIndex":"0","adv":{"startup_adv":{"advCntList":[],"buttonList":[]}},"respCode":"0000"}' header='Content-Type:application/json'
