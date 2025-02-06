@@ -2,7 +2,7 @@
 #!desc=通用设置模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-02-06 09:20:53
+#!updated=2025-02-06 09:25:03
 
 [MITM]
 # 不可 MitM 也不应该被打断连接的域名
