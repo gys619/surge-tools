@@ -96,15 +96,16 @@ modules:
         - "General"      # 通用配置段
         - "Script"       # 脚本段
 
-    scripts:              # 脚本模块配置
-      name: "CommonScripts"
-      desc: "常用脚本合集"
+    generalSettings:              # 脚本模块配置
+      name: "GeneralSettings"
+      desc: "通用设置模块"
       author: "gys619"
       repo: "https://github.com/gys619/surge-tools"
       urls:
         - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rewrite/Surge/General/General.sgmodule"
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%F0%9F%8D%9F%20%E9%80%9A%E7%94%A8%E6%A8%A1%E5%9D%97.official.sgmodule"
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E6%8B%A6%E6%88%AAHTTPDNS.official.sgmodule"
+        - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%F0%9F%8D%9F%20DNS%20%E5%88%86%E6%B5%81.official.sgmodule"
       exclude_rules:     # 排除特定的脚本
         - "ExampleScript.js"
         - "UnwantedScript.js"
@@ -114,23 +115,34 @@ modules:
         - "Script"
         - "MITM"
         - "General"
-
-    general:             # 通用设置模块配置
-      name: "GeneralSettings"
-      desc: "通用设置模块"
+  
+    AppRemoveAds:
+      name: "AppRemoveAds"
+      desc: "app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒)"
       author: "gys619"
       repo: "https://github.com/gys619/surge-tools"
       urls:
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/Keep%20%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule"
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule"
-      exclude_rules:    
-        - "api.gotokeep.com"    # 排除特定主机名
-      exclude_sections:         
-        "中国联通 去广告":     
-          - "line:21"       # 排除第17到18行 
-          - "Body Rewrite"         # 排除整个段落
 
-      section_preference:
-        - "General"
-        - "Host"
-        - "MITM"
+
+
+    # CommonSettings:             # 通用设置模块配置
+    #   name: "CommonSettings"
+    #   desc: "通用设置模块"
+    #   author: "gys619"
+    #   repo: "https://github.com/gys619/surge-tools"
+    #   urls:
+    #     - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/Keep%20%E5%8E%BB%E5%B9%BF%E5%91%8A.official.sgmodule"
+    #     - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Official/%E4%B8%AD%E5%9B%BD%E8%81%94%E9%80%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.sgmodule"
+    #   exclude_rules:    
+    #     - "api.gotokeep.com"    # 排除特定主机名
+    #   exclude_sections:         
+    #     "中国联通 去广告":     
+    #       - "line:21"       # 排除第17到18行 
+    #       - "Body Rewrite"         # 排除整个段落
+
+    #   section_preference:
+    #     - "General"
+    #     - "Host"
+    #     - "MITM"
