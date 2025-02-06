@@ -52,6 +52,20 @@ class ModuleParser:
         """标准化 URL Rewrite 规则，使相似的规则可以被正确比较"""
         # 移除可选的问号 (?), 统一使用 https
         line = line.replace('https?:', 'https:')
+        
+        # 查找域名部分并标准化格式
+        pattern = r'\/\/([\w\.-]+?)/'  # 匹配 // 和域名之间的部分
+        match = re.search(pattern, line)
+        if match:
+            domain = match.group(1)
+            # 如果域名中的点号前没有转义符，添加转义符
+            if '\\.' not in domain:
+                escaped_domain = re.sub(r'\.', r'\.', domain)
+                # 确保斜杠也被正确转义
+                new_part = f'\\/\\/{escaped_domain}\\/'
+                old_part = f'//{domain}/'
+                line = line.replace(old_part, new_part)
+        
         return line
 
     def parse_section(self, content: str, module_name: str, exclude_sections: dict) -> Dict[str, List[str]]:

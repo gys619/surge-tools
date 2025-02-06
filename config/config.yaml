@@ -112,7 +112,7 @@ modules:
         - ""
       section_preference:
         - "Script"
-        # - "MITM"
+        - "MITM"
         - "General"
 
     general:             # 通用设置模块配置
@@ -133,4 +133,4 @@ modules:
       section_preference:
         - "General"
         - "Host"
-        # - "MITM"
+        - "MITM"
