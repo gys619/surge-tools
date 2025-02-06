@@ -154,8 +154,6 @@ modules:
         - https://raw.githubusercontent.com/thNylHx/Tools/refs/heads/main/Surge/Module/Video.sgmodule
       exclude_rules:    
         - ""    # 排除特定主机名
-      exclude_sections:
-
       section_preference:
         - "General"
         - "Host"
