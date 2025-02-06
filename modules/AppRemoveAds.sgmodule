@@ -2,42 +2,19 @@
 #!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-02-06 09:15:16
-
-[Rule]
-
-DOMAIN,httpdns.calorietech.com,REJECT,extended-matching
-
-[URL Rewrite]
-
-# 动态相册
-^https:\/\/api\.gotokeep\.com\/anno\/v1\/upgrade\/check$ _ reject
-^https:\/\/api\.gotokeep\.com\/athena\/v1\/people\/my\/entry _ reject
-^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/tool\/v1\/jump\/popup$ - reject
-^https:\/\/api\.gotokeep\.com\/op-engine-webapp\/v1\/ad _ reject
-^https:\/\/api\.gotokeep\.com\/training\/box\/config _ reject
-^https?:\/\/api.gotokeep.com/cauchy/growth/init _ reject
-
-[Script]
-
-K-Ad = type= http-response,pattern=https:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v1\/ad,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/kad.js
-K-Basic = type=http-response,pattern=https:\/\/api\.gotokeep\.com\/config\/v3/basic,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/basic.js
-K-Course = type=http-response,pattern=^https?:\/\/api\.gotokeep\.com\/athena\/v7\/people\/course\/(practiced|general),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/course.js
-K-My = type=http-response,pattern=https:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/my.js
-
-[MITM]
-
-hostname = %APPEND% api.gotokeep.com, kad.gotokeep.com, m.client.10010.com
+#!updated=2025-02-06 09:20:57
 
 [General]
 
-force-http-engine-hosts = %APPEND% m.client.10010.com
+[MITM]
+hostname = %APPEND% *.iqiyi.com, *.mgtv.com, *live.bilibili.com, 112.53.55.225, 116.85.2.*, 116.85.3.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 3pp.starbucks.com.cn, aag.enmonster.com, acs.m.goofish.com, acs.m.taobao.com, acs.youku.com, activity.yonghuivip.com, ad.12306.cn, ad.maoyan.com, ad.xiaotucc.com, ads.ishansong.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, ap?.bilibili.com, api-fouth-mem.huazhu.com, api-marketing.zhinengxiyifang.cn, api.alipan.com, api.caiyunapp.com, api.gotokeep.com, api.hellobike.com, api.hengdianfilm.com, api.hongyibo.com.cn, api.kuaidihelp.com, api.maoyan.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.songguo7.com, api.szbgcx.cn, api.udache.com, api.yangkeduo.com, api.yonghuivip.com, apiproxy.zuche.com, apis.alenable.com, app.95504.net, app.homeinns.com, applets.jtexpress.com.cn, appuser-static.huolala.cn, as.xiaojukeji.com, biz.cyapi.cn, bizapi.alipan.com, capis*.didapinche.com, cappapi.alittle-tea.com, cbd-gateway-service-applets.hualala.com, ccmsupport-sz.tenpay.com, cdn-w.caiyunapp.com, cn-acs.m.cainiao.com, coco-com.e.verystar.net, common.diditaxi.com.cn, conf.diditaxi.com.cn, creditcardapp.bankcomm.com, ct.xiaojukeji.com, customer-app.sto.cn, daijia.kuaidadi.com, dock.tenchii.com, dsp.fcbox.com, edith.xiaohongshu.com, file.dian.so, flow.dmall.com, freight.xiaojukeji.com, fscdn.zto.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw-passenger-wap.01zhuanche.com, hdgateway.zto.com, heic.alicdn.com, htwkop.xiaojukeji.com, images.qmai.cn, kad.gotokeep.com, lawsonapi.yorentown.com, m.bilibili.com, m.ctrip.com, m5-zb.amap.com, m5.amap.com, mapi.xiaotucc.com, mbmodule-openapi.paas.cmbchina.com, mcsp.cloudpnr.com, member.alipan.com, member.lxjchina.com.cn, miniapp.sexytea2013.com, minicap.caocaokeji.cn, minifm.maxxipoint.com, minipro.95504.net, miniprogram.ishansong.com, mkt-gateway.tuhu.cn, mobile-api.imlaidian.com, mobile.12306.cn, mp.weixin.qq.com, mxsa.mxbc.net, newton.gumingnc.com, oss.amap.com, passenger.t3go.cn, passengerapi.saicmobility.com, plt.yorentown.com, poplayer.template.alibaba.com, push.m.youku.com, qapi.huolala.cn, r2.gzyct.com, rec.xiaohongshu.com, res.hongyibo.com.cn, res.pizzahut.com.cn, res.xiaojukeji.com, rms.meituan.com, s.jiediankeji.com, saas-ad.cloudpnr.com, sauron-report.yonghuivip.com, smarket.dian.so, sns.amap.com, starplucker.cyapi.cn, sto-customer-app.oss-cn-shanghai.aliyuncs.com, supplier-api.imdada.cn, suyun-guest.daojia.com, tbgapplet.carlsberg.asia, tm-api.pin-dao.cn, ucmp.sf-express.com, ump.ems.com.cn, un-acs.youku.com, vod-movie.maoyan.com, vv.video.qq.com, webapi.qmai.cn, webchatapp.fcbox.com, wechat-api.i-xiaoma.com.cn, www.bilibili.com, www.deppon.com, www.xiaohongshu.com, wx.bthhotels.com, wx.maoyan.com, wxapp.bestwehotel.com, wxproj.seeyouyima.com, wxs-weixin.sd.zhumanggroup.com
+
+[Rule]
+
+[URL Rewrite]
 
 [Body Rewrite]
 
-# http-response-jq ^https?:\/\/m\.client\.10010\.com\/mobileserviceNine\/api\/v1\/index\/queryIndexExclusiveOffers\/ 'walk(if type == "array" then [] else . end)'
-# http-response-jq ^https?:\/\/m\.client\.10010\.com\/mobileserviceNine\/api\/v1\/index\/queryIndexWaterfall\/ 'walk(if type == "array" then [] else . end)'
-
 [Map Local]
 
-^https?:\/\/m\.client\.10010\.com\/mobileService\/customer\/accountListData\.htm data-type=text data='{"imgIndex":"0","adv":{"startup_adv":{"advCntList":[],"buttonList":[]}},"respCode":"0000"}' header='Content-Type:application/json'
+[Script]
