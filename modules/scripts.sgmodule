@@ -2,7 +2,11 @@
 #!desc=常用脚本合集
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-02-06 01:08:21
+#!updated=2025-02-06 06:48:49
+
+[MITM]
+# 不可 MitM 也不应该被打断连接的域名
+hostname = %APPEND% *.httpdns.pro, 119.29.29.98, 119.29.29.99, amdc-sibling.alipay.com.cn, amdc.alipay.com, buy.itunes.apple.com, dns.jd.com, gateway.icloud.com, gateway.icloud.com.cn, ios.chat.openai.com, weather-data.apple.com
 
 [General]
 
@@ -15,10 +19,6 @@
 force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443
 skip-proxy = %APPEND% *.local, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, captive.apple.com, e.crashlytics.com, fe80::/10, gate.lagou.com, localhost, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, passenger.t3go.cn, www.abchina.com.cn, www.baidu.com, wxh.wo.cn, yunbusiness.ccb.com
 tun-excluded-routes = %APPEND% 239.255.255.250/32
-
-[MITM]
-# 不可 MitM 也不应该被打断连接的域名
-hostname = %APPEND% *.httpdns.pro, 119.29.29.98, 119.29.29.99, amdc-sibling.alipay.com.cn, amdc.alipay.com, buy.itunes.apple.com, dns.jd.com, gateway.icloud.com, gateway.icloud.com.cn, ios.chat.openai.com, weather-data.apple.com
 
 [Rule]
 
