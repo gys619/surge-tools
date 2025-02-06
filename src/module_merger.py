@@ -262,14 +262,44 @@ class ModuleMerger:
         module_config = self.config['modules']['sources'][module_name]
         sections = {}
         all_hostnames = set()
-        extracted_rules = []  # 用于存储提取的规则
+        extracted_rules = []
         
-        # 获取排除规则
+        # 检查所有配置参数
+        # 1. 检查 exclude_rules
         exclude_rules = set(module_config.get('exclude_rules', []))
+        if exclude_rules and not any(exclude_rules):
+            logging.warning(f"模块 {module_name} 的 exclude_rules 配置为空，将不进行排除")
+            exclude_rules = set()
+        
+        # 2. 检查 exclude_sections
         exclude_sections = module_config.get('exclude_sections', {})
+        if exclude_sections and not any(exclude_sections.values()):
+            logging.warning(f"模块 {module_name} 的 exclude_sections 配置为空，将不进行排除")
+            exclude_sections = {}
+        
+        # 3. 检查 section_preference
+        section_preference = module_config.get('section_preference', [])
+        if section_preference and not any(section_preference):
+            logging.warning(f"模块 {module_name} 的 section_preference 配置为空，将使用默认顺序")
+            section_preference = []
+        
+        # 4. 检查 exclude_module_sets
+        exclude_module_sets = module_config.get('exclude_module_sets', [])
+        if exclude_module_sets and not any(exclude_module_sets):
+            logging.warning(f"模块 {module_name} 的 exclude_module_sets 配置为空，将不排除任何模块")
+            exclude_module_sets = []
+            
+        # 获取需要排除的模块内容
+        excluded_content = set()
+        for exclude_url in exclude_module_sets:
+            content = self.fetch_module(exclude_url)
+            if content:
+                # 解析需要排除的内容
+                parsed_sections = self.parser.parse_section(content, None, {})
+                for section in parsed_sections.values():
+                    excluded_content.update(section)
         
         # 合并模块
-        success = False
         for url in module_config['urls']:
             content = self.fetch_module(url)
             if content:
@@ -283,6 +313,7 @@ class ModuleMerger:
                     exclude_sections
                 )
                 
+                # 合并各个段落
                 for section, lines in parsed_sections.items():
                     if self.parser.should_exclude_section(section, current_module_name, exclude_sections):
                         logging.info(f"排除段落: {section} 从模块: {current_module_name}")
@@ -291,7 +322,13 @@ class ModuleMerger:
                     if section not in sections:
                         sections[section] = []
                     
+                    # 处理每一行
                     for line in lines:
+                        # 检查是否在排除的模块内容中
+                        if line in excluded_content:
+                            logging.info(f"排除来自其他模块的内容: {line}")
+                            continue
+                            
                         should_exclude, new_line = self.parser.should_exclude(
                             line, 
                             exclude_rules, 
@@ -299,27 +336,25 @@ class ModuleMerger:
                         )
                         if not should_exclude:
                             if section == 'MITM' and line.startswith('hostname'):
-                                # 收集 hostname
                                 hostnames = self.parser.parse_config_line(line, 'hostname')
                                 all_hostnames.update(hostnames)
                             elif new_line and new_line not in sections[section]:
                                 sections[section].append(new_line)
                             elif not new_line and line not in sections[section]:
                                 sections[section].append(line)
-                
-                # 提取规则
-                rules = self.parser.extract_rules(content)
-                extracted_rules.extend(rules)
+        
+        # 移除空段落
+        sections = {k: v for k, v in sections.items() if v}
         
         # 如果有收集到 hostname，添加到 MITM 段落
         if all_hostnames:
             if 'MITM' not in sections:
                 sections['MITM'] = []
-            # 添加合并后的 hostname 行
-            sections['MITM'] = [f"hostname = %APPEND% {', '.join(sorted(all_hostnames))}"] + [
-                line for line in sections.get('MITM', [])
-                if not line.startswith('hostname')
-            ]
+            sections['MITM'] = [f"hostname = %APPEND% {', '.join(sorted(all_hostnames))}"]
+        
+        # 提取规则
+        rules = self.parser.extract_rules(content)
+        extracted_rules.extend(rules)
         
         # 如果有提取到规则，保存到文件
         if extracted_rules:
