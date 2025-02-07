@@ -2,10 +2,9 @@
 #!desc=通用设置模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-02-06 09:28:22
+#!updated=2025-02-07 15:45:58
 
 [MITM]
-# 不可 MitM 也不应该被打断连接的域名
 hostname = %APPEND% *.httpdns.pro, 119.29.29.98, 119.29.29.99, amdc-sibling.alipay.com.cn, amdc.alipay.com, buy.itunes.apple.com, dns.jd.com, gateway.icloud.com, gateway.icloud.com.cn, ios.chat.openai.com, weather-data.apple.com
 
 [General]
