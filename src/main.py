@@ -54,7 +54,7 @@ def main():
         os.makedirs(module_merger.config['modules']['output_dir'], exist_ok=True)
         
         for module_name in module_merger.config['modules']['sources']:
-            merged_data = module_merger.merge_modules(module_name)
+            merged_data = module_merger.merge_module(module_name)
             if merged_data:  # 只有在成功获取模块时才生成文件
                 output_path = os.path.join(
                     module_merger.config['modules']['output_dir'],
