@@ -1,18 +1,15 @@
 # NAME: Netflix
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-02-08 03:35:52
+# UPDATED: 2025-02-08 17:29:10
 # DESCRIPTION: Netflix 分流规则
-# DOMAIN: 3
+# DOMAIN: 0
 # DOMAIN-SUFFIX: 30
 # IP-CIDR: 1115
-# DOMAIN-KEYWORD: 4
+# DOMAIN-KEYWORD: 3
 # IP-CIDR6: 4
-# TOTAL: 1156
+# TOTAL: 1152
 
-DOMAIN,e13252.dscg.akamaiedge.net
-DOMAIN,h-netflix.online-metrix.net
-DOMAIN,netflix.com.edgesuite.net
 DOMAIN-SUFFIX,cookielaw.org
 DOMAIN-SUFFIX,fast.com
 DOMAIN-SUFFIX,flxvpn.net
@@ -1161,7 +1158,6 @@ IP-CIDR,99.80.88.0/25,no-resolve
 DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
 DOMAIN-KEYWORD,dualstack.apiproxy-
 DOMAIN-KEYWORD,dualstack.ichnaea-web-
-DOMAIN-KEYWORD,netflixdnstest
 IP-CIDR6,2607:fb10::/32,no-resolve
 IP-CIDR6,2620:10c:7000::/44,no-resolve
 IP-CIDR6,2a00:86c0::/32,no-resolve

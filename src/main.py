@@ -22,65 +22,87 @@ def optimize_rules(rules: dict) -> dict:
     """优化规则集，去除冗余规则"""
     optimized = {rule_type: set() for rule_type in rules}
     
-    # 1. 处理域名相关规则
-    domains = set(rules.get('DOMAIN', []))
-    domain_suffixes = set(rules.get('DOMAIN-SUFFIX', []))
-    domain_keywords = set(rules.get('DOMAIN-KEYWORD', []))
-    domain_wildcards = set(rules.get('DOMAIN-WILDCARD', []))
+    # 预处理函数：将规则分割为(policy, domain)元组
+    def preprocess_rules(rule_set):
+        if not rule_set:
+            return set()
+        return {tuple(r.split(',', 1)) for r in rule_set}
     
-    # 移除无效域名
-    domains = {d for d in domains if is_valid_domain(d.split(',')[1])}  # 提取域名部分
-    domain_suffixes = {d for d in domain_suffixes if is_valid_domain(d.split(',')[1])}
+    # 1. 预处理所有域名相关规则
+    domains = preprocess_rules(rules.get('DOMAIN', []))
+    domain_suffixes = preprocess_rules(rules.get('DOMAIN-SUFFIX', []))
+    domain_keywords = preprocess_rules(rules.get('DOMAIN-KEYWORD', []))
+    domain_wildcards = preprocess_rules(rules.get('DOMAIN-WILDCARD', []))
     
-    # 处理 DOMAIN 和 DOMAIN-SUFFIX 的关系
-    for domain in list(domains):
-        domain_name = domain.split(',')[1]
-        for suffix in domain_suffixes:
-            suffix_name = suffix.split(',')[1]
-            if is_subdomain(domain_name, suffix_name):
-                domains.remove(domain)
+    # 创建域名到策略的映射，避免重复分割
+    domain_map = {domain: policy for policy, domain in domains}
+    suffix_map = {suffix: policy for policy, suffix in domain_suffixes}
+    
+    # 2. 移除无效域名（使用已分割的数据）
+    domains = {(policy, domain) for policy, domain in domains if is_valid_domain(domain)}
+    domain_suffixes = {(policy, suffix) for policy, suffix in domain_suffixes if is_valid_domain(suffix)}
+    
+    # 3. 优化 DOMAIN 和 DOMAIN-SUFFIX 的关系
+    # 创建后缀树来加速查找
+    suffix_tree = set()
+    for _, suffix in domain_suffixes:
+        parts = suffix.split('.')
+        for i in range(len(parts)):
+            suffix_tree.add('.'.join(parts[i:]))
+    
+    # 过滤被后缀规则覆盖的域名
+    filtered_domains = set()
+    for policy, domain in domains:
+        parts = domain.split('.')
+        covered = False
+        for i in range(len(parts)):
+            if '.'.join(parts[i:]) in suffix_tree:
+                covered = True
                 break
+        if not covered:
+            filtered_domains.add((policy, domain))
     
-    # 处理 DOMAIN-KEYWORD
-    for keyword in list(domain_keywords):
-        keyword_value = keyword.split(',')[1]
-        # 如果关键词出现在任何DOMAIN或DOMAIN-SUFFIX规则中，移除该关键词
-        if any(keyword_value in d.split(',')[1] for d in domains) or \
-           any(keyword_value in s.split(',')[1] for s in domain_suffixes):
-            domain_keywords.remove(keyword)
+    # 4. 优化 DOMAIN-KEYWORD（使用集合操作）
+    filtered_keywords = set()
+    for policy, keyword in domain_keywords:
+        if not any(keyword in domain for _, domain in domains) and \
+           not any(keyword in suffix for _, suffix in domain_suffixes):
+            filtered_keywords.add((policy, keyword))
     
-    # 处理 DOMAIN-WILDCARD
-    for wildcard in list(domain_wildcards):
-        wildcard_value = wildcard.split(',')[1]
-        clean_wildcard = wildcard_value.replace('*', '').replace('.', '')
-        if any(clean_wildcard in d.split(',')[1].replace('.', '') for d in domains):
-            domain_wildcards.remove(wildcard)
+    # 5. 优化 DOMAIN-WILDCARD
+    filtered_wildcards = set()
+    for policy, wildcard in domain_wildcards:
+        clean_wildcard = wildcard.replace('*', '').replace('.', '')
+        if not any(clean_wildcard in domain.replace('.', '') for _, domain in domains):
+            filtered_wildcards.add((policy, wildcard))
     
-    # 2. 处理 IP 相关规则
+    # 6. 处理 IP 规则
     ip_cidrs = set(rules.get('IP-CIDR', []))
     ip_cidrs6 = set(rules.get('IP-CIDR6', []))
     
-    # 确保 IP-CIDR 和 IP-CIDR6 不重复
-    for ip in list(ip_cidrs):
-        if ':' in ip.split(',')[1]:  # IPv6
-            ip_cidrs.remove(ip)
-            ip_cidrs6.add(ip)
+    # 使用集合推导式处理 IP 规则
+    ipv6_rules = {ip for ip in ip_cidrs if ':' in ip.split(',')[1]}
+    ip_cidrs = ip_cidrs - ipv6_rules
+    ip_cidrs6.update(ipv6_rules)
     
-    # 3. 更新优化后的规则集
-    if domains:
-        optimized['DOMAIN'] = sorted(domains)
+    # 7. 重建规则字符串并更新优化后的规则集
+    def rebuild_rules(rule_set):
+        return {f"{policy},{value}" for policy, value in rule_set}
+    
+    if filtered_domains:
+        optimized['DOMAIN'] = sorted(rebuild_rules(filtered_domains))
     if domain_suffixes:
-        optimized['DOMAIN-SUFFIX'] = sorted(domain_suffixes)
-    if domain_keywords:
-        optimized['DOMAIN-KEYWORD'] = sorted(domain_keywords)
-    if domain_wildcards:
-        optimized['DOMAIN-WILDCARD'] = sorted(domain_wildcards)
+        optimized['DOMAIN-SUFFIX'] = sorted(rebuild_rules(domain_suffixes))
+    if filtered_keywords:
+        optimized['DOMAIN-KEYWORD'] = sorted(rebuild_rules(filtered_keywords))
+    if filtered_wildcards:
+        optimized['DOMAIN-WILDCARD'] = sorted(rebuild_rules(filtered_wildcards))
     if ip_cidrs:
         optimized['IP-CIDR'] = sorted(ip_cidrs)
     if ip_cidrs6:
         optimized['IP-CIDR6'] = sorted(ip_cidrs6)
     
-    # 4. 复制其他类型的规则
+    # 8. 复制其他类型的规则
     for rule_type in rules:
         if rule_type not in optimized:
             optimized[rule_type] = sorted(set(rules[rule_type]))
