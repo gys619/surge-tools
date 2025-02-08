@@ -1,8 +1,9 @@
+import os
 import requests
 import yaml
 from datetime import datetime
 from typing import Dict, List, Set
-from .rule_parser import RuleParser, Rule
+from src.rule_parser import RuleParser, Rule
 import logging
 
 # 配置日志
@@ -16,14 +17,19 @@ class RuleMerger:
         
     def fetch_rules(self, url: str) -> List[str]:
         try:
-            response = requests.get(url, timeout=10)  # 添加超时设置
+            logging.info(f"开始下载规则: {url}")
+            # 增加超时时间到30秒，移除代理设置
+            response = requests.get(url, timeout=30)
             response.raise_for_status()
-            return response.text.splitlines()
+            lines = response.text.splitlines()
+            logging.info(f"规则下载成功: {url}, 共 {len(lines)} 行")
+            return lines
         except requests.exceptions.RequestException as e:
             logging.warning(f"获取规则失败: {url}, 错误: {str(e)}")
             return []
         
     def merge_rules(self, rule_set_name: str) -> Dict:
+        logging.info(f"开始处理规则集: {rule_set_name}")
         rule_config = self.config['rules']['sources'][rule_set_name]
         rules: Dict[str, Set[str]] = {  # 使用 Set 而不是 List 来存储规则
             'DOMAIN': set(),
@@ -34,11 +40,12 @@ class RuleMerger:
             'URL-REGEX': set()
         }
         
-        # 获取排除规则
-        exclude_rules = set(rule_config.get('exclude_rules', []))
+        # 获取排除规则，过滤掉空值
+        exclude_rules = set(rule for rule in rule_config.get('exclude_rules', []) if rule)
         
-        # 获取需要排除的规则集
-        for exclude_url in rule_config.get('exclude_rule_sets', []):
+        # 获取需要排除的规则集，过滤掉空值
+        for exclude_url in (url for url in rule_config.get('exclude_rule_sets', []) if url):
+            logging.info(f"获取排除规则集: {exclude_url}")
             exclude_lines = self.fetch_rules(exclude_url)
             for line in exclude_lines:
                 rule = self.parser.parse_line(line)
@@ -48,13 +55,17 @@ class RuleMerger:
         # 合并规则
         success = False
         for url in rule_config['urls']:
+            logging.info(f"正在获取规则: {url}")
             lines = self.fetch_rules(url)
             if lines:
                 success = True
+                logging.info(f"成功获取规则，共 {len(lines)} 行")
                 for line in lines:
                     rule = self.parser.parse_line(line)
                     if rule and not self.parser.should_exclude(rule, exclude_rules):
                         rules[rule.type].add(rule.original)  # 存储原始行，而不是 Rule 对象
+            else:
+                logging.warning(f"获取规则失败: {url}")
         
         if not success:
             logging.warning(f"规则集 {rule_set_name} 所有源获取失败")
