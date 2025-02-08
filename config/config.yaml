@@ -9,6 +9,9 @@ rules:
       urls:  # 需要合并的规则源
         - "https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/master/Surge/Ruleset/AdBlock.list"
         - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_All_No_Resolve.list"
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Surge/Privacy/Privacy_All_No_Resolve.list"
+        - "https://github.com/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Surge/Hijacking/Hijacking_Resolve.list"
+        - "https://github.com/thNylHx/Tools/raw/main/Ruleset/Surge/Block/Ads_ml.list"
       exclude_rules:  # 需要排除的单条规则
         - "0.myikas.com"
       exclude_rule_sets:  # 需要排除的规则集

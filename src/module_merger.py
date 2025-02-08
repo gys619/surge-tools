@@ -262,7 +262,6 @@ class ModuleMerger:
         module_config = self.config['modules']['sources'][module_name]
         sections = {}
         all_hostnames = set()
-        extracted_rules = []
         success = False
         
         # 检查所有配置参数
@@ -353,25 +352,6 @@ class ModuleMerger:
                 sections['MITM'] = []
             sections['MITM'] = [f"hostname = %APPEND% {', '.join(sorted(all_hostnames))}"]
         
-        # 提取规则
-        rules = self.parser.extract_rules(content)
-        extracted_rules.extend(rules)
-        
-        # 如果有提取到规则，保存到文件
-        if extracted_rules:
-            rules_dir = self.config.get('rules', {}).get('output_dir', './rules')
-            os.makedirs(rules_dir, exist_ok=True)
-            rules_file = os.path.join(rules_dir, f"{module_name}_from_modules.list")
-            
-            with open(rules_file, 'w', encoding='utf-8') as f:
-                f.write("\n".join(sorted(set(extracted_rules))))
-                logging.info(f"从模块提取的规则已保存到: {rules_file}")
-        
-        # 如果没有成功获取任何模块，返回 None
-        if not success:
-            logging.warning(f"模块 {module_name} 所有源获取失败")
-            return None
-            
         # 如果所有段落都为空，返回 None
         if not any(sections.values()):
             logging.warning(f"模块 {module_name} 合并后为空")
@@ -454,16 +434,43 @@ class ModuleMerger:
         return '\n'.join(filtered_lines)
 
     def save_merged_content(self, file_path, content):
-        # Check if the content has changed
+        """
+        保存合并后的内容，但如果只有时间戳更新则不保存
+        """
         try:
-            with open(file_path, 'r') as file:
+            with open(file_path, 'r', encoding='utf-8') as file:
                 existing_content = file.read()
-                if existing_content == content:
-                    print("No changes detected, not updating the file.")
+                
+                # 将现有内容和新内容按行分割
+                existing_lines = existing_content.splitlines()
+                new_lines = content.splitlines()
+                
+                # 如果行数不同，说明有实质性更新
+                if len(existing_lines) != len(new_lines):
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    logging.info(f"文件已更新: {file_path}")
                     return
+                
+                # 比较除了时间戳之外的所有行
+                has_real_changes = False
+                for old_line, new_line in zip(existing_lines, new_lines):
+                    # 跳过时间戳行的比较
+                    if old_line.startswith('#!updated='):
+                        continue
+                    if old_line != new_line:
+                        has_real_changes = True
+                        break
+                
+                if has_real_changes:
+                    with open(file_path, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    logging.info(f"文件已更新: {file_path}")
+                else:
+                    logging.info(f"仅时间戳变化，不更新文件: {file_path}")
+                
         except FileNotFoundError:
-            pass  # File doesn't exist, so we need to create it
-
-        with open(file_path, 'w') as file:
-            file.write(content)
-        print("File updated:", file_path) 
+            # 如果文件不存在，创建新文件
+            with open(file_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            logging.info(f"创建新文件: {file_path}") 
