@@ -1,8 +1,9 @@
 # NAME: Apple
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-02-08 17:29:15
+# UPDATED: 2025-02-08 17:32:49
 # DESCRIPTION: Apple 分流规则，包含 App Store、Apple Music 等服务
+# HASH: 651e502e6bb9a211b62d2cb6b63332c1
 # DOMAIN-KEYWORD: 7
 # IP-CIDR: 10
 # TOTAL: 17

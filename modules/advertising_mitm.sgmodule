@@ -2,7 +2,8 @@
 #!desc=分流规则中含有URL-REGEX类型的MITM模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-02-08 17:29:17
+#!updated=2025-02-08 17:44:03
+#!HASH=d9ce4890ac7e9cc62b8c04f465e8eadc
 
 [MITM]
 

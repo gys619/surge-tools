@@ -2,6 +2,8 @@ import os
 from .rule_merger import RuleMerger
 from .module_merger import ModuleMerger
 import logging
+import hashlib
+from datetime import datetime
 
 def is_valid_domain(domain: str) -> bool:
     """验证域名格式是否有效"""
@@ -109,9 +111,37 @@ def optimize_rules(rules: dict) -> dict:
     
     return optimized
 
+def get_content_hash(rules: dict) -> str:
+    """计算规则内容的哈希值"""
+    # 将规则转换为稳定的字符串格式进行哈希
+    content = []
+    for rule_type in sorted(rules.keys()):
+        content.append(f"{rule_type}:")
+        for rule in sorted(rules[rule_type]):
+            content.append(rule)
+    
+    content_str = '\n'.join(content)
+    return hashlib.md5(content_str.encode('utf-8')).hexdigest()
+
 def generate_rule_file(merged_data: dict, output_path: str):
     # 在写入之前优化规则
     merged_data['rules'] = optimize_rules(merged_data['rules'])
+    
+    # 计算新内容的哈希值
+    new_hash = get_content_hash(merged_data['rules'])
+    
+    # 检查现有文件的哈希值
+    old_hash = None
+    if os.path.exists(output_path):
+        with open(output_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                if line.startswith('# HASH: '):
+                    old_hash = line.strip().split(': ')[1]
+                    break
+    
+    # 如果哈希值相同，说明内容没有变化，直接返回
+    if old_hash and old_hash == new_hash:
+        return False
     
     with open(output_path, 'w', encoding='utf-8') as f:
         # 写入元数据
@@ -119,8 +149,11 @@ def generate_rule_file(merged_data: dict, output_path: str):
         f.write(f"# NAME: {meta['name']}\n")
         f.write(f"# AUTHOR: {meta['author']}\n")
         f.write(f"# REPO: {meta['repo']}\n")
-        f.write(f"# UPDATED: {meta['updated']}\n")
+        # 只在内容变化时更新时间戳
+        f.write(f"# UPDATED: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         f.write(f"# DESCRIPTION: {meta['description']}\n")
+        # 写入内容哈希值
+        f.write(f"# HASH: {new_hash}\n")
         
         # 写入统计信息
         rules = merged_data['rules']
@@ -133,12 +166,61 @@ def generate_rule_file(merged_data: dict, output_path: str):
         for rule_type in rules:
             for rule in rules[rule_type]:
                 f.write(f"{rule}\n")
+    
+    return True
 
 def generate_module_file(merged_data: dict, module_merger: ModuleMerger, output_path: str):
     """生成模块文件"""
+    # 获取新的模块内容
+    module_content = module_merger.format_module_content(merged_data)
+    
+    # 提取和规范化内容（移除时间戳和哈希值行，并确保空行一致性）
+    def normalize_content(content):
+        lines = []
+        for line in content.split('\n'):
+            # 跳过时间戳、哈希值和空行
+            if line.startswith('#!updated=') or line.startswith('#!HASH=') or not line.strip():
+                continue
+            lines.append(line)
+        return '\n'.join(lines)
+    
+    # 获取规范化后的新内容
+    new_content = normalize_content(module_content)
+    new_hash = hashlib.md5(new_content.encode('utf-8')).hexdigest()
+    
+    # 检查现有文件的内容
+    if os.path.exists(output_path):
+        with open(output_path, 'r', encoding='utf-8') as f:
+            old_content = normalize_content(f.read())
+            if new_content == old_content:
+                return False
+    
+    # 内容有变化，重新组织文件内容
+    lines = []
+    header_lines = []
+    content_lines = []
+    
+    # 分离头部注释和内容
+    for line in module_content.split('\n'):
+        if line.startswith('#!'):
+            if not line.startswith('#!updated=') and not line.startswith('#!HASH='):
+                header_lines.append(line)
+        else:
+            if line.strip():  # 只添加非空行
+                content_lines.append(line)
+    
+    # 组合最终内容
+    lines.extend(header_lines)
+    lines.append(f'#!updated={datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+    lines.append(f'#!HASH={new_hash}')
+    lines.append('')  # 添加一个空行分隔头部和内容
+    lines.extend(content_lines)
+    
+    # 写入文件
     with open(output_path, 'w', encoding='utf-8') as f:
-        module_content = module_merger.format_module_content(merged_data)
-        f.write(module_content)
+        f.write('\n'.join(lines))
+    
+    return True
 
 def main():
     merger = RuleMerger('config/config.yaml')
@@ -154,8 +236,10 @@ def main():
                 merger.config['rules']['output_dir'],
                 f"{rule_set_name}.list"
             )
-            generate_rule_file(merged_data, output_path)
-            logging.info(f"成功生成规则文件: {rule_set_name}.list")
+            if generate_rule_file(merged_data, output_path):
+                logging.info(f"规则文件已更新: {rule_set_name}.list")
+            else:
+                logging.info(f"规则文件无变化: {rule_set_name}.list")
     
     # 处理模块
     if 'modules' in merger.config:
@@ -169,8 +253,10 @@ def main():
                     module_merger.config['modules']['output_dir'],
                     f"{module_name}.sgmodule"
                 )
-                generate_module_file(merged_data, module_merger, output_path)
-                logging.info(f"成功生成模块文件: {module_name}.sgmodule")
+                if generate_module_file(merged_data, module_merger, output_path):
+                    logging.info(f"模块文件已更新: {module_name}.sgmodule")
+                else:
+                    logging.info(f"模块文件无变化: {module_name}.sgmodule")
 
     # Example configuration
     example_config = {
