@@ -258,11 +258,12 @@ class ModuleMerger:
             logging.warning(f"获取模块失败: {url}, 错误: {str(e)}")
             return ""
     
-    def merge_modules(self, module_name: str) -> Dict:
+    def merge_module(self, module_name: str) -> Dict:
         module_config = self.config['modules']['sources'][module_name]
         sections = {}
         all_hostnames = set()
         extracted_rules = []
+        success = False
         
         # 检查所有配置参数
         # 1. 检查 exclude_rules
@@ -390,7 +391,8 @@ class ModuleMerger:
             if section not in ordered_sections:
                 ordered_sections[section] = sections[section]
         
-        return {
+        # Debugging: print the type and content of the result
+        result = {
             'metadata': {
                 'name': module_config['name'],
                 'desc': module_config['desc'],
@@ -400,6 +402,11 @@ class ModuleMerger:
             },
             'sections': ordered_sections
         }
+        
+        print("merge_module result type:", type(result))
+        print("merge_module result content:", result)
+
+        return result
 
     def format_module_content(self, merged_data: Dict) -> str:
         """格式化模块内容"""
@@ -419,7 +426,44 @@ class ModuleMerger:
         # 添加各个段落的内容
         for section, rules in merged_data['sections'].items():
             lines.append(f"[{section}]")
-            lines.extend(sorted(rules))  # 对规则进行排序
+            
+            # 处理注释和规则，确保注释紧跟在它们所描述的规则之前
+            previous_line_was_comment = False
+            for line in rules:
+                if line.startswith('#'):
+                    lines.append(line)
+                    previous_line_was_comment = True
+                else:
+                    if previous_line_was_comment:
+                        # 如果前一行是注释，直接添加规则
+                        lines.append(line)
+                    else:
+                        # 如果前一行不是注释，确保规则和注释之间有空行
+                        lines.append("")
+                        lines.append(line)
+                    previous_line_was_comment = False
+            
             lines.append("")  # 段落之间添加空行
         
-        return "\n".join(lines) 
+        return "\n".join(lines)
+
+    def remove_unnecessary_comments(self, content: str) -> str:
+        """移除无用的注释"""
+        lines = content.split('\n')
+        filtered_lines = [line for line in lines if not line.strip().startswith('#')]
+        return '\n'.join(filtered_lines)
+
+    def save_merged_content(self, file_path, content):
+        # Check if the content has changed
+        try:
+            with open(file_path, 'r') as file:
+                existing_content = file.read()
+                if existing_content == content:
+                    print("No changes detected, not updating the file.")
+                    return
+        except FileNotFoundError:
+            pass  # File doesn't exist, so we need to create it
+
+        with open(file_path, 'w') as file:
+            file.write(content)
+        print("File updated:", file_path) 

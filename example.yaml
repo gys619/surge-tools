@@ -1,0 +1,39 @@
+rules:
+  output_dir: "./rules"    # 规则文件输出目录
+  sources:
+    example_rule_set:           # 示例规则集配置
+      name: "Example Rule Set"  # 规则集名称
+      author: "Example Author"  # 作者
+      repo: "https://github.com/example/repo"  # 仓库地址
+      description: "这是一个示例规则集"  # 规则集描述
+      urls:  # 需要合并的规则源
+        - "https://example.com/ruleset1.list"
+        - "https://example.com/ruleset2.list"
+      exclude_rules:  # 需要排除的单条规则
+        - "example.com"
+      exclude_rule_sets:  # 需要排除的规则集
+        - "https://example.com/exclude-ruleset.list"
+      rule_preference:  # 规则优先级顺序
+        - "DOMAIN"
+        - "DOMAIN-SUFFIX"
+        - "DOMAIN-KEYWORD"
+
+modules:
+  output_dir: "./modules"  # 模块文件输出目录
+  sources:
+    example_module:      # 示例模块配置
+      name: "Example Module"  # 模块名称
+      desc: "这是一个示例模块"  # 模块描述
+      author: "Example Author"  # 作者
+      repo: "https://github.com/example/repo"  # 仓库地址
+      urls:  # 模块源
+        - "https://example.com/module1.sgmodule"
+        - "https://example.com/module2.sgmodule"
+      exclude_rules:  # 排除特定的规则
+        - "*.example.com"
+      exclude_module_sets:  # 排除其他模块文件中的规则
+        - "https://example.com/exclude-module.sgmodule"
+      section_preference:  # 模块段落优先级
+        - "MITM"
+        - "URL-REGEX"
+        - "General" 

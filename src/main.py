@@ -63,5 +63,12 @@ def main():
                 generate_module_file(merged_data, module_merger, output_path)
                 logging.info(f"成功生成模块文件: {module_name}.sgmodule")
 
+    # Example configuration
+    example_config = {
+        "modules": ["modules/advertising_mitm.sgmodule", "modules/AppRemoveAds.sgmodule"],
+        "output": "merged_output.sgmodule"
+    }
+    print("Example configuration:", example_config)
+
 if __name__ == "__main__":
     main() 

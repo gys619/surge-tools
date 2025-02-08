@@ -164,24 +164,4 @@ modules:
         - "Host"
         - "MITM"
 
-    
-    # example:
-    #   name: "example"
-    #   desc: "example模块"
-    #   author: "gys619"
-    #   repo: "https://github.com/gys619/surge-tools"
-    #   urls:
-    #     - "url1"
-    #     - "url2"
-    #   exclude_rules:    
-    #     - "example.com"    # 如果不需要排除规则，可以删除此项
-    #   exclude_sections:         # 如果不需要排除段落，可以删除此项
-    #     "模块名称":
-    #       - "line:16-18"
-    #       - "段落名称,例如Body Rewrite"
-    #   exclude_module_sets:      # 如果不需要排除模块，可以删除此项
-    #     - "https://example.com/module1.sgmodule"
-    #   section_preference:       # 如果不需要指定顺序，可以删除此项
-    #     - "General"
-    #     - "Host"
-    #     - "MITM"
+
