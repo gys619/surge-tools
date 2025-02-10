@@ -101,18 +101,6 @@ https://github.com/Rabbit-Spec/Surge/tree/Master/Module
 
 
 
-## 必装模块
-
-[BoxJs](https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.sgmodule)
-
-[ScriptHub](https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/modules/script-hub.surge.sgmodule)
-
-[SubStore](https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Surge-Beta.sgmodule)
-
-[三个模块教程](https://mylucky.cyou/post/20240107003508.html)
-
-
-
 ## 规则集查找(blackmatrix7大佬的)
 
 分流规则
@@ -125,6 +113,18 @@ https://github.com/blackmatrix7/ios_rule_script/tree/master/rewrite
 
 
 
+
+## 必装模块
+
+[BoxJs](https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.surge.sgmodule)
+
+[ScriptHub](https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/modules/script-hub.surge.sgmodule)
+
+[SubStore](https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Surge-Beta.sgmodule)
+
+[三个模块教程](https://mylucky.cyou/post/20240107003508.html)
+
+
 ## Loon插件及模块,配合ScriptHub使用
 
 [luestr/ProxyResource: 可莉的Loon资源库 | 插件 | 脚本 | 规则](https://github.com/luestr/ProxyResource)
@@ -134,5 +134,4 @@ https://github.com/blackmatrix7/ios_rule_script/tree/master/rewrite
 
 
 ## 以下排名不分先后
-
-[@ddgksf2013](https://github.com/ddgksf2013)[*@Blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script) [*@DivineEngine*](https://github.com/DivineEngine) [*@App2smile*](https://github.com/app2smile/rules)  [*@Peng-YM*](https://github.com/Peng-YM) [*@Nick-workflow*](https://github.com/Nick-workflow) [*@KOP-XIAO*](https://github.com/KOP-XIAO) [*@NobyDa*](https://github.com/NobyDa) [*@Neurogram-R*](https://github.com/Neurogram-R) [*@yjqiang*](https://github.com/yjqiang) [*@O7Y0*](https://github.com/O7Y0) [*@Choler*](https://github.com/Choler) [*@id77*](https://github.com/id77) [*@zmqcherish*](https://github.com/zmqcherish) [*@Qure*](https://github.com/Koolson/Qure) [*@Orz-3*](https://github.com/Orz-3) [*@kyle*](https://github.com/Xirou) [*@HotKids*](https://github.com/hotKids) [*@langkach*](https://github.com/langkhach270389) [*@lxk0301*](https://github.com/lxk0301) [*@zqzess*](https://github.com/zqzess/rule_for_quantumultX) [*@Anti-AD*](https://github.com/privacy-protection-tools/anti-AD) [*@VirgilClyne*](https://github.com/VirgilClyne/iRingo#iringo) [*@zZPiglet*](https://github.com/zZPiglet/Task/tree/master) [*@Chavyleung*](https://github.com/chavyleung) [luestr]([luestr/ProxyResource: 可莉的Loon资源库 | 插件 | 脚本 | 规则](https://github.com/luestr/ProxyResource)) [fmz200]([fmz200/wool_scripts: 收集一些QuantumultX、Loon、Surge、ShadowRocket的配置与去广告规则。](https://github.com/fmz200/wool_scripts))
+[*@Blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script) [*@DivineEngine*](https://github.com/DivineEngine) [*@App2smile*](https://github.com/app2smile/rules) [*@VirgilClyne*](https://github.com/VirgilClyne/iRingo#iringo) [*@Chavyleung*](https://github.com/chavyleung) [*@luestr*](https://github.com/luestr) [*@fmz200*](https://github.com/fmz200)
