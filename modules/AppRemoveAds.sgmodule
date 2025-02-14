@@ -2,13 +2,13 @@
 #!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-02-10 05:01:20
-#!HASH=d09eed0c82cdc9a08feef96c4f09a645
+#!updated=2025-02-14 09:57:34
+#!HASH=00c1925a68c3cf92a6dc0ff334f8c62c
 
 [General]
 force-http-engine-hosts = %APPEND% :8000
 [MITM]
-hostname = %APPEND% *.iqiyi.com, *.mgtv.com, *live.bilibili.com, 112.53.55.225, 116.85.2.*, 116.85.3.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 3pp.starbucks.com.cn, aag.enmonster.com, acs.m.goofish.com, acs.m.taobao.com, acs.youku.com, activity.yonghuivip.com, ad.12306.cn, ad.maoyan.com, ad.xiaotucc.com, ads.ishansong.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, ap?.bilibili.com, api-fouth-mem.huazhu.com, api-marketing.zhinengxiyifang.cn, api.alipan.com, api.caiyunapp.com, api.gotokeep.com, api.hellobike.com, api.hengdianfilm.com, api.hongyibo.com.cn, api.kuaidihelp.com, api.m.jd.com, api.maoyan.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.songguo7.com, api.szbgcx.cn, api.udache.com, api.yangkeduo.com, api.yonghuivip.com, apiproxy.zuche.com, apis.alenable.com, app.95504.net, app.homeinns.com, applets.jtexpress.com.cn, appuser-static.huolala.cn, as.xiaojukeji.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, capis*.didapinche.com, cappapi.alittle-tea.com, cbd-gateway-service-applets.hualala.com, ccmsupport-sz.tenpay.com, cdn-w.caiyunapp.com, cn-acs.m.cainiao.com, coco-com.e.verystar.net, common.diditaxi.com.cn, conf.diditaxi.com.cn, creditcardapp.bankcomm.com, ct.xiaojukeji.com, customer-app.sto.cn, daijia.kuaidadi.com, dock.tenchii.com, dsp.fcbox.com, edith.xiaohongshu.com, file.dian.so, flow.dmall.com, freight.xiaojukeji.com, fscdn.zto.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw-passenger-wap.01zhuanche.com, hdgateway.zto.com, heic.alicdn.com, htwkop.xiaojukeji.com, images.qmai.cn, kad.gotokeep.com, lawsonapi.yorentown.com, m.bilibili.com, m.ctrip.com, m5-zb.amap.com, m5.amap.com, mapi.xiaotucc.com, mbmodule-openapi.paas.cmbchina.com, mcsp.cloudpnr.com, member.alipan.com, member.lxjchina.com.cn, miniapp.sexytea2013.com, minicap.caocaokeji.cn, minifm.maxxipoint.com, minipro.95504.net, miniprogram.ishansong.com, mkt-gateway.tuhu.cn, mobile-api.imlaidian.com, mobile.12306.cn, mp.weixin.qq.com, mxsa.mxbc.net, newton.gumingnc.com, oss.amap.com, passenger.t3go.cn, passengerapi.saicmobility.com, plt.yorentown.com, poplayer.template.alibaba.com, push.m.youku.com, qapi.huolala.cn, r2.gzyct.com, rec.xiaohongshu.com, res.hongyibo.com.cn, res.pizzahut.com.cn, res.xiaojukeji.com, rms.meituan.com, s.jiediankeji.com, saas-ad.cloudpnr.com, sauron-report.yonghuivip.com, smarket.dian.so, sns.amap.com, starplucker.cyapi.cn, sto-customer-app.oss-cn-shanghai.aliyuncs.com, supplier-api.imdada.cn, suyun-guest.daojia.com, tbgapplet.carlsberg.asia, tm-api.pin-dao.cn, ucmp.sf-express.com, ump.ems.com.cn, un-acs.youku.com, vod-movie.maoyan.com, vv.video.qq.com, webapi.qmai.cn, webcast-open.douyin.com, webchatapp.fcbox.com, wechat-api.i-xiaoma.com.cn, www.bilibili.com, www.deppon.com, www.xiaohongshu.com, wx.bthhotels.com, wx.maoyan.com, wxapp.bestwehotel.com, wxproj.seeyouyima.com, wxs-weixin.sd.zhumanggroup.com
+hostname = %APPEND% *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, *live.bilibili.com, 112.53.55.225, 116.85.2.*, 116.85.3.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 3pp.starbucks.com.cn, aag.enmonster.com, acs.m.goofish.com, acs.m.taobao.com, acs.youku.com, activity.yonghuivip.com, ad.12306.cn, ad.maoyan.com, ad.xiaotucc.com, ads.ishansong.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, ap?.bilibili.com, api-fouth-mem.huazhu.com, api-marketing.zhinengxiyifang.cn, api.alipan.com, api.caiyunapp.com, api.gotokeep.com, api.hellobike.com, api.hengdianfilm.com, api.hongyibo.com.cn, api.kuaidihelp.com, api.m.jd.com, api.maoyan.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.songguo7.com, api.szbgcx.cn, api.udache.com, api.yangkeduo.com, api.yonghuivip.com, apiproxy.zuche.com, apis.alenable.com, app.95504.net, app.homeinns.com, applets.jtexpress.com.cn, appuser-static.huolala.cn, as.xiaojukeji.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, capis*.didapinche.com, cappapi.alittle-tea.com, cbd-gateway-service-applets.hualala.com, ccmsupport-sz.tenpay.com, cdn-w.caiyunapp.com, cn-acs.m.cainiao.com, coco-com.e.verystar.net, common.diditaxi.com.cn, conf.diditaxi.com.cn, creditcardapp.bankcomm.com, ct.xiaojukeji.com, customer-app.sto.cn, daijia.kuaidadi.com, dock.tenchii.com, dsp.fcbox.com, edith.xiaohongshu.com, file.dian.so, flow.dmall.com, freight.xiaojukeji.com, fscdn.zto.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw-passenger-wap.01zhuanche.com, hdgateway.zto.com, heic.alicdn.com, htwkop.xiaojukeji.com, images.qmai.cn, kad.gotokeep.com, lawsonapi.yorentown.com, m.bilibili.com, m.ctrip.com, m5-zb.amap.com, m5.amap.com, mapi.xiaotucc.com, mbmodule-openapi.paas.cmbchina.com, mcsp.cloudpnr.com, member.alipan.com, member.lxjchina.com.cn, miniapp.sexytea2013.com, minicap.caocaokeji.cn, minifm.maxxipoint.com, minipro.95504.net, miniprogram.ishansong.com, mkt-gateway.tuhu.cn, mobile-api.imlaidian.com, mobile.12306.cn, mp.weixin.qq.com, mxsa.mxbc.net, newton.gumingnc.com, oss.amap.com, passenger.t3go.cn, passengerapi.saicmobility.com, plt.yorentown.com, poplayer.template.alibaba.com, push.m.youku.com, qapi.huolala.cn, r2.gzyct.com, rec.xiaohongshu.com, res.hongyibo.com.cn, res.pizzahut.com.cn, res.xiaojukeji.com, rms.meituan.com, s.jiediankeji.com, saas-ad.cloudpnr.com, sauron-report.yonghuivip.com, smarket.dian.so, sns.amap.com, starplucker.cyapi.cn, sto-customer-app.oss-cn-shanghai.aliyuncs.com, supplier-api.imdada.cn, suyun-guest.daojia.com, tbgapplet.carlsberg.asia, tm-api.pin-dao.cn, ucmp.sf-express.com, ump.ems.com.cn, un-acs.youku.com, vod-movie.maoyan.com, vv.video.qq.com, webapi.qmai.cn, webcast-open.douyin.com, webchatapp.fcbox.com, wechat-api.i-xiaoma.com.cn, weibo.com, www.bilibili.com, www.deppon.com, www.xiaohongshu.com, wx.bthhotels.com, wx.maoyan.com, wxapp.bestwehotel.com, wxproj.seeyouyima.com, wxs-weixin.sd.zhumanggroup.com
 [Rule]
 # 开屏广告
 URL-REGEX,"^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH",REJECT-TINYGIF,extended-matching
@@ -188,6 +188,9 @@ DOMAIN-KEYWORD,log-api.pangolin-sdk-toutiao,REJECT,extended-matching,pre-matchin
 DOMAIN-KEYWORD,-ad.byteoversea.com,REJECT,extended-matching,pre-matching
 DOMAIN-KEYWORD,video-cn.snssdk.com,REJECT,extended-matching,pre-matching
 DOMAIN-KEYWORD,asiad.byteactivity,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,uve.weibo.com,DIRECT,extended-matching
+DOMAIN,huodong.weibo.cn,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,biz.weibo.com,REJECT,extended-matching,pre-matching
 [URL Rewrite]
 # 移除直播间链接跟踪参数
 (^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) $1 302
@@ -448,6 +451,24 @@ http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? 'delpaths
 ^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\? data-type=text data="{}" status-code=200
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/upsells\? data-type=text data="{}" status-code=200
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/v2\/commerce_info\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/(?:ug\/checkin\/list|push\/daily) data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/!\/live\/media_homelist\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/comments\/bullet_screens\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/photo\/info\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:container_positive|push_info) data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/vote\/get_vote_detail\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/!\/huati\/(?:discovery_home_bottom_getdotinfo|mobile_discovery_searchchange) data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/!\/wbox\/\w+\/(?:home_bottom_modal|interest_category) data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/search\/container_discover\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/hot\/hours_spotlight\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/video\/redpacket\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/!\/(sug\/list\/finderchange|was\/finder\/searchbarchange)\? data-type=text data="{}" status-code=200
+^https:\/\/api\.weibo\.cn\/2\/video\/tiny_video_info_show\? data-type=text data="{}" status-code=200
+^https:\/\/bootrealtime\.uve\.weibo\.com\/v[23]\/ad\/realtime data-type=text data="{}" status-code=200
+^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(?:get-lbs-cell-info\.php|sdkconfig\.php) data-type=text data="{}" status-code=200
+^https:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead) data-type=text data="{}" status-code=200
+^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead) data-type=text data="{}" status-code=200
 [Script]
 移除动态页面广告 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$, script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
 移除青少年模式弹窗 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$, script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
@@ -583,3 +604,22 @@ T3出行去广告 = type=http-response, pattern=^https:\/\/passenger\.t3go\.cn\/
 移除播放详情页广告 = type=http-response, pattern=^https:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/info\?, script-path=https://kelee.one/Resource/Script/Mango_TV/Mango_TV_remove_ads.js, requires-body=true
 移除搜索填充词 = type=http-response, pattern=^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v2\?, script-path=https://kelee.one/Resource/Script/Mango_TV/Mango_TV_remove_ads.js, requires-body=true
 移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://kelee.one/Resource/Script/JD/JD_remove_ads.js, requires-body=true
+移除首页推广 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(?:checkin\/show|client\/publisher_list|push\/active), script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除首页顶部标签 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\?, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除信息流广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(?:cardlist|page), script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除评论区广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\?, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除个人微博详情页广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/(?:container\/asyn|flowlist|flowpage), script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除关注、取消关注弹窗 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/friendships\/(?:create|destroy), script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除个人主页广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/profile\/(?:container_timeline|dealatt|me|statuses\/tab|userinfo), script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除超话搜索页广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/shproxy\/chaohua\/discovery\/searchactive\?, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除信息流广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:container_timeline(?:_hot|_topic|_topicpage|_unread)?|repost_timeline|unread_hot_timeline), script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除微博详情页广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/statuses\/(?:extend|show), script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除视频流广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/video\/(?:full_screen_stream|tiny_stream_video_list)\?, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除超话顶部标签 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\?, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除消息页列表广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\?, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除消息页提醒 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\?, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除热门微博信息流广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/search\/(?:container_timeline|finder), script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除发现页搜索结果广告 = type=http-response, pattern=^https:\/\/api\.weibo\.cn\/2\/searchall\?, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除开屏广告 preload = type=http-response, pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v[12]\/ad\/preload, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除开屏广告 sdkad = type=http-response, pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php, script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
+移除开屏广告 wbapplua = type=http-response, pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(?:preload\/get_ad|wbapplua\/wbpullad\.lua), script-path=https://kelee.one/Resource/Script/Weibo/Weibo_remove_ads.js, requires-body=true
