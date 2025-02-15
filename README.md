@@ -4,7 +4,12 @@
 ```
 有很多大规则，或单个app的去广告规则…等等其他。
 只想要符合自己需求的规则。
+
 ```
+菜鸟一个，大佬勿喷,都是用AI写的, 白嫖cursor借助[chengazhen大佬的软件](https://github.com/chengazhen/cursor-auto-free)
+
+## 其他脚本说明
+surge-module-upload.js ([修改自一佬的脚本SurgeModuleTool.js需借助Scriptable软件使用](https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/SurgeModuleTool.js)和[一佬的Script-Hub模块](https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/modules/script-hub.surge.sgmodule)) 用于上传模块到 GitHub
 
 ## 功能特点
 
