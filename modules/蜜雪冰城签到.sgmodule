@@ -1,0 +1,13 @@
+#!name=蜜雪冰城签到
+#!desc=🔗 [2025/2/15 20:51:03] 蜜雪冰城签到
+
+[Script]
+蜜雪冰城获取token = type=http-response, pattern=^https:\/\/mxsa\.mxbc\.net\/api\/v1\/customer\/info, script-path=https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% mxsa.mxbc.net
+
+
+
+# 🔗 模块链接
+#SUBSCRIBED http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js/_end_/mxbc.sgmodule?n=%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E7%AD%BE%E5%88%B0&type=qx-rewrite&target=surge-module&del=true
