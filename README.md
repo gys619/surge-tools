@@ -5,6 +5,12 @@
 有很多大规则，或单个app的去广告规则…等等其他。
 只想要符合自己需求的规则。
 
+食用：
+有surge模块：
+	直接搜索添加到配置文件中运行actions合并
+有loon插件或qx脚本但是没有surge模块：
+	使用surge-module-batch-upload.js添加到本地，配合Script-Hub 可以上传到自己的github仓库，或者配合快捷指令定时更新
+
 ```
 菜鸟一个，大佬勿喷,都是用AI写的, 白嫖cursor借助[chengazhen大佬的软件](https://github.com/chengazhen/cursor-auto-free)
 
@@ -140,4 +146,5 @@ https://github.com/blackmatrix7/ios_rule_script/tree/master/rewrite
 
 
 ## 以下排名不分先后
-[*@Blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script) [*@DivineEngine*](https://github.com/DivineEngine) [*@App2smile*](https://github.com/app2smile/rules) [*@VirgilClyne*](https://github.com/VirgilClyne/iRingo#iringo) [*@Chavyleung*](https://github.com/chavyleung) [*@luestr*](https://github.com/luestr) [*@fmz200*](https://github.com/fmz200)
+
+[*@Blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script) [*@DivineEngine*](https://github.com/DivineEngine) [*@App2smile*](https://github.com/app2smile/rules) [*@VirgilClyne*](https://github.com/VirgilClyne/iRingo#iringo) [*@Chavyleung*](https://github.com/chavyleung) [*@luestr*](https://github.com/luestr) [*@fmz200*](https://github.com/fmz200)[@小白脸 @xream @keywos @ckyb]([xream (xream)](https://github.com/xream))[@chengazhen](https://github.com/chengazhen)
