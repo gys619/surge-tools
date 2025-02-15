@@ -1,0 +1,15 @@
+#!name=奶茶多合一签到
+#!desc=🔗 [2025/2/15 20:45:35] 奶茶多合一签到
+
+[Script]
+奶茶获取token = type=http-response, pattern=^https:\/\/(webapi|webapi2)\.qmai\.cn\/web\/seller\/(oauth\/flash-sale-login|account\/login-minp), script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60
+
+奶茶获取token = type=http-request, pattern=^https:\/\/(webapi|webapi2|qmwebapi)\.qmai\.cn\/web\/(catering\/integral|cmk-center)\/sign\/(signIn|takePartInSign), script-path=https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js, requires-body=true, timeout=60
+
+[MITM]
+hostname = %APPEND% webapi2.qmai.cn, webapi.qmai.cn, qmwebapi.qmai.cn
+
+
+
+# 🔗 模块链接
+#SUBSCRIBED http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/8b4f5487e0f28786c7dec9c7484dcd5e/raw/teaMilk.js/_end_/teaMilk.sgmodule?n=%E5%A5%B6%E8%8C%B6%E5%A4%9A%E5%90%88%E4%B8%80%E7%AD%BE%E5%88%B0&type=qx-rewrite&target=surge-module&del=true
