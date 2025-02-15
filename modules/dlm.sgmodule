@@ -1,5 +1,5 @@
 #!name=dlm
-#!desc=🔗 [2025/2/15 21:38:49] dlm
+#!desc=🔗 [2025/2/15 21:41:47] dlm
 
 [Script]
 达美乐披萨 = type=cron, cronexp="30 10 * * *", script-path=https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js, timeout=300
