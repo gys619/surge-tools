@@ -10,8 +10,8 @@ const GITHUB_BRANCH = 'main';
 // 模块配置
 const MODULE_CONFIGS = [
   {
-    name: "达美乐",
-    url: "http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js/_end_/dlm.sgmodule?type=qx-rewrite&target=surge-module&del=true"
+    name: "蜜雪冰城",
+    url: "http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/865c82e42a5730bb696f6700ebb94cee/raw/mxbc.js/_end_/mxbc.sgmodule?n=%E8%9C%9C%E9%9B%AA%E5%86%B0%E5%9F%8E%E7%AD%BE%E5%88%B0&type=qx-rewrite&target=surge-module&del=true"
   },
   {
     name: "夸克网盘",
