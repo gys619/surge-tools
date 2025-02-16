@@ -12,13 +12,17 @@ const MODULE_CONFIGS = [
   },
   {
     name: "夸克网盘",
-    url: "http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js/_end_/?type=qx-rewrite&target=surge-module&del=true",
+    url: "http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js/_end_/quarkV2.sgmodule?type=qx-rewrite&target=surge-module&del=true",
     folder: "modules"
   },
   {
     name: "广告拦截&净化合集",
     url: "http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin/_end_/blockAds.sgmodule?n=blockAds&type=loon-plugin&target=surge-module&del=true",
     folder: "adblock"
+  },{
+    name: "广告拦截&净化合集规则",
+    url: "http://script.hub/file/_start_/https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliuxiuzheng.list/_end_/fenliuxiuzheng.list?type=rule-set&target=surge-rule-set&del=true",
+    folder: "rules"
   }
 ];
 
@@ -46,27 +50,29 @@ async function processModule(moduleConfig) {
 
     if (!responseText) throw new Error('未获取到模块内容');
 
-    // **从模块内容提取 `#!name` 字段**
-    const nameMatched = responseText.match(/^#\!name\s*?=\s*?\s*(.*?)\s*(\n|$)/im);
-    let name = nameMatched ? nameMatched[1] : moduleConfig.name;
-
-    if (!name) throw new Error('模块无名称字段');
-
-    // **从 URL 提取 .sgmodule 文件名**
-    const urlFilename = moduleConfig.url.split('/').pop().split('?')[0];
-    if (urlFilename.endsWith('.sgmodule')) {
-      name = urlFilename.replace('.sgmodule', '');
+    // **优先从 URL 提取文件名**
+    const urlParts = moduleConfig.url.split('/');
+    let fileNameFromUrl = urlParts.pop().split('?')[0]; // 移除查询参数
+    if (fileNameFromUrl.includes('.')) {
+      fileNameFromUrl = fileNameFromUrl.split('.').slice(0, -1).join('.'); // 移除扩展名
     }
+
+    // **生成最终文件名（保留原始扩展名）**
+    const urlExtension = moduleConfig.url.split('.').pop().split('?')[0];
+    const validName = convertToValidFileName(fileNameFromUrl || moduleConfig.name);
+    const finalFileName = urlExtension.match(/sgmodule|list/) 
+      ? `${validName}.${urlExtension}`
+      : `${validName}.sgmodule`;
+
+    // **确保文件路径正确**
+    const folder = moduleConfig.folder ? `${moduleConfig.folder}/` : "";
+    const fileName = `${folder}${finalFileName}`;
 
     let processedText = responseText;
     const subscribed = `#SUBSCRIBED ${moduleConfig.url}`;
     processedText = processedText.replace(/^(#SUBSCRIBED|# 🔗 模块链接)(.*?)(\n|$)/gim, '');
     processedText = `${processedText}\n\n# 🔗 模块链接\n${subscribed}\n`;
     processedText = processedText.replace(/^#\!desc\s*?=\s*/im, `#!desc=🔗 [${new Date().toLocaleString()}] `);
-
-    // **确保文件路径正确**
-    const folder = moduleConfig.folder ? `${moduleConfig.folder}/` : "";
-    const fileName = `${folder}${convertToValidFileName(name)}.sgmodule`;
 
     uploadQueue.push({ filename: fileName, content: processedText });
 
