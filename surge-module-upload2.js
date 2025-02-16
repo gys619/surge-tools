@@ -8,7 +8,7 @@ const MODULE_CONFIGS = [
   {
     name: "达美乐",
     url: "http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/6b4da0d367d13790a9fd1d928c82bdf8/raw/dlm.js/_end_/dlm.sgmodule?type=qx-rewrite&target=surge-module&del=true",
-    folder: "module"
+    folder: "modules"
   },
   {
     name: "夸克网盘",
@@ -46,14 +46,16 @@ async function processModule(moduleConfig) {
 
     if (!responseText) throw new Error('未获取到模块内容');
 
+    // **从模块内容提取 `#!name` 字段**
     const nameMatched = responseText.match(/^#\!name\s*?=\s*?\s*(.*?)\s*(\n|$)/im);
     let name = nameMatched ? nameMatched[1] : moduleConfig.name;
-    
+
     if (!name) throw new Error('模块无名称字段');
 
-    // 纠正 `广告拦截&净化合集` 以 `blockAds.sgmodule` 作为文件名
-    if (moduleConfig.name === "广告拦截&净化合集") {
-      name = "blockAds";
+    // **从 URL 提取 .sgmodule 文件名**
+    const urlFilename = moduleConfig.url.split('/').pop().split('?')[0];
+    if (urlFilename.endsWith('.sgmodule')) {
+      name = urlFilename.replace('.sgmodule', '');
     }
 
     let processedText = responseText;
