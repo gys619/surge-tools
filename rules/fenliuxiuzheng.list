@@ -2,6 +2,10 @@
 #不支持的规则数量:0
 #已排除的规则数量:0
 
+
+# 🔗 模块链接
+#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliuxiuzheng.list/_end_/fenliuxiuzheng.list?type=rule-set&target=surge-rule-set&del=true
+
 #-----------------以下为解析后的规则-----------------#
 
 DOMAIN,ad.12306.cn
@@ -66,6 +70,3 @@ DOMAIN-KEYWORD,aw-s.tripcdn.com
 DOMAIN-KEYWORD,trip.com
 IP-CIDR,192.168.0.1/24
 IP-CIDR,192.168.1.1/24
-
-# 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/fenliuxiuzheng.list/_end_/fenliuxiuzheng.list?type=rule-set&target=surge-rule-set&del=true
