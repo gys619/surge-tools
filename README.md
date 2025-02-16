@@ -147,4 +147,5 @@ https://github.com/blackmatrix7/ios_rule_script/tree/master/rewrite
 
 ## 以下排名不分先后
 
-[*@Blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script) [*@DivineEngine*](https://github.com/DivineEngine) [*@App2smile*](https://github.com/app2smile/rules) [*@VirgilClyne*](https://github.com/VirgilClyne/iRingo#iringo) [*@Chavyleung*](https://github.com/chavyleung) [*@luestr*](https://github.com/luestr) [*@fmz200*](https://github.com/fmz200)[@小白脸 @xream @keywos @ckyb]([xream (xream)](https://github.com/xream))[@chengazhen](https://github.com/chengazhen)
+[*@Blackmatrix7*](https://github.com/blackmatrix7) [*@DivineEngine*](https://github.com/DivineEngine) [*@App2smile*](https://github.com/app2smile/rules) [*@VirgilClyne*](https://github.com/VirgilClyne/iRingo#iringo) [*@Chavyleung*](https://github.com/chavyleung) [*@luestr*](https://github.com/luestr) [*@fmz200*](https://github.com/fmz200)[*@xream*](https://github.com/xream)@ckyb @小白脸 
+[*@keywos*](https://github.com/keywos)[*@chengazhen*](https://github.com/chengazhen)
