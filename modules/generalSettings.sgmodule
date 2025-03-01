@@ -2,19 +2,13 @@
 #!desc=通用设置模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-02-08 17:44:06
-#!HASH=9c59677da7a46b9816ebc5c59ebdcad6
+#!updated=2025-03-01 01:15:36
+#!HASH=5d5139d9112445b95eeed81173c8b32b
 
 [MITM]
-
-hostname = %APPEND% *.httpdns.pro, 119.29.29.98, 119.29.29.99, amdc-sibling.alipay.com.cn, amdc.alipay.com, buy.itunes.apple.com, dns.jd.com, gateway.icloud.com, gateway.icloud.com.cn, ios.chat.openai.com, weather-data.apple.com
-
+hostname = %APPEND% *.httpdns.pro, *.zijieapi.com, 119.29.29.98, 119.29.29.99, amdc-sibling.alipay.com.cn, amdc.alipay.com, buy.itunes.apple.com, dns.jd.com, gateway.icloud.com, gateway.icloud.com.cn, ios.chat.openai.com, weather-data.apple.com
 [General]
-
 tun-excluded-routes = %APPEND% 239.255.255.250/32
-
-
-
 skip-proxy = %APPEND% *.local, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, captive.apple.com, e.crashlytics.com, fe80::/10, gate.lagou.com, localhost, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, passenger.t3go.cn, www.abchina.com.cn, www.baidu.com, wxh.wo.cn, yunbusiness.ccb.com
 # > 跳过代理
 # 跳过某个域名或者 IP 段，这些目标主机将不会由 Surge Proxy 处理。
@@ -29,16 +23,12 @@ use-local-host-item-for-proxy = true
 # > 加密DNS服务器
 # 使加密DNS请求通过代理策略执行
 encrypted-dns-follow-outbound-mode = false
-
 [Rule]
 # Alibaba
 DOMAIN,httpdns.alicdn.com,REJECT,extended-matching,pre-matching
-
-
 # Aliyun
 # refer: https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/download%2Fpdf%2F30114%2F%25E7%2594%25A8%25E6%2588%25B7%25E6%258C%2587%25E5%258D%2597_cn_zh-CN.pdf
 DOMAIN,httpdns-api.aliyuncs.com,REJECT,extended-matching,pre-matching
-
 DOMAIN,httpdns-sc.aliyuncs.com,REJECT,extended-matching,pre-matching
 # refer: http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/pdf/httpdns-api-reference-cn-zh-2016-05-12.pdf
 # refer: http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/pdf/httpdns-product-introduction-cn-zh-2017-05-24.pdf
@@ -47,54 +37,38 @@ DOMAIN,httpdns-sc.aliyuncs.com,REJECT,extended-matching,pre-matching
 IP-CIDR,203.107.1.0/24,REJECT,no-resolve,pre-matching
 # Baidu
 DOMAIN,httpsdns.baidu.com,REJECT,extended-matching,pre-matching
-
 DOMAIN,httpdns.baidu.com,REJECT,extended-matching,pre-matching
 # BaiduBCE
 # refer: https://bce-cdn.bj.bcebos.com/p3m/pdf/bce-doc/online/HTTPDNS/HTTPDNS.pdf
 DOMAIN,httpdns.baidubce.com,REJECT,extended-matching,pre-matching
-
-IP-CIDR,186.76.76.200/32,REJECT,no-resolve,pre-matching
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve,pre-matching
 # Bilibili
 DOMAIN,httpdns.bilivideo.com,REJECT,extended-matching,pre-matching
 # KEY_EXT_P2P_HTTPDNS_BILI_IP
 IP-CIDR,47.101.175.206/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,47.100.123.169/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,120.46.169.234/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,121.36.72.124/32,REJECT,no-resolve,pre-matching
 # KEY_EXT_P2P_BILIDNS_CMCC_IP
 IP-CIDR,116.63.10.135/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,122.9.7.134/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,117.185.228.108/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,117.144.238.29/32,REJECT,no-resolve,pre-matching
 # KEY_EXT_P2P_BILIDNS_CT_IP
 IP-CIDR,122.9.13.79/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,122.9.15.129/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,101.91.140.224/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,101.91.140.124/32,REJECT,no-resolve,pre-matching
 # KEY_EXT_P2P_BILIDNS_CU_IP
 IP-CIDR,114.116.215.110/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,116.63.10.31/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,112.64.218.119/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,112.65.200.117/32,REJECT,no-resolve,pre-matching
 # Huawei
 DOMAIN,httpdns.c.cdnhwc2.com,REJECT,extended-matching,pre-matching
 # JD
 DOMAIN,dns.jd.com,REJECT,extended-matching,pre-matching
-
 IP-CIDR,101.124.19.122/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve,pre-matching
 # JD Cloud
 # refer: https://docs.jdcloud.com/cn/jd-cloud-dns/HTTPDNS
@@ -102,30 +76,21 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve,pre-matching
 IP-CIDR,103.224.222.208/32,REJECT,no-resolve,pre-matching
 # Keep
 DOMAIN,httpdns.calorietech.com,REJECT,extended-matching,pre-matching
-# Kuaishou
-DOMAIN,kuaishou.httpdns.pro,REJECT,extended-matching,pre-matching
 # Meituan
 DOMAIN,httpdns.meituan.com,REJECT,extended-matching,pre-matching
-
 DOMAIN,httpdnsvip.meituan.com,REJECT,extended-matching,pre-matching
+IP-CIDR,202.90.108.13/32,REJECT,no-resolve
+IP-CIDR,202.90.110.46/32,REJECT,no-resolve
 # NetEase
 # refer: https://lbs.netease.im/lbs/conf.jsp
 DOMAIN,httpdns.yunxindns.com,REJECT,extended-matching,pre-matching
-
 DOMAIN,httpdns.n.netease.com,REJECT,extended-matching,pre-matching
-
 DOMAIN,httpdns.music.163.com,REJECT,extended-matching,pre-matching
-
 DOMAIN,music.httpdns.c.163.com,REJECT,extended-matching,pre-matching
-
 DOMAIN,lofter.httpdns.c.163.com,REJECT,extended-matching,pre-matching
-
 IP-CIDR,59.111.239.61/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,59.111.239.62/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,115.236.121.51/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,115.236.121.195/32,REJECT,no-resolve,pre-matching
 # Oppo
 DOMAIN,httpdns.push.oppomobile.com,REJECT,extended-matching,pre-matching
@@ -134,135 +99,88 @@ DOMAIN,httpdns.push.oppomobile.com,REJECT,extended-matching,pre-matching
 # Tencent Cloud
 # refer：https://cloud.tencent.com/document/product/379/95497
 DOMAIN-SUFFIX,httpdns.pro,REJECT,extended-matching,pre-matching
-
 IP-CIDR,119.29.29.98/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,119.29.29.99/32,REJECT,no-resolve,pre-matching
 # Volcengine
 # refer: https://www.volcengine.com/docs/6758/174756
 DOMAIN,httpdns.volcengineapi.com,REJECT,extended-matching,pre-matching
 # Weibo
 DOMAIN,dns.weibo.cn,REJECT,extended-matching,pre-matching
-
 IP-CIDR,39.97.128.148/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,39.97.130.51/32,REJECT,no-resolve,pre-matching
 # Wework
 # refer: https://res.mail.qq.com/zh_CN/wework_ip/latest.html
 IP-CIDR,182.254.116.117/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,182.254.118.119/32,REJECT,no-resolve,pre-matching
 # Weixin
 # refer: http://dns.weixin.qq.com/cgi-bin/micromsg-bin/newgetdns
 # refer: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Mini_Programs/HTTPDNS.html
 DOMAIN,dns.weixin.qq.com,REJECT,extended-matching,pre-matching
-
 DOMAIN,dns.weixin.qq.com.cn,REJECT,extended-matching,pre-matching
-
 IP-CIDR,42.81.232.18/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,42.187.182.106/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,42.187.182.123/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,42.187.184.154/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR,123.151.54.50/32,REJECT,no-resolve,pre-matching
-
 IP-CIDR6,2402:4e00:1900:1700:0:9554:1ad9:c3a/128,REJECT,no-resolve,pre-matching
-
 IP-CIDR6,240e:928:1400:10::25/128,REJECT,no-resolve,pre-matching
 # Zhihu
 # refer: https://github.com/lwd-temp/anti-ip-attribution/issues/24
-IP-CIDR,118.89.204.198/23,REJECT,no-resolve,pre-matching
-
+IP-CIDR,118.89.204.198/32,REJECT,no-resolve,pre-matching
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve,pre-matching
-
 [URL Rewrite]
 # Alipay
 ^https?:\/\/amdc\.alipay\.com\/s?query - reject
-
 ^https?:\/\/amdc-sibling\.alipay\.com\.cn\/s?query - reject
-
 ^https?:\/\/110\.76\.8\.150\/squery - reject
-
 ^https?:\/\/203\.209\.230\.39\/squery - reject
-
 ^https?:\/\/203\.209\.245\.102\/squery - reject
-
 ^https?:\/\/203\.209\.245\.158\/squery - reject
-
 ^https?:\/\/203\.209\.247\.95\/squery - reject
-
 ^https?:\/\/203\.209\.250\.41\/squery - reject
-
 ^https?:\/\/203\.209\.250\.114\/squery - reject
-
 ^https?:\/\/203\.209\.251\.147\/squery - reject
-
 ^https?:\/\/2400:B180:6001::18F\/squery - reject
-
 ^https?:\/\/2400:B200:1005:3000::155\/squery - reject
-
 ^https?:\/\/2400:B200:1005:3000::1D3\/squery - reject
-
 ^https?:\/\/2400:B200:5000:B000::C8\/squery - reject
-
-
 # Baidu
 ^http:\/\/180\.76\.76\.112\/v4\/resolve - reject
-
 ^http:\/\/180\.76\.76\.220\/v4\/resolve - reject
 # Bilibili
 # KEY_EXT_P2P_HTTPDNS_BILI_IP
 ^http:\/\/47\.101\.175\.206\/resolve - reject
-
 ^http:\/\/47\.100\.123\.169\/resolve - reject
-
 ^http:\/\/120\.46\.169\.234\/resolve - reject
-
 ^http:\/\/121\.36\.72\.124\/resolve - reject
 # KEY_EXT_P2P_BILIDNS_CMCC_IP
 ^http:\/\/116\.63\.10\.135\/resolve - reject
-
 ^http:\/\/122\.9\.7\.134\/resolve - reject
-
 ^http:\/\/117\.185\.228\.108\/resolve - reject
-
 ^http:\/\/117\.144\.238\.29\/resolve - reject
 # KEY_EXT_P2P_BILIDNS_CT_IP
 ^http:\/\/122\.9\.13\.79\/resolve - reject
-
 ^http:\/\/122\.9\.15\.129\/resolve - reject
-
 ^http:\/\/101\.91\.140\.224\/resolve - reject
-
 ^http:\/\/101\.91\.140\.124\/resolve - reject
 # KEY_EXT_P2P_BILIDNS_CU_IP
 ^http:\/\/114\.116\.215\.110\/resolve - reject
-
 ^http:\/\/116\.63\.10\.31\/resolve - reject
-
 ^http:\/\/112\.64\.218\.119\/resolve - reject
-
 ^http:\/\/112\.65\.200\.117\/resolve - reject
+# ByteDance
+^https?:\/\/.+\.zijieapi\.com\/get_domains\/ - reject
 # JD
 ^https:\/\/dns\.jd\.com\/v6\/b - reject
 # Meituan
 ^http:\/\/103\.37\.155\.60\/fetch - reject
 # Pinduoduo
 ^http:\/\/101\.35\.204\.35\/d - reject
-
 ^http:\/\/101\.35\.212\.35\/d - reject
-
 ^http:\/\/114\.110\.96\.26\/d - reject
-
 ^http:\/\/114\.110\.97\.97\/d - reject
-
 ^http:\/\/240c:409f::3:0:163\/d - reject
-
 ^http:\/\/240c:409f::3:0:359\/d - reject
-
 ^http:\/\/2402:4e00:1411:201:0:9964:ba21:5a41\/d - reject
 # QCloud
 # refer: https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
@@ -274,112 +192,68 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve,pre-matching
 # Weibo
 # refer: https://github.com/CNSRE/HTTPDNSLib-for-iOS
 ^http:\/\/api\.weibo\.cn\/2\/httpdns\/config - reject
-
 ^http:\/\/api\.weibo\.cn\/httpdns\/config - reject
 # Weixin
 # 注意: 以下域名HTTPS无法MitM，如通过此链接查询，无法处理
 ^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns - reject
-
 ^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns - reject
-
 ^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
-
 ^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
 # Wework
 # refer: https://res.mail.qq.com/zh_CN/wework_ip/latest.html
 ^http:\/\/182\.254\.116\.117\/d - reject
-
 ^http:\/\/182\.254\.118\.119\/d - reject
 # Zhihu
 # refer: https://github.com/lwd-temp/anti-ip-attribution/issues/24
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
-
 [Host]
 # --- CUSTOM HOSTS ---
 # > IPv6
 ip6-localhost = ::1 // IPv6 Localhost
-
 ip6-loopback = ::1 // IPv6 Loopback
-
 ip6-localnet = fe00::0 // IPv6 Link-Local
-
 ip6-mcastprefix = ff00::0 // IPv6 Multicast
-
 ip6-allnodes = ff02::1 // IPv6 All Nodes
-
 ip6-allrouters = ff02::2 // IPv6 All Routers
-
 ip6-allhosts = ff02::3 // IPv6 All Hosts
-
-
 # > Encrypted DNS
 dns.google = 8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844 // https://dns.google/dns-query
-
 dns64.dns.google = 2001:4860:4860::6464, 2001:4860:4860::64 // https://dns64.dns.google/dns-query
-
 cloudflare-dns.com = 104.16.249.249, 104.16.248.249, 2606:4700::6810:f8f9, 2606:4700::6810:f9f9 // https://cloudflare-dns.com/dns-query
-
 1dot1dot1dot1.cloudflare-dns.com = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1001, 2606:4700:4700::1111 // 1dot1dot1dot1.cloudflare-dns.com:853
-
 one.one.one.one = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1001, 2606:4700:4700::1111  // one.one.one.one:853
-
 dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1 // https://dns.alidns.com/dns-query
-
 doh.pub = 1.12.12.12, 120.53.53.53 // https://doh.pub/dns-query
-
 dot.pub = 1.12.12.12, 120.53.53.53 // dot.pub:853
-
 doh.360.cn = 23.6.48.18, 112.65.69.15 // https://doh.360.cn/dns-query
-
 dot.360.cn = 101.198.198.198, 101.198.199.200, 101.198.192.33, 112.65.69.15 // dot.360.cn:853
-
 dns.twnic.tw = 101.101.101.101, 2001:de4::101, 2001:de4::102 // https://dns.twnic.tw/dns-query
-
 ordns.he.net = 74.82.42.42, 2001:470:20::2 // https://ordns.he.net/dns-query
 # > Modify Contents
 # services.googleapis.cn = 74.125.193.94 // Google API Services China
 talk.google.com = 108.177.125.188 // Firebase Cloud Messaging
-
 mtalk.google.com = 108.177.125.188, 2404:6800:4008:c07::bc, 142.250.31.188 // Firebase Cloud Messaging
-
 alt1-mtalk.google.com = 3.3.3.3, 2607:f8b0:4023:c0b::bc, 64.233.171.188 // Firebase Cloud Messaging
-
 alt2-mtalk.google.com = 3.3.3.3, 142.250.115.188 // Firebase Cloud Messaging
-
 alt3-mtalk.google.com = 74.125.200.188, 173.194.77.188 // Firebase Cloud Messaging
-
 alt4-mtalk.google.com = 74.125.200.188, 173.194.219.188 // Firebase Cloud Messaging
-
 alt5-mtalk.google.com = 3.3.3.3, 2607:f8b0:4023:1::bc, 142.250.112.188 // Firebase Cloud Messaging
-
 alt6-mtalk.google.com = 3.3.3.3, 172.217.197.188 // Firebase Cloud Messaging
-
 alt7-mtalk.google.com = 74.125.200.188, 2607:f8b0:4002:c03::bc, 108.177.12.188 // Firebase Cloud Messaging
-
 alt8-mtalk.google.com = 3.3.3.3 // Firebase Cloud Messaging
 # dl.google.com = 180.163.151.161 // Google CDN
 # dl.l.google.com = 180.163.151.161 // Google CDN
 # --- CUSTOM DNS ---
 blog.google = server:119.29.29.29 // Google Blog
-
 googletraveladservices.com = server:119.29.29.29 // Google Flights
-
 dl.google.com = server:119.29.29.29 // Google Download
-
 dl.l.google.com = server:119.29.29.29 // Google Download
-
 clientservices.googleapis.com = server:119.29.29.29 // Google Chrome
-
 update.googleapis.com = server:119.29.29.29 // Google Update
-
 translate.googleapis.com = server:119.29.29.29 // Google Translate
-
 fonts.googleapis.com = server:119.29.29.29 // Google Fonts
-
 fonts.gstatic.com = server:119.29.29.29 // Google Fonts
-
 stun.l.google.com = server:syslib // Google STUN
-
 stun?.l.google.com = server:syslib // Google STUN
 # > Router Admin Panel
 *.id.ui.direct = server:syslib // Ubiquiti Unifi Network App
@@ -387,59 +261,32 @@ stun?.l.google.com = server:syslib // Google STUN
 unifi.local = server:syslib // Ubiquiti Unifi OS
 # network.unifi.ui.com = server:syslib // Ubiquiti Unifi Controller
 amplifi.lan = server:syslib // Ubiquiti Amplifi Router
-
 router.synology.com = server:syslib // Synology Router
-
 sila.razer.com = server:syslib // Razer Sila Router
-
 router.asus.com = server:syslib // Asus Router
-
 routerlogin.net = server:syslib // Netgear Router
-
 orbilogin.com = server:syslib // Netgear Obri Router
-
 www.LinksysSmartWiFi.com = server:syslib // Linksys Router
-
 LinksysSmartWiFi.com = server:syslib // Linksys Router
-
 myrouter.local = server:syslib // Linksys Router
-
 instant.arubanetworks.com = server:syslib // Aurba Router
-
 setmeup.arubanetworks.com = server:syslib // Aurba Router
-
 www.miwifi.com = server:syslib // 小米 Mi WiFi Router
-
 miwifi.com = server:syslib // 小米 Mi WiFi Router
-
 mediarouter.home = server:syslib // 华为 Huawei Router
-
 tplogin.cn = server:syslib // TP-Link Router
-
 tplinklogin.net = server:syslib // TP-Link Router
-
 tplinkwifi.net = server:syslib // TP-Link Router
-
 melogin.cn = server:syslib // 水星 MERCURY Router
-
 falogin.cn = server:syslib // 迅捷 FAST Router
-
 tendawifi.com = server:syslib // 腾达 Tenda Router
-
 leike.cc = server:syslib // 磊科 Netcore Router
-
 zte.home = server:syslib // 中兴 ZTE Router
-
 p.to = server:syslib // 斐讯 PHICOMM Router
-
 phicomm.me = server:syslib // 斐讯 PHICOMM Router
-
 hiwifi.com = server:syslib // 极路由 HiWiFi Router
-
 peiluyou.com = server:syslib // 迅雷路由
-
 _hotspot_.m2m = server:syslib // M2M routers at MiFi Hotspot
-
 hotspot.cslwifi.com = server:syslib // csl Wi-Fi
 # > Apple
 # refer: https://support.apple.com/zh-cn/HT210060
@@ -485,301 +332,162 @@ networking.apple = server:https://doh.dns.apple.com/dns-query // Apple
 # > 阿里巴巴
 # refer: https://www.alidns.com
 *.alibaba.cn = server:quic://dns.alidns.com // 阿里巴巴
-
 *.alibaba.com.cn = server:quic://dns.alidns.com // 阿里巴巴
-
 *.china.alibaba.com = server:quic://dns.alidns.com // Alibaba 中国
-
 *.1688.com = server:quic://dns.alidns.com // 1688
-
 *.taobao.com = server:quic://dns.alidns.com // 淘宝
-
 *.tbcache.com = server:quic://dns.alidns.com // 淘宝 缓存
-
 *.tmall.com = server:quic://dns.alidns.com // 天猫
-
 *.alicdn.com = server:quic://dns.alidns.com // 阿里 CDN
-
 *.alikunlun.com = server:quic://dns.alidns.com // 阿里昆仑
-
 *.aliapp.com = server:quic://dns.alidns.com // 云引擎应用平台
-
 *.aliapp.org = server:quic://dns.alidns.com // 上云平台
-
 *.alibabausercontent.com = server:quic://dns.alidns.com // 阿里用户上传资料
-
 *.mmstat.com = server:quic://dns.alidns.com // mmstat 数据统计 广告追踪
-
 tb.cn = server:quic://dns.alidns.com // 淘宝短网址
 # > 阿里云
 *.aliyun.* = server:quic://dns.alidns.com // 阿里云
-
 *.aliyuncdn.* = server:quic://dns.alidns.com // 阿里云 CDN
-
 *.aliyuncs.com = server:quic://dns.alidns.com // 阿里云 API 服务
-
 *.aliyunddos????.com = server:quic://dns.alidns.com // 阿里云 DDoS防护
-
 *.aliyundrive.com = server:quic://dns.alidns.com // 阿里云盘
-
 *.aliyundun.com = server:quic://dns.alidns.com // 阿里云盾
-
 *.aliyundunwaf.com = server:quic://dns.alidns.com // 阿里云盾 Web 应用防火墙
-
 *.aliyun-inc.com = server:quic://dns.alidns.com // 阿里云 内部
 # > 蚂蚁集团
 *.antgroup.com = server:quic://dns.alidns.com // 蚂蚁集团
-
 *.antfin.com = server:quic://dns.alidns.com // 蚂蚁金服
-
 *.antfinancial.com = server:quic://dns.alidns.com // 蚂蚁金服
-
 *.alipay.com = server:quic://dns.alidns.com // 支付宝
-
 *.alipay.com.cn = server:quic://dns.alidns.com // 支付宝
-
 *.alipaydns.com = server:quic://dns.alidns.com // 支付宝 HTTP DNS
-
 *.alipayeshop.com = server:quic://dns.alidns.com // 支付宝 商家资源
-
 *.alipaylog.com = server:quic://dns.alidns.com // 支付宝 Mdap
-
 *.alipayobjects.com = server:quic://dns.alidns.com // 支付宝 静态资源
-
 *.alipay-eco.com = server:quic://dns.alidns.com // 支付宝 开放技术生态体系
 # > 腾讯
 # refer: https://www.dnspod.cn/products/publicdns
 *.tencent.com = server:https://doh.pub/dns-query // 腾讯
-
 *.qcloud.com = server:https://doh.pub/dns-query // 腾讯云
-
 *.qcloudcdn.cn = server:https://doh.pub/dns-query // 腾讯云CDN
-
 *.qcloudcdn.com = server:https://doh.pub/dns-query // 腾讯云CDN
-
 *.qcloudcos.com = server:https://doh.pub/dns-query // 腾讯云对象储存
-
 *.qcloudimg.com = server:https://doh.pub/dns-query // 腾讯云静态资源
-
 *.qcloudcjgj.com = server:https://doh.pub/dns-query // 腾讯云超级管家
-
 *.qcloudwzgj.com = server:https://doh.pub/dns-query // 腾讯云网站管家
-
 *.qcloudzygj.com = server:https://doh.pub/dns-query // 腾讯云主页管家
-
 *.myqcloud.com = server:https://doh.pub/dns-query // 腾讯开放云
-
 *.tencent-cloud.net = server:https://doh.pub/dns-query // 腾讯云
-
 *.tencentcloud-aiot.com = server:https://doh.pub/dns-query // 腾讯云aiot解决方案
-
 *.tencentcloudapi.com = server:https://doh.pub/dns-query // 腾讯云API
-
 *.tencentcloudcr.com = server:https://doh.pub/dns-query // 腾讯云容器镜像服务TCR
-
 *.tencentcloudmarket.com = server:https://doh.pub/dns-query // 腾讯云云市场
-
 *.qq.com = server:https://doh.pub/dns-query // QQ
-
 *.qlogo.cn = server:https://doh.pub/dns-query // 腾讯头像
-
 *.qpic.cn = server:https://doh.pub/dns-query // 腾讯图片
-
 *.weixin.qq.com = server:https://doh.pub/dns-query // 微信
-
 *.wx.qq.com = server:https://doh.pub/dns-query // 微信
-
 *.weixin.com = server:https://doh.pub/dns-query // 微信
-
 *.weixinbridge.com = server:https://doh.pub/dns-query // 微信公众平台
-
 *.wechat.com = server:https://doh.pub/dns-query // WeChat
-
 *.servicewechat.com = server:https://doh.pub/dns-query // 微信小程序
-
 *.weiyun.com = server:https://doh.pub/dns-query // 微云
-
 *.gtimg.cn = server:https://doh.pub/dns-query // 腾讯 图片 静态资源
-
 *.idqqimg.com = server:https://doh.pub/dns-query // 腾讯 图片 静态资源
-
 *.cdn-go.cn = server:https://doh.pub/dns-query // 腾讯 静态资源 CDN
-
 *.smtcdns.com = server:https://doh.pub/dns-query // 腾讯云 智能云解析DNS
-
 *.smtcdns.net = server:https://doh.pub/dns-query // 腾讯云 智能云解析DNS
-
 url.cn = server:https://doh.pub/dns-query // 腾讯短网址
 # > 百度
 # refer: https://dudns.baidu.com/support/localdns/Address/index.html
 *.baidu = server:180.76.76.76 // 百度
-
 *.baidu.com = server:180.76.76.76 // 百度
-
 *.bdimg.com = server:180.76.76.76 // 百度 静态资源
-
 *.bdstatic.com = server:180.76.76.76 // 百度 静态资源
-
 *.baidupcs.* = server:180.76.76.76 // 百度网盘
-
 *.baiduyuncdn.* = server:180.76.76.76 // 百度云CDN
-
 *.baiduyundns.* = server:180.76.76.76 // 百度云DNS
-
 *.bdydns.* = server:180.76.76.76 // 百度云 DNS
-
 *.bdycdn.* = server:180.76.76.76 // 百度云 CDN
-
 *.bdysite.com = server:180.76.76.76 // 百度云 域名
-
 *.bdysites.com = server:180.76.76.76 // 百度云 域名
-
 *.baidubce.* = server:180.76.76.76 // 百度智能云
-
 *.bcedns.* = server:180.76.76.76 // 百度智能云 DNS
-
 *.bcebos.com = server:180.76.76.76 // 百度智能云 对象存储BOS
-
 *.bcevod.com = server:180.76.76.76 // 百度智能云 播放器服务
-
 *.bceimg.com = server:180.76.76.76 // 百度智能云 图片服务
-
 *.bcehost.com = server:180.76.76.76 // 百度智能云 主机
-
 *.bcehosts.com = server:180.76.76.76 // 百度智能云 主机
-
 dwz.cn = server:180.76.76.76 // 百度短网址
 # > 360
 # refer: https://sdns.360.net/dnsPublic.html#course
 *.360.cn = server:https://doh.360.cn/dns-query // 360安全中心
-
 *.360safe.com = server:https://doh.360.cn/dns-query // 360安全卫士
-
 *.360kuai.com = server:https://doh.360.cn/dns-query // 360快资讯
-
 *.so.com = server:https://doh.360.cn/dns-query // 360搜索
-
 *.360webcache.com = server:https://doh.360.cn/dns-query // 360网页快照服务
-
 *.qihuapi.com = server:https://doh.360.cn/dns-query // 奇虎api
-
 *.qhimg.com = server:https://doh.360.cn/dns-query // 360图床
-
 *.qhimgs.com = server:https://doh.360.cn/dns-query // 360图床
-
 *.qhimgs?.com = server:https://doh.360.cn/dns-query // 360图床
-
 *.qhmsg.com = server:https://doh.360.cn/dns-query // 360
-
 *.qhres.com = server:https://doh.360.cn/dns-query // 奇虎静态资源
-
 *.qhres?.com = server:https://doh.360.cn/dns-query // 奇虎静态资源
-
 *.dhrest.com = server:https://doh.360.cn/dns-query // 导航静态文件
-
 *.qhupdate.com = server:https://doh.360.cn/dns-query // 360
-
 *.yunpan.cn = server:https://doh.360.cn/dns-query // 360安全云盘
-
 *.yunpan.com.cn = server:https://doh.360.cn/dns-query // 360安全云盘
-
 *.yunpan.com = server:https://doh.360.cn/dns-query // 360安全云盘
-
 urlqh.cn = server:https://doh.360.cn/dns-query // 360短网址
 # > Bytedance
 # refer: https://www.volcengine.com/docs/6758/179060
 *.amemv.com = server:180.184.1.1 // 艾特迷
-
 *.bdxiguaimg.com = server:180.184.1.1 // 西瓜 图片服务
-
 *.bdxiguastatic.com = server:180.184.1.1 // 西瓜 静态资源
-
 *.byted-static.com = server:180.184.1.1 // 字节跳动 UNPKG
-
 *.bytedance.* = server:180.184.1.1 // 字节跳动
-
 *.bytedns.net = server:180.184.1.1 // 字节跳动 DNS
-
 *.bytednsdoc.com = server:180.184.1.1 // 字节跳动 CDN 文件存储
-
 *.bytegoofy.com = server:180.184.1.1 // 字节跳动 Goofy
-
 *.byteimg.com = server:180.184.1.1 // 字节跳动 图片服务
-
 *.bytescm.com = server:180.184.1.1 // 字节跳动 SCM
-
 *.bytetos.com = server:180.184.1.1 // 字节跳动 TOS
-
 *.bytexservice.com = server:180.184.1.1 // 飞书企业服务平台
-
 *.douyin.com = server:180.184.1.1 // 抖音
-
 *.douyinpic.com = server:180.184.1.1 // 抖音 静态资源
-
 *.douyinstatic.com = server:180.184.1.1 // 抖音 静态资源
-
 *.douyinvod.com = server:180.184.1.1 // 抖音 静态资源
-
 *.feelgood.cn = server:180.184.1.1 // FeelGood平台
-
 *.feiliao.com = server:180.184.1.1 // 飞聊官网
-
 *.gifshow.com = server:180.184.1.1 // 快手
-
 *.huoshan.com = server:180.184.1.1 // 火山网
-
 *.huoshanzhibo.com = server:180.184.1.1 // 火山直播
-
 *.ibytedapm.com = server:180.184.1.1 // 抖音 dapm
-
 *.iesdouyin.com = server:180.184.1.1 // 抖音 CDN
-
 *.ixigua.com = server:180.184.1.1 // 西瓜视频
-
 *.kspkg.com = server:180.184.1.1 // 快手
-
 *.pstatp.com = server:180.184.1.1 // 抖音 静态资源
-
 *.snssdk.com = server:180.184.1.1 // 今日头条
-
 *.toutiao.com = server:180.184.1.1 // 今日头条
-
 *.toutiao13.com = server:180.184.1.1 // 今日头条
-
 *.toutiao???.??? = server:180.184.1.1 // 今日头条 静态资源
-
 *.toutiaocloud.cn = server:180.184.1.1 // 头条云
-
 *.toutiaocloud.com = server:180.184.1.1 // 头条云
-
 *.toutiaopage.com = server:180.184.1.1 // 今日头条 建站
-
 *.wukong.com = server:180.184.1.1 // 悟空
-
 *.zijieapi.com = server:180.184.1.1 // 字节跳动 API
-
 *.zijieimg.com = server:180.184.1.1 // 字节跳动 图片服务
-
 *.zjbyte.com = server:180.184.1.1 // 今日头条 网页版
-
 *.zjcdn.com = server:180.184.1.1 // 字节跳动 CDN
 # > BiliBili
 upos-sz-mirrorali.bilivideo.com = server:quic://dns.alidns.com // BiliBili upos视频服务器（阿里云）
-
 upos-sz-mirrorali?.bilivideo.com = server:quic://dns.alidns.com // BiliBili upos视频服务器（阿里云）
-
 upos-sz-mirrorali??.bilivideo.com = server:quic://dns.alidns.com // BiliBili upos视频服务器（阿里云）
-
 upos-sz-mirrorbos.bilivideo.com = server:180.76.76.76 // BiliBili upos视频服务器（百度云）
-
 upos-sz-mirrorcos.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-
 upos-sz-mirrorcos?.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-
 upos-sz-mirrorcos??.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
-
 upos-sz-upcdnbd??.bilivideo.com = server:180.76.76.76 // BiliBili upos视频服务器（百度云）
-
 upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
 # > 🇨🇳 CHN
 # CNNIC SDNS
@@ -806,16 +514,13 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upo
 # > 🇹🇼 TWN
 # 中华电信
 *.cht.com.tw = server:https://dns.hinet.net/dns-query // 中华电信
-
 *.hinet.net = server:https://dns.hinet.net/dns-query // 中华电信HiNet
-
 *.emome.net = server:https://dns.hinet.net/dns-query // 中华电信emome
 # So-net
 # so-net.net.tw = server:ns1.so-net.net.tw // So-net Entertainment Taiwan
 # so-net.tw = server:ns1.so-net.net.tw // So-net Entertainment Taiwan
 # Taiwan Network Information Center
 *.tw = server:https://dns.twnic.tw/dns-query // TWNIC DNS
-
 *.taipei = server:https://dns.twnic.tw/dns-query // TWNIC DNS
 # > 🇺🇸 USA
 # Hurricane Electric
