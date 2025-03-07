@@ -1,14 +1,14 @@
 #!name=AppRemoveAds
-#!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒)
+#!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒，汽水音乐，微博，京东，快手，qq音乐)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-03-07 01:12:33
-#!HASH=fb60b664f53e520a16edb128f2d230d3
+#!updated=2025-03-07 06:18:11
+#!HASH=8d01f2efc499cad8d46d4f318989ae04
 
 [General]
 force-http-engine-hosts = %APPEND% :8000
 [MITM]
-hostname = %APPEND% *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, *live.bilibili.com, 112.53.55.225, 116.85.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 3pp.starbucks.com.cn, aag.enmonster.com, acs.m.goofish.com, acs.m.taobao.com, acs.youku.com, activity.yonghuivip.com, ad.12306.cn, ad.maoyan.com, ad.xiaotucc.com, ads.ishansong.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, ap?.bilibili.com, api-fouth-mem.huazhu.com, api-marketing.zhinengxiyifang.cn, api.alipan.com, api.caiyunapp.com, api.gotokeep.com, api.hellobike.com, api.hengdianfilm.com, api.hongyibo.com.cn, api.kuaidihelp.com, api.m.jd.com, api.maoyan.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.songguo7.com, api.szbgcx.cn, api.udache.com, api.yangkeduo.com, api.yonghuivip.com, apiproxy.zuche.com, apis.alenable.com, app.95504.net, app.homeinns.com, applets.jtexpress.com.cn, appuser-static.huolala.cn, as.xiaojukeji.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, capis*.didapinche.com, cappapi.alittle-tea.com, cbd-gateway-service-applets.hualala.com, ccmsupport-sz.tenpay.com, cdn-w.caiyunapp.com, cn-acs.m.cainiao.com, coco-com.e.verystar.net, common.diditaxi.com.cn, conf.diditaxi.com.cn, creditcardapp.bankcomm.com, ct.xiaojukeji.com, customer-app.sto.cn, daijia.kuaidadi.com, dock.tenchii.com, dsp.fcbox.com, edith.xiaohongshu.com, file.dian.so, flow.dmall.com, freight.xiaojukeji.com, fscdn.zto.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw-passenger-wap.01zhuanche.com, hdgateway.zto.com, heic.alicdn.com, htwkop.xiaojukeji.com, images.qmai.cn, kad.gotokeep.com, lawsonapi.yorentown.com, m.bilibili.com, m.ctrip.com, m5-zb.amap.com, m5.amap.com, mapi.xiaotucc.com, mbmodule-openapi.paas.cmbchina.com, mcsp.cloudpnr.com, member.alipan.com, member.lxjchina.com.cn, miniapp.sexytea2013.com, minicap.caocaokeji.cn, minifm.maxxipoint.com, minipro.95504.net, miniprogram.ishansong.com, mkt-gateway.tuhu.cn, mobile-api.imlaidian.com, mobile.12306.cn, mp.weixin.qq.com, mxsa.mxbc.net, newton.gumingnc.com, oss.amap.com, passenger.t3go.cn, passengerapi.saicmobility.com, plt.yorentown.com, poplayer.template.alibaba.com, push.m.youku.com, qapi.huolala.cn, r2.gzyct.com, rec.xiaohongshu.com, res.hongyibo.com.cn, res.pizzahut.com.cn, res.xiaojukeji.com, rms.meituan.com, s.jiediankeji.com, saas-ad.cloudpnr.com, sauron-report.yonghuivip.com, smarket.dian.so, sns.amap.com, starplucker.cyapi.cn, sto-customer-app.oss-cn-shanghai.aliyuncs.com, supplier-api.imdada.cn, suyun-guest.daojia.com, tbgapplet.carlsberg.asia, tm-api.pin-dao.cn, ucmp.sf-express.com, ump.ems.com.cn, un-acs.youku.com, vod-movie.maoyan.com, vv.video.qq.com, webapi.qmai.cn, webcast-open.douyin.com, webchatapp.fcbox.com, wechat-api.i-xiaoma.com.cn, weibo.com, www.bilibili.com, www.deppon.com, www.xiaohongshu.com, wx.bthhotels.com, wx.maoyan.com, wxapp.bestwehotel.com, wxproj.seeyouyima.com, wxs-weixin.sd.zhumanggroup.com
+hostname = %APPEND% *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, *live.bilibili.com, 112.53.55.225, 116.85.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 3pp.starbucks.com.cn, aag.enmonster.com, acs.m.goofish.com, acs.m.taobao.com, acs.youku.com, activity.yonghuivip.com, ad.12306.cn, ad.maoyan.com, ad.xiaotucc.com, ads.ishansong.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, ap?.bilibili.com, api-fouth-mem.huazhu.com, api-marketing.zhinengxiyifang.cn, api.alipan.com, api.caiyunapp.com, api.gotokeep.com, api.hellobike.com, api.hengdianfilm.com, api.hongyibo.com.cn, api.kuaidihelp.com, api.m.jd.com, api.maoyan.com, api.mcd.cn, api.pinduoduo.com, api.prod.dj.mstand.cn, api.songguo7.com, api.szbgcx.cn, api.udache.com, api.yangkeduo.com, api.yonghuivip.com, apiproxy.zuche.com, apis.alenable.com, apissl.gifshow.com, apissl.ksapisrv.com, app.95504.net, app.homeinns.com, applets.jtexpress.com.cn, appuser-static.huolala.cn, as.xiaojukeji.com, az2-api-idc.ksapisrv.com, az2-api-js.gifshow.com, az2-api.ksapisrv.com, az2-live.ksapisrv.com, az4-api-idc.ksapisrv.com, az4-api.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, capis*.didapinche.com, cappapi.alittle-tea.com, cbd-gateway-service-applets.hualala.com, ccmsupport-sz.tenpay.com, cdn-w.caiyunapp.com, cn-acs.m.cainiao.com, coco-com.e.verystar.net, common.diditaxi.com.cn, conf.diditaxi.com.cn, creditcardapp.bankcomm.com, ct.xiaojukeji.com, customer-app.sto.cn, daijia.kuaidadi.com, dock.tenchii.com, dsp.fcbox.com, edith.xiaohongshu.com, file.dian.so, flow.dmall.com, freight.xiaojukeji.com, fscdn.zto.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw-passenger-wap.01zhuanche.com, hdgateway.zto.com, heic.alicdn.com, htwkop.xiaojukeji.com, images.qmai.cn, kad.gotokeep.com, lawsonapi.yorentown.com, m.bilibili.com, m.ctrip.com, m5-zb.amap.com, m5.amap.com, mapi.xiaotucc.com, mbmodule-openapi.paas.cmbchina.com, mcsp.cloudpnr.com, member.alipan.com, member.lxjchina.com.cn, miniapp.sexytea2013.com, minicap.caocaokeji.cn, minifm.maxxipoint.com, minipro.95504.net, miniprogram.ishansong.com, mkt-gateway.tuhu.cn, mobile-api.imlaidian.com, mobile.12306.cn, mp.weixin.qq.com, mxsa.mxbc.net, newton.gumingnc.com, oss.amap.com, passenger.t3go.cn, passengerapi.saicmobility.com, plt.yorentown.com, poplayer.template.alibaba.com, push.m.youku.com, qapi.huolala.cn, r2.gzyct.com, rec.xiaohongshu.com, res.hongyibo.com.cn, res.pizzahut.com.cn, res.xiaojukeji.com, rms.meituan.com, s.jiediankeji.com, saas-ad.cloudpnr.com, sauron-report.yonghuivip.com, smarket.dian.so, sns.amap.com, starplucker.cyapi.cn, sto-customer-app.oss-cn-shanghai.aliyuncs.com, supplier-api.imdada.cn, suyun-guest.daojia.com, tbgapplet.carlsberg.asia, tm-api.pin-dao.cn, ucmp.sf-express.com, ump.ems.com.cn, un-acs.youku.com, vod-movie.maoyan.com, vv.video.qq.com, webapi.qmai.cn, webcast-open.douyin.com, webchatapp.fcbox.com, wechat-api.i-xiaoma.com.cn, weibo.com, www.bilibili.com, www.deppon.com, www.xiaohongshu.com, wx.bthhotels.com, wx.maoyan.com, wxapp.bestwehotel.com, wxproj.seeyouyima.com, wxs-weixin.sd.zhumanggroup.com
 [Rule]
 # 开屏广告
 URL-REGEX,"^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH",REJECT-TINYGIF,extended-matching
@@ -229,6 +229,20 @@ DOMAIN-SUFFIX,uve.weibo.com,DIRECT,extended-matching
 # 微博开屏广告
 DOMAIN,huodong.weibo.cn,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,biz.weibo.com,REJECT,extended-matching,pre-matching
+DOMAIN,adstats.tencentmusic.com,REJECT,extended-matching,pre-matching
+DOMAIN,ad.tencentmusic.com,REJECT,extended-matching,pre-matching
+DOMAIN,adcdn.tencentmusic.com,REJECT,extended-matching,pre-matching
+DOMAIN,adcdn6.tencentmusic.com,REJECT,extended-matching,pre-matching
+DOMAIN,adexpo.tencentmusic.com,REJECT,extended-matching,pre-matching
+DOMAIN,adclick.tencentmusic.com,REJECT,extended-matching,pre-matching
+DOMAIN,monitor.music.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,stat.y.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,tmeadquic.y.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,oth.str.mdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,h.trace.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,p.l.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,tangram.e.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,imtmp.net,REJECT,extended-matching,pre-matching
 [URL Rewrite]
 # 移除直播间链接跟踪参数
 (^https:\/\/live\.bilibili\.com\/\d+)(\/?\?.*) $1 302
@@ -311,6 +325,13 @@ http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? 'if (getpath(["
 http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? 'if (getpath(["card_items",0]) | has("is_show")) then (setpath(["card_items",0,"is_show"]; false)) else . end'
 http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? 'if (getpath([]) | has("preview_guide")) then (setpath(["preview_guide"]; null)) else . end'
 http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? 'delpaths([["blocks",1]])'
+http-response-jq ^https:\/\/(apissl|az2-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["reskinConfig"]])'
+http-response-jq ^https:\/\/(apissl|az2-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["sidebarExSquareStyle","moreList"]])'
+http-response-jq ^https:\/\/(apissl|az2-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["sidebarExSquareStyle","topList"]])'
+http-response-jq ^https:\/\/(apissl|az2-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? '.sidebarExSquareStyle.commonlyUsedList |= map(select(.title == "设置" or .title == "历史记录" or .title == "草稿箱" or .title == "我的钱包" or .title == "小程序" or .title == "未成年人模式" or .title == "官方客服" or .title == "内容偏好" or .title == "离线模式" or .title == "稍后再看" or .title == "举报中心" or .title == "挂件"))'
+http-response-jq ^https:\/\/az2-live\.ksapisrv\.com\/rest\/n\/live\/feed\/square\/refresh\? 'delpaths([["data","banners"]])'
+http-response-jq ^https:\/\/az4-api(-idc)?\.ksapisrv\.com\/rest\/n\/feed\/selectionFast\? 'if (.feeds | type) == "array" then .feeds |= map(select(.ad | not)) else . end'
+http-response-jq ^https:\/\/az2-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2\? 'delpaths([["postRecommends"]])'
 [Map Local]
 # 开屏广告
 ^https:\/\/(?:api\.bilibili\.com\/x\/mengqi\/v1\/resource|app\.bilibili\.com\/x\/resource\/peak\/download) data-type=text data="{}" status-code=200
@@ -624,6 +645,10 @@ http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? 'delpaths
 # 微博长文章推广
 ^https:\/\/card\.weibo\.com\/article\/m\/aj\/(?:reward|uvead) data-type=text data="{}" status-code=200
 ^https:\/\/weibo\.com\/ttarticle\/x\/m\/aj\/(?:reward|uvead) data-type=text data="{}" status-code=200
+# 任务中心 - 挂件
+^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/taskCenter\/task\/report\? data-type=text data="{}" status-code=200
+# 广告下发
+^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/ad\/ data-type=text data="{}" status-code=200
 [Script]
 移除动态页面广告 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$, script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
 移除青少年模式弹窗 = type=http-response, pattern=^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$, script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true
