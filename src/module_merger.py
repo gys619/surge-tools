@@ -9,7 +9,7 @@ import os
 class ModuleParser:
     def __init__(self):
         self.section_types = {
-            'MITM', 'URL-REGEX', 'General', 'Script', 'Host', 'Rule'
+            'MITM', 'URL-REGEX', 'General', 'Script', 'Host', 'Rule','URL Rewrite','Header Rewrite'
         }
         # 需要合并的特殊配置项
         self.merge_configs = {
