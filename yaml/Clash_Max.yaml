@@ -93,7 +93,7 @@ proxy-providers:
     path: './proxy_provider/Providers.yaml'
 
 # 锚点 - 节点筛选组
-FilterCustom: &FilterCustom '^(?=.*((?i)custom|custom|(\b(custom|custom)\b))).*$'
+FilterCustom: &FilterCustom '^(?=.*((?i)🇭🇰|香港|(\b(HK|custom)\b))).*$'
 FilterHK: &FilterHK '^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b))).*$'
 FilterJP: &FilterJP '^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b))).*$'
 FilterKR: &FilterKR '^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|Korea)\b))).*$'
@@ -114,7 +114,7 @@ RuleSet: &RuleSet {type: http, behavior: classical, interval: 86400, format: yam
 proxy-groups: 
   - {name: Proxy, type: select, proxies: [🇭🇰 香港节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🇫🇷 法国节点, 🇩🇪 德国节点], icon: 'https://raw.githubusercontent.com/pompurin404/mihomo-party/master/resources/icon.png'}
   - {name: Apple, type: select, proxies: [DIRECT, Proxy, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🇫🇷 法国节点, 🇩🇪 德国节点], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png'}
-  - {name: Custom, type: select, proxies: [DIRECT, 自定义节点], icon: 'https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/menhera/Sticker_1212.png'}
+  - {name: Custom, type: select, proxies: [DIRECT, 🇭🇰 自定义节点], icon: 'https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/menhera/Sticker_1212.png'}
   - {name: OpenAI, type: select, include-all: true, filter: *FilterAll, icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png'}
   - {name: Telegram, type: select, proxies: [Proxy, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🇫🇷 法国节点, 🇩🇪 德国节点], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png'}
   - {name: Netflix, type: select, proxies: [Proxy, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇰🇷 韩国节点, 🇸🇬 新加坡节点, 🇺🇸 美国节点, 🇬🇧 英国节点, 🇫🇷 法国节点, 🇩🇪 德国节点], icon: 'https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png'}
