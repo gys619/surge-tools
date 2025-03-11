@@ -139,7 +139,7 @@ proxy-groups:
 rule-providers:
   Custom:
     <<: *RuleSet
-    url: 'https://github.com/gys619/surge-tools/raw/refs/heads/main/yaml/custom.yaml'
+    url: 'https://raw.githubusercontent.com/gys619/surge-tools/refs/heads/main/yaml/custom.yaml'
     path: './RuleSet/Custom.yaml'
 
   ChinaMedia:
