@@ -1,1 +1,3 @@
-IP-CIDR,61.50.148.182/32,no-resolve
+# IP-CIDR,61.50.148.182/32,no-resolve
+payload:
+  - IP-CIDR,61.50.148.182/32
