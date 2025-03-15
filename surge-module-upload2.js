@@ -2,7 +2,7 @@
 // These must be at the very top of the file. Do not edit.
 // always-run-in-app: true; icon-color: deep-green;
 // icon-glyph: magic;
-const GITHUB_TOKEN = 'github token';
+const GITHUB_TOKEN = 'github的token';
 const GITHUB_REPO = 'gys619/surge-tools';
 const GITHUB_BRANCH = 'main';
 
@@ -234,10 +234,139 @@ function calculateContentHash(content) {
   return calculateMD5(cleanContent);
 }
 
-// 从 GitHub 获取文件内容
+// 日志管理
+const Logger = {
+  logs: [],
+  startTime: null,
+  stats: {
+    skipped: 0,
+    updated: 0
+  },
+
+  start() {
+    this.startTime = new Date();
+    this.logs = [];
+    this.stats = { skipped: 0, updated: 0 };
+    this.info('🚀 开始执行更新任务');
+    this.cleanOldLogs(); // 清理旧日志
+  },
+
+  // 清理7天前的日志文件
+  cleanOldLogs() {
+    try {
+      const fm = FileManager.local();
+      const logDir = fm.joinPath(fm.documentsDirectory(), 'logs');
+      if (!fm.fileExists(logDir)) return;
+      
+      const sevenDaysAgo = new Date();
+      sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+      
+      const files = fm.listContents(logDir);
+      let cleanedCount = 0;
+      
+      files.forEach(file => {
+        if (!file.endsWith('.txt')) return;
+        
+        const filePath = fm.joinPath(logDir, file);
+        const fileDate = new Date(file.split('_')[2].split('.')[0]); // 从文件名提取日期
+        
+        if (fileDate < sevenDaysAgo) {
+          fm.remove(filePath);
+          cleanedCount++;
+        }
+      });
+      
+      if (cleanedCount > 0) {
+        this.info(`🧹 已清理 ${cleanedCount} 个超过7天的日志文件`);
+      }
+    } catch (e) {
+      this.warn(`清理旧日志文件失败: ${e.message}`);
+    }
+  },
+
+  info(message) {
+    const log = `[INFO] ${message}`;
+    console.log(log);
+    this.logs.push(log);
+  },
+
+  warn(message) {
+    const log = `[WARN] ⚠️ ${message}`;
+    console.warn(log);
+    this.logs.push(log);
+  },
+
+  error(message, error) {
+    const log = `[ERROR] ❌ ${message}${error ? `: ${error.message}` : ''}`;
+    console.error(log);
+    this.logs.push(log);
+  },
+
+  success(message) {
+    const log = `[SUCCESS] ✅ ${message}`;
+    console.log(log);
+    this.logs.push(log);
+  },
+
+  skip(message) {
+    this.stats.skipped++;
+    const log = `[SKIP] ⏭️ ${message}`;
+    console.log(log);
+    this.logs.push(log);
+  },
+
+  async showSummary(success, fail) {
+    const endTime = new Date();
+    const duration = (endTime - this.startTime) / 1000;
+    
+    this.info(`\n📊 任务统计`);
+    this.info(`总耗时: ${duration.toFixed(2)}秒`);
+    this.info(`成功: ${success} 个`);
+    this.info(`失败: ${fail} 个`);
+    this.info(`无需更新: ${this.stats.skipped} 个`);
+    this.info(`已更新: ${this.stats.updated} 个`);
+    
+    // 创建日志文本
+    const logText = this.logs.join('\n');
+    
+    // 保存日志到文件
+    try {
+      const fm = FileManager.local();
+      const logDir = fm.joinPath(fm.documentsDirectory(), 'logs');
+      if (!fm.fileExists(logDir)) {
+        fm.createDirectory(logDir);
+      }
+      const logFile = fm.joinPath(logDir, `update_log_${this.startTime.toISOString().split('T')[0]}.txt`);
+      fm.writeString(logFile, logText);
+      this.info(`📝 日志已保存至: ${logFile}`);
+    } catch (e) {
+      this.error('保存日志文件失败', e);
+    }
+
+    // 显示总结弹窗
+    let alert = new Alert();
+    alert.title = '更新任务完成';
+    alert.message = `✅ 成功: ${success}\n❌ 失败: ${fail}\n⏱ 耗时: ${duration.toFixed(2)}秒\n📝 无需更新: ${this.stats.skipped}\n🔄 已更新: ${this.stats.updated}`;
+    alert.addAction('查看日志');
+    alert.addCancelAction('关闭');
+    const action = await alert.presentAlert();
+    
+    // 如果用户选择查看日志，显示详细日志
+    if (action === 0) {
+      let logAlert = new Alert();
+      logAlert.title = '详细日志';
+      logAlert.message = logText;
+      logAlert.addCancelAction('关闭');
+      await logAlert.presentAlert();
+    }
+  }
+};
+
+// 修改 getGitHubFileContent 函数
 async function getGitHubFileContent(filePath) {
   try {
     const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${filePath}?ref=${GITHUB_BRANCH}`;
+    Logger.info(`📥 正在获取文件: ${filePath}`);
     const req = new Request(url);
     req.headers = {
       'Authorization': `token ${GITHUB_TOKEN}`,
@@ -246,12 +375,12 @@ async function getGitHubFileContent(filePath) {
     };
     const response = await req.loadJSON();
     if (response.content) {
-      // 使用 atob 进行 base64 解码
       const content = atob(response.content.replace(/\n/g, ''));
+      Logger.info(`✅ 成功获取文件: ${filePath}`);
       return content;
     }
   } catch (e) {
-    console.log(`获取 GitHub 文件失败: ${filePath}, 错误: ${e.message}`);
+    Logger.warn(`获取 GitHub 文件失败: ${filePath}, 错误: ${e.message}`);
   }
   return null;
 }
@@ -286,14 +415,19 @@ function processModuleContent(content, hash, url) {
   return processedText;
 }
 
+// 修改 processModule 函数
 async function processModule(moduleConfig) {
   try {
+    Logger.info(`\n🔄 开始处理模块: ${moduleConfig.name}`);
+    Logger.info(`📦 源地址: ${moduleConfig.url}`);
+
     const req = new Request(moduleConfig.url);
     req.timeoutInterval = 10;
     req.method = 'GET';
     const responseText = await req.loadString();
 
     if (!responseText) throw new Error('未获取到模块内容');
+    Logger.info(`📥 已获取模块内容，大小: ${responseText.length} 字节`);
 
     // 生成文件名
     const urlParts = moduleConfig.url.split('/');
@@ -310,23 +444,28 @@ async function processModule(moduleConfig) {
 
     const folder = moduleConfig.folder ? `${moduleConfig.folder}/` : "";
     const fileName = `${folder}${finalFileName}`;
+    Logger.info(`📄 目标文件: ${fileName}`);
 
     // 计算新内容的哈希值
     const contentHash = calculateContentHash(responseText);
+    Logger.info(`🔒 内容哈希值: ${contentHash}`);
     
-    // 尝试从 GitHub 获取现有文件内容，但不影响后续流程
+    // 尝试从 GitHub 获取现有文件内容
     let shouldUpdate = true;
     try {
       const existingContent = await getGitHubFileContent(fileName);
       if (existingContent) {
         const existingHash = extractExistingHash(existingContent);
+        Logger.info(`📎 现有文件哈希值: ${existingHash || '无'}`);
         if (existingHash && existingHash === contentHash) {
-          console.log(`⏭️ 跳过更新: ${moduleConfig.name} (内容未变化)`);
+          Logger.skip(`${moduleConfig.name} (内容未变化)`);
           shouldUpdate = false;
         }
+      } else {
+        Logger.info('🆕 这是新文件');
       }
     } catch (e) {
-      console.log(`⚠️ 无法获取 GitHub 文件，将继续更新: ${fileName}`);
+      Logger.warn(`无法获取 GitHub 文件，将继续更新: ${fileName}`);
     }
 
     if (shouldUpdate) {
@@ -337,12 +476,13 @@ async function processModule(moduleConfig) {
       processedText = processedText.replace(/^#\!desc\s*?=\s*/im, `#!desc=🔗 [${new Date().toLocaleString()}] `);
 
       uploadQueue.push({ filename: fileName, content: processedText });
-      console.log(`✅ 处理完成: ${fileName} (已更新)`);
+      Logger.stats.updated++; // 记录更新数量
+      Logger.success(`处理完成: ${fileName} (已加入上传队列)`);
     }
 
     return true;
   } catch (e) {
-    console.error(`❌ 处理失败: ${moduleConfig.name}: ${e.message}`);
+    Logger.error(`处理失败: ${moduleConfig.name}`, e);
     return false;
   }
 }
@@ -416,19 +556,22 @@ async function batchUploadToGitHub() {
     });
     await updateRefReq.loadJSON();
 
-    console.log(`✅ 成功上传 ${uploadQueue.length} 个文件`);
+    Logger.success(`成功上传 ${uploadQueue.length} 个文件`);
     uploadQueue = [];
     return true;
 
   } catch (e) {
-    console.error(`❌ 上传失败: ${e.message}`);
+    Logger.error(`上传失败: ${e.message}`);
     return false;
   }
 }
 
-// 主函数
+// 修改 main 函数
 async function main() {
+  Logger.start();
   let success = 0, fail = 0;
+  
+  Logger.info(`📋 共有 ${MODULE_CONFIGS.length} 个模块待处理`);
   
   for (const moduleConfig of MODULE_CONFIGS) {
     if (await processModule(moduleConfig)) {
@@ -440,16 +583,17 @@ async function main() {
   }
 
   if (uploadQueue.length > 0) {
+    Logger.info(`\n📤 开始上传文件到 GitHub`);
     const uploaded = await batchUploadToGitHub();
-    if (!uploaded) fail += uploadQueue.length;
+    if (!uploaded) {
+      Logger.error('批量上传失败');
+      fail += uploadQueue.length;
+    } else {
+      Logger.success(`成功上传 ${uploadQueue.length} 个文件`);
+    }
   }
 
-  console.log(`✅ 成功: ${success}, ❌ 失败: ${fail}`);
-  let alert = new Alert();
-  alert.title = '处理完成';
-  alert.message = `✅ 成功: ${success}\n❌ 失败: ${fail}`;
-  alert.addCancelAction('关闭');
-  await alert.presentAlert();
+  await Logger.showSummary(success, fail);
 }
 
 await main();

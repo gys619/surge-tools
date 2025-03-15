@@ -1,7 +1,12 @@
 # Surge Tools
 
 一个用于合并和管理 Surge 规则和模块的工具。
-```
+
+<details>
+<summary>Scriptables脚本效果图</summary>
+<img src="images/IMG_4808.PNG" alt="效果图">
+</details>
+
 有很多大规则，或单个app的去广告规则…等等其他。
 只想要符合自己需求的规则。
 

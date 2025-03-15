@@ -120,7 +120,7 @@ modules:
         - "General"
     AppRemoveAds:
       name: "AppRemoveAds"
-      desc: "app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒，汽水音乐，微博，京东，快手，qq音乐)"
+      desc: "app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,京东,快手,qq音乐)"
       author: "gys619"
       repo: "https://github.com/gys619/surge-tools"
       urls:
