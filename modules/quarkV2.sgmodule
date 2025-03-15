@@ -1,5 +1,6 @@
+#!HASH=eaa0f41e53c74e144f8ed2d92758b748
 #!name=quarkV2
-#!desc=🔗 [2025/3/15 21:01:38] quarkV2
+#!desc=🔗 [2025/3/15 21:21:28] quarkV2
 
 [Script]
 夸克网盘获取token = type=http-response, pattern=^https:\/\/drive-pc\.quark\.cn\/1\/clouddrive\/file\/sort, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
