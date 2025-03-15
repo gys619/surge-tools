@@ -142,3 +142,8 @@ surge-tools/
 ## 📄 License
 
 本项目采用 [MIT](LICENSE) 许可证开源。你可以自由地使用、修改和分发本项目，但需要保留原始作者的版权声明。
+
+<p align="center"> 
+  Visitor count<br>
+  <img src="https://profile-counter.glitch.me/surge-tools/count.svg" />
+</p>
