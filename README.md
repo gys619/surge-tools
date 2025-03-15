@@ -9,7 +9,7 @@
 有surge模块：
 	直接搜索添加到配置文件中运行actions合并
 有loon插件或qx脚本但是没有surge模块：
-	使用surge-module-batch-upload.js添加到本地，配合Script-Hub 可以上传到自己的github仓库，或者配合快捷指令定时更新
+	使用surge-module-upload2.js添加到本地，配合Script-Hub 可以上传到自己的github仓库，或者配合快捷指令定时更新
 
 ```
 菜鸟一个，大佬勿喷,都是用AI写的, 白嫖cursor借助[chengazhen大佬的软件](https://github.com/chengazhen/cursor-auto-free)
