@@ -1,7 +1,7 @@
 # Surge Tools
 
-[![GitHub license](https://img.shields.io/github/license/guoyansheng/surge-tools?style=flat-square)](https://github.com/guoyansheng/surge-tools/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/guoyansheng/surge-tools?style=flat-square)](https://github.com/guoyansheng/surge-tools/stargazers)
+[![GitHub license](https://img.shields.io/github/license/guoyansheng/surge-tools?style=flat-square)](https://github.com/gys619/surge-tools/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/guoyansheng/surge-tools?style=flat-square)](https://github.com/gys619/surge-tools/stargazers)
 
 一个用于合并和管理 Surge 规则和模块的工具。A tool for merging and managing Surge rules and modules.
 
