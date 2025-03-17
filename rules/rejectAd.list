@@ -9600,4 +9600,4 @@ IP-CIDR,222.73.156.235/32,no-resolve
 IP-CIDR,203.107.1.1/24,no-resolve
 
 # 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list/_end_/rejectAd.list?type=rule-set&target=surge-rule-set&del=true
+#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/rule/rejectAd.list/_end_/rejectAd.list?type=rule-set&target=surge-rule-set&del=true
