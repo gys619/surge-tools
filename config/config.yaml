@@ -81,13 +81,14 @@ rules:
 modules:
   output_dir: "./modules"  # 模块文件输出目录
   sources:
-    advertising_mitm:      # MITM 模块配置
-      name: "Advertising MITM"  # 模块名称
+    black-http-dns:      # MITM 模块配置
+      name: "拦截httpdns"  # 模块名称
       desc: "分流规则中含有URL-REGEX类型的MITM模块"  # 模块描述
       author: "gys619"      # 作者
       repo: "https://github.com/gys619/surge-tools"  # 仓库地址
       urls:  # 模块源
-        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Advertising/Advertising_MITM.sgmodule"
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Surge/BlockHTTPDNS/BlockHTTPDNS.sgmodule"
+        - "https://raw.githubusercontent.com/gys619/surge-tools/main/modules/Block_HTTPDNS.sgmodule"
       exclude_rules:  # 排除特定的 MITM 主机名或规则
         - "*.example.com"
         - "api.example.com"
