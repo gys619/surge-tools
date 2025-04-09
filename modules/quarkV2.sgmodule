@@ -1,17 +1,11 @@
-#!name=quarkV2
-#!desc=🔗 [2025/3/15 21:30:21] quarkV2 #!HASH=eaa0f41e53c74e144f8ed2d92758b748
+#!HASH=a800fe7323e856788fb155b9e62295ad
+quarkV2：TypeError: null is not an object (evaluating 'body.entries')
 
-[Script]
-夸克网盘获取token = type=http-response, pattern=^https:\/\/drive-pc\.quark\.cn\/1\/clouddrive\/file\/sort, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 
-夸克网盘福利日常收录任务 = type=http-response, pattern=^https:\/\/coral2\.quark\.cn\/task\/trigger, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 
-夸克网盘空间签到收录任务 = type=http-request, pattern=^https:\/\/coral2\.quark\.cn\/quark\/(carbon|welfare)\/(v1|v2)\/signIn, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 
-夸克网盘睡眠打卡收录任务 = type=http-request, pattern=^https:\/\/coral2\.quark\.cn\/quark\/welfare\/v2\/sleep\/trigger, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 
-[MITM]
-hostname = %APPEND% coral2.quark.cn, drive-pc.quark.cn
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
 
 # 🔗 模块链接
 #SUBSCRIBED http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js/_end_/quarkV2.sgmodule?type=qx-rewrite&target=surge-module&del=true
