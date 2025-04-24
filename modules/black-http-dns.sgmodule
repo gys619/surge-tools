@@ -2,8 +2,8 @@
 #!desc=分流规则中含有URL-REGEX类型的MITM模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-03-24 01:15:41
-#!HASH=87a111e311f8ff5cd2bb30633ea9f9a2
+#!updated=2025-04-24 01:16:28
+#!HASH=d633077975a1f89145dc216b9d965394
 
 [MITM]
 hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 180.76.76.200, 182.256.116.116, 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:20::10, 2401:b180:2000:30::1c, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com
@@ -82,6 +82,7 @@ IP-CIDR,8.134.241.67/32,REJECT,no-resolve
 DOMAIN,dig.bdurl.net,REJECT
 DOMAIN,dig.zjurl.cn,REJECT
 DOMAIN,aedns.weixin.qq.com,REJECT
+DOMAIN,paydns.wechatpay.cn,REJECT
 IP-CIDR,39.156.140.30/32,REJECT,no-resolve
 IP-CIDR,39.156.140.47/32,REJECT,no-resolve
 IP-CIDR,39.156.140.245/32,REJECT,no-resolve
@@ -165,6 +166,7 @@ DOMAIN,kuaishou.httpdns.pro,REJECT
 DOMAIN,httpdns.kwd.inkuai.com,REJECT
 DOMAIN,apidns.kwd.inkuai.com,REJECT
 DOMAIN,apidns-js.kwd.inkuai.com,REJECT
+DOMAIN,httpdnsmultiapivip.meituan.com,REJECT
 URL-REGEX,"^http:\/\/103\.37\.155\.60\/fetch",REJECT
 URL-REGEX,"^http:\/\/81\.69\.130\.131\/d",REJECT
 URL-REGEX,"^http:\/\/101\.35\.204\.35\/d",REJECT
