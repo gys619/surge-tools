@@ -1,6 +1,6 @@
 #!name=广告拦截&净化合集
-#!desc=🔗 [2025/4/28 00:09:22] (支持约538款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
-#!HASH=22595e8422836ff6629a863d784d057d
+#!desc=🔗 [2025/4/29 00:09:13] (支持约538款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
+#!HASH=623b780385995596d47b75f597f593ec
 #!author=奶思[https://github.com/fmz200]
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdblockPlus.png
 #!category=奶思的模块
@@ -10,7 +10,7 @@
 #!tg-group=https://t.me/lanjieguanggao
 #!tag=去广告, fmz200, 奶思
 #!system=ios
-#!date=2025-04-27 20:11:00
+#!date=2025-04-28 22:11:00
 #!support=支持约511款APP/小程序
 #!remark=下方的所有规则都标注了对应的hostname，可能存在错误或者遗漏，欢迎反馈。对于无法/可选MITM的hostname都特别做了“如开启可自行添加主机名”提示，如果提示后面没有标注主机名则包含所有主机名，否则只包含提示语后面的主机名。
 
@@ -1443,7 +1443,7 @@ http-request ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(?:batch
 https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert\/skin) data-type=text data="{}" status-code=200
 
 # hostname = gha.ghac.cn
-^https?:\/\/gha\.ghac\.cn\:8081\/base\/app\/api\/ad\/query\?adType=1 data-type=text data=" " status-code=200
+^https?:\/\/gha\.ghac\.cn\:8081\/base\/app\/api\/ad\/query\?adType=1 data-type=text data="{}" status-code=200
 
 # hostname = yun.tuitiger.com, mi.gdt.qq.com, open.e.kuaishou.com
 ^https?:\/\/yun\.tuitiger\.com\/mami-media data-type=text data=" " status-code=200
@@ -2208,39 +2208,6 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 # hostname = 4gimg.map.qq.com
 ^https?:\/\/4gimg\.map\.qq\.com\/mwaSplash\/ data-type=text data=" " status-code=200
 
-# hostname = btrace.qq.com, api2.helper.qq.com, *.beacon.qq.com, mi.gdt.qq.com, lives.l.qq.com, imgcache.qq.com, mtteve.beacon.qq.com, vv.video.qq.com, qt.qq.com, 3gimg.qq.com, y.gtimg.cn, splashqqlive.gtimg.com, qzonestyle.gtimg.cn, discuz.gtimg.cn, bla.gtimg.com, mmgr.gtimg.com, bk.bingo.qq.com
-^https?:\/\/btrace\.qq\.com data-type=text data=" " status-code=200
-
-^https?:\/\/api2\.helper\.qq\.com\/game\/buttons data-type=tiny-gif status-code=200
-
-^https?:\/\/lives\.l\.qq\.com\/livemsg\?sdtfrom= data-type=tiny-gif status-code=200
-
-^https?:\/\/imgcache\.qq\.com\/qqlive\/ data-type=tiny-gif status-code=200
-
-^https?:\/\/mtteve\.beacon\.qq\.com\/analytics data-type=tiny-gif status-code=200
-
-^https?:\/\/vv\.video\.qq\.com\/getvmind\? data-type=text data=" " status-code=200
-
-^https?:\/\/3gimg\.qq\.com\/tencentMapTouch\/app\/activity\/ data-type=text data=" " status-code=200
-
-^https?:\/\/3gimg\.qq\.com\/tencentMapTouch\/splash\/ data-type=text data=" " status-code=200
-
-^https?:\/\/y\.gtimg\.cn\/music\/.*?_Ad/\d+\.png data-type=tiny-gif status-code=200
-
-^https?:\/\/splashqqlive\.gtimg\.com\/website\/\d{6} data-type=tiny-gif status-code=200
-
-^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v2\/ data-type=tiny-gif status-code=200
-
-^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips\.js data-type=tiny-gif status-code=200
-
-^https?:\/\/bla\.gtimg\.com\/qqlive\/\d{6}.+?\.png data-type=tiny-gif status-code=200
-
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qiantu\/upload\/ data-type=tiny-gif status-code=200
-
-^https?:\/\/mmgr\.gtimg\.com\/gjsmall\/qqpim\/public\/ios\/splash\/.+?\/\d{4}_\d{4} data-type=tiny-gif status-code=200
-
-^https?://bk\.bingo\.qq\.com/bk/crx/data/videoAd.*$ data-type=text data="{}" status-code=200
-
 # 去开屏广告 需要重装
 ^https?:\/\/m\.pvp\.xoyo\.com\/conf\/server-mapping data-type=text data="{}" status-code=200
 
@@ -2843,9 +2810,6 @@ https://mgesq.api.mgtv.com/v2/user/center/icon data-type=text data="{}" status-c
 
 ^https?:\/\/ossweb-img\.qq\.com\/upload\/adw\/image\/[0-9]{3}\/202[0-9]{5}\/[a-z0-9]{32}\.(jpg|jpeg) data-type=text data=" " status-code=200
 
-# hostname = portal.zjzwfw.gov.cn
-^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic data-type=text data=" " status-code=200
-
 # 开屏广告 感谢【Mozart】分享
 ^https?:\/\/z\.onewo\.com\/passer\/api\/ads\/v1\/8\/list data-type=text data=" " status-code=200
 
@@ -2938,6 +2902,8 @@ body_rewrite_2972 = type=http-response, pattern=^https:\/\/api\.zhihu\.com\/sear
 body_rewrite_3034 = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getfeedflowinfo\?, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22userRed%22%2C%22fmz200%22%5D%5D%5D%5D
 
 body_rewrite_3036 = type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/v2\/zzinfoshow\/getchoicegoodsinfos, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22infoData%22%2C%22fmz200%22%5D%5D%5D%5D
+
+body_rewrite_3045 = type=http-response, pattern=^https?:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22json-replace%22%2C%5B%5B%22data%22%2C%7B%7D%5D%5D%5D%5D
 
 body_rewrite_3049 = type=http-response, pattern=^https?:\/\/app-izz\.zhengzhou\.gov\.cn:10019\/bizgw\/gateway\.do, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/body-rewrite.js, requires-body=true, max-size=-1, timeout=30, argument=%5B%5B%22replace-regex%22%2C%5B%5B%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22.%2B%3F%5C%22%22%2C%22%5C%22imgUrl19_5x9%5C%22%3A%5C%22%5C%22%22%5D%5D%5D%5D
 
