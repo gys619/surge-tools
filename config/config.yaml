@@ -77,6 +77,32 @@ rules:
         - "DOMAIN-SUFFIX"
         - "DOMAIN-KEYWORD"
         - "IP-CIDR"
+    GlobalMedia:
+      name: "GlobalMediaAll"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge-tools"
+      description: "GlobalMedia分流规则(youtube,youtube music)"
+      urls:
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list"
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTubeMusic/YouTubeMusic.list"
+
+      exclude_rules: []
+      rule_preference:
+        - "DOMAIN"
+        - "DOMAIN-SUFFIX"
+        - "DOMAIN-KEYWORD"
+        - "IP-CIDR"
+    ChinaMedia:
+      name: "ChinaMediaAll"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge-tools"
+      description: "ChinaMedia分流规则(bilibili,微博,小红书,快手,抖音,TikTok,Kuaishou,Douyin,Xiaohongshu,Weibo,Kuaishou,Douyin,Xiaohongshu)"
+      urls:
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list"
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/NetEaseMusic/NetEaseMusic.list"
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TencentVideo/TencentVideo.list"
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DouYin/DouYin.list"
+        
 
 modules:
   output_dir: "./modules"  # 模块文件输出目录
@@ -121,7 +147,7 @@ modules:
         - "General"
     AppRemoveAds:
       name: "AppRemoveAds"
-      desc: "app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,京东,快手,qq音乐)"
+      desc: "app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,快手,qq音乐)"
       author: "gys619"
       repo: "https://github.com/gys619/surge-tools"
       urls:
@@ -156,7 +182,7 @@ modules:
         # 爱优腾芒
         - "https://raw.githubusercontent.com/thNylHx/Tools/refs/heads/main/Surge/Module/Video.sgmodule"
         # 京东
-        - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E4%BA%AC%E4%B8%9C%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule"
+        # - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E4%BA%AC%E4%B8%9C%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule"
         # 汽水音乐
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E6%B1%BD%E6%B0%B4%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule"
         # 微博
