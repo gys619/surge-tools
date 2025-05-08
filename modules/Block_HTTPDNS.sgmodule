@@ -1,12 +1,12 @@
 #!name=拦截HTTPDNS
-#!desc=🔗 [2025/4/24 00:09:06] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
-#!HASH=45e6a329e73d07d8c25629299e965b17
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],VirgilClyne[https://github.com/VirgilClyne]
+#!desc=🔗 [2025/5/6 09:07:47] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
+#!HASH=12e8f313d18f6d26f0689f4c5830dcdb
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], VirgilClyne[https://github.com/VirgilClyne]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
 #!tag=DNS
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-04-22 14:25:47
+#!date=2025-05-06 02:31:58
 
 [Rule]
 DOMAIN,yyapp-httpdns.gslb.yy.com,REJECT
@@ -132,6 +132,7 @@ DOMAIN,httpdns.kwd.inkuai.com,REJECT
 DOMAIN,apidns.kwd.inkuai.com,REJECT
 DOMAIN,apidns-js.kwd.inkuai.com,REJECT
 DOMAIN,httpdns.meituan.com,REJECT
+DOMAIN,httpdnsmultiapi.meituan.com,REJECT
 DOMAIN,httpdnsmultiapivip.meituan.com,REJECT
 URL-REGEX,"^http:\/\/103\.37\.155\.60\/fetch",REJECT
 URL-REGEX,"^http:\/\/81\.69\.130\.131\/d",REJECT
