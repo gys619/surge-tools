@@ -1,0 +1,38 @@
+# NAME: AI
+# AUTHOR: gys619
+# REPO: https://github.com/gys619/surge-tools
+# UPDATED: 2025-05-08 07:38:03
+# DESCRIPTION: AI分流规则(OpenAI,DeepSeek,Claude,Gemini,Baidu,BaiduAI,BaiduSearch,BaiduMap,BaiduTranslate,BaiduNews,BaiduWeather,BaiduStock,BaiduVideo,BaiduImage,BaiduMusic,BaiduMap,BaiduTranslate,BaiduNews,BaiduWeather,BaiduStock,BaiduVideo,BaiduImage,BaiduMusic)
+# HASH: 4ba5413ea0576dd7a74bcdafedabdca7
+# DOMAIN: 0
+# DOMAIN-SUFFIX: 24
+# DOMAIN-KEYWORD: 0
+# IP-CIDR: 2
+# TOTAL: 26
+
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,api.statsig.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,host.livekit.cloud
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,observeit.net
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,segment.io
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,turn.livekit.cloud
+IP-CIDR,24.199.123.28/32,no-resolve
+IP-CIDR,64.23.132.171/32,no-resolve
