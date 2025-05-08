@@ -78,7 +78,7 @@ rules:
         - "DOMAIN-KEYWORD"
         - "IP-CIDR"
     GlobalMedia:
-      name: "GlobalMediaAll"
+      name: "GlobalMedia"
       author: "gys619"
       repo: "https://github.com/gys619/surge-tools"
       description: "GlobalMedia分流规则(youtube,youtube music)"
@@ -93,7 +93,7 @@ rules:
         - "DOMAIN-KEYWORD"
         - "IP-CIDR"
     ChinaMedia:
-      name: "ChinaMediaAll"
+      name: "ChinaMedia"
       author: "gys619"
       repo: "https://github.com/gys619/surge-tools"
       description: "ChinaMedia分流规则(bilibili,微博,小红书,快手,抖音,TikTok,Kuaishou,Douyin,Xiaohongshu,Weibo,Kuaishou,Douyin,Xiaohongshu)"
@@ -102,7 +102,17 @@ rules:
         - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/NetEaseMusic/NetEaseMusic.list"
         - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TencentVideo/TencentVideo.list"
         - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/DouYin/DouYin.list"
+    AI:
+      name: "AI"
+      author: "gys619"
+      repo: "https://github.com/gys619/surge-tools"
+      description: "AI分流规则(OpenAI,DeepSeek,Claude,Gemini,Baidu,BaiduAI,BaiduSearch,BaiduMap,BaiduTranslate,BaiduNews,BaiduWeather,BaiduStock,BaiduVideo,BaiduImage,BaiduMusic,BaiduMap,BaiduTranslate,BaiduNews,BaiduWeather,BaiduStock,BaiduVideo,BaiduImage,BaiduMusic)"
+      urls:
+        - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list"
+        - "https://raw.githubusercontent.com/gys619/surge-tools/refs/heads/main/rules/AI.list"
         
+
+
 
 modules:
   output_dir: "./modules"  # 模块文件输出目录
