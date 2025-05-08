@@ -106,7 +106,7 @@ rules:
       name: "AI"
       author: "gys619"
       repo: "https://github.com/gys619/surge-tools"
-      description: "AI分流规则(OpenAI,DeepSeek,Claude,Gemini,Baidu,BaiduAI,BaiduSearch,BaiduMap,BaiduTranslate,BaiduNews,BaiduWeather,BaiduStock,BaiduVideo,BaiduImage,BaiduMusic,BaiduMap,BaiduTranslate,BaiduNews,BaiduWeather,BaiduStock,BaiduVideo,BaiduImage,BaiduMusic)"
+      description: "AI分流规则"
       urls:
         - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list"
         - "https://raw.githubusercontent.com/gys619/surge-tools/refs/heads/main/rules/AI.list"
