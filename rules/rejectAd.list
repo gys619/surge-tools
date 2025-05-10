@@ -1,5 +1,5 @@
-#!HASH=6099d60a209c79a2b97e11e04a245a5a
-#规则数量:9591
+#!HASH=a595f4819054bb9808c1bc7bd3caf2a1
+#规则数量:9594
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -316,6 +316,9 @@ DOMAIN-SUFFIX,bayescom.com
 DOMAIN,track.tiara.daum.net
 DOMAIN,track.tiara.kakao.com
 DOMAIN-SUFFIX,ad.duoduo.link
+DOMAIN,trackercollect.ddxq.mobi
+DOMAIN,ddfs-public.ddimg.mobi
+DOMAIN,rttrack.ddxq.mobi
 DOMAIN,i.snssdk.com
 DOMAIN,i-lq.snssdk.com
 DOMAIN,dig.bdurl.net

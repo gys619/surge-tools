@@ -1,6 +1,6 @@
 #!name=墨鱼去开屏
-#!desc=🔗 [2025/5/9 00:13:01] 原脚本https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
-#!HASH=bd27645fde93271fe55252b8c5da81f8
+#!desc=🔗 [2025/5/11 04:38:27] 原脚本https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
+#!HASH=b28c31e3a4ca96d6e1a90a5acdbf0548
 
 [URL Rewrite]
 # > kanlixiang
@@ -9,7 +9,7 @@ https://b.appsimg.com/upload/momin/ - reject
 
 [Map Local]
 # > Version
-^https?:\/\/2025.05.09/c379/v2.0.589 data-type=text data=" " status-code=200
+^https?:\/\/2025.05.10/c379/v2.0.590 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
