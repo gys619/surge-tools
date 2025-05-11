@@ -2,11 +2,11 @@
 #!desc=分流规则中含有URL-REGEX类型的MITM模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-05-09 01:18:20
-#!HASH=a0a4713d6fc953ddfd4cde1559dd7af7
+#!updated=2025-05-11 01:23:12
+#!HASH=d34f72ae796af5cac0c3a4900dc5bb74
 
 [MITM]
-hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 180.76.76.200, 182.256.116.116, 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:20::10, 2401:b180:2000:30::1c, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com
+hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.*, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 180.76.76.200, 182.256.116.116, 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:20::10, 2401:b180:2000:30::1c, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com
 [General]
 force-http-engine-hosts = %APPEND% 119.29.29.29:80,dns.weixin.qq.com:443,dns.weixin.qq.com:80,dns.weixin.qq.com:8080
 [Rule]
@@ -205,7 +205,6 @@ DOMAIN,hd.xiaojukeji.com,REJECT
 "^https?:\/\/amdc\.alipay\.com\/s?query" - reject
 "^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns" - reject
 "^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns" - reject
-^https?:\/\/119\.29\.29\.29\/d - reject
 ^https?:\/\/203\.107\.1\.1/\d+/ss - reject
 ^https?:\/\/203\.107\.1\.33/\d+/ss - reject
 ^https?:\/\/203\.107\.1\.66/\d+/ss - reject
@@ -217,5 +216,6 @@ DOMAIN,hd.xiaojukeji.com,REJECT
 ^https?:\/\/180\.76\.76\.112\/v\d\/resolve - reject
 ^https?:\/\/cdn\.wup\.huya\.com\/monitor\/monitor\.jsp - reject
 [Map Local]
+^https?:\/\/119\.29\.29\.\d+\/d data-type=text data=" " status-code=200
 ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/msglb\.91160\.com\/msg\/outer\/broker\/get$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
