@@ -2,11 +2,11 @@
 #!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,快手,qq音乐)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-05-01 01:24:04
-#!HASH=9e64d4bbece947436ab8aa178b068495
+#!updated=2025-05-14 01:18:33
+#!HASH=9df397d2d263fc73b3e2306554c68d22
 
 [MITM]
-hostname = %APPEND% *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, 112.53.55.225, 116.85.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 852b95d36.xwlpk.cn, acs.m.goofish.com, acs.m.taobao.com, acs.youku.com, ad.12306.cn, api.alipan.com, api.bilibili.com, api.caiyunapp.com, api.cc.163.com, api.gotokeep.com, api.live.bilibili.com, api.pinduoduo.com, api.udache.com, api.yangkeduo.com, api.ys7.com, apissl.gifshow.com, apissl.ksapisrv.com, app-v1.ecoliving168.com, app.bilibili.com, appapi.cc.163.com, az2-api-idc.ksapisrv.com, az2-api-js.gifshow.com, az2-api.ksapisrv.com, az2-live.ksapisrv.com, az4-api-idc.ksapisrv.com, az4-api.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, cc.163.com, cdn-w.caiyunapp.com, ci.xiaohongshu.com, cn-acs.m.cainiao.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, edith.xiaohongshu.com, freight.xiaojukeji.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, i.ys7.com, kad.gotokeep.com, m5-zb.amap.com, m5.amap.com, member.alipan.com, mobile.12306.cn, mp.weixin.qq.com, mshare.cc.163.com, oss.amap.com, poplayer.template.alibaba.com, push.m.youku.com, rec.xiaohongshu.com, res.xiaojukeji.com, sns.amap.com, starplucker.cyapi.cn, un-acs.youku.com, vv.video.qq.com, webcast-open.douyin.com, weibo.com, www.xiaohongshu.com
+hostname = %APPEND% *-mtop.cainiao.com, *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, 112.53.55.225, 116.85.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 852b95d36.xwlpk.cn, acs.m.goofish.com, acs.m.taobao.com, acs.youku.com, ad.12306.cn, api.alipan.com, api.bilibili.com, api.caiyunapp.com, api.cc.163.com, api.gotokeep.com, api.live.bilibili.com, api.pinduoduo.com, api.qishui.com, api.udache.com, api.yangkeduo.com, api.ys7.com, apissl.gifshow.com, apissl.ksapisrv.com, app-v1.ecoliving168.com, app.bilibili.com, appapi.cc.163.com, az2-api-idc.ksapisrv.com, az2-api-js.gifshow.com, az2-api.ksapisrv.com, az2-live.ksapisrv.com, az4-api-idc.ksapisrv.com, az4-api.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, cc.163.com, cdn-w.caiyunapp.com, ci.xiaohongshu.com, cn-acs.m.cainiao.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, edith.xiaohongshu.com, freight.xiaojukeji.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, i.ys7.com, kad.gotokeep.com, m5-zb.amap.com, m5.amap.com, member.alipan.com, mobile.12306.cn, mp.weixin.qq.com, mshare.cc.163.com, oss.amap.com, poplayer.template.alibaba.com, push.m.youku.com, rec.xiaohongshu.com, res.xiaojukeji.com, sns.amap.com, starplucker.cyapi.cn, un-acs.youku.com, vv.video.qq.com, webcast-open.douyin.com, weibo.com, www.xiaohongshu.com
 [Rule]
 DOMAIN,api.biliapi.com,REJECT,extended-matching,pre-matching
 DOMAIN,api.biliapi.net,REJECT,extended-matching,pre-matching
@@ -15,18 +15,25 @@ DOMAIN,app.biliapi.net,REJECT,extended-matching,pre-matching
 URL-REGEX,"^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH",REJECT-TINYGIF,extended-matching
 URL-REGEX,"^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH",REJECT-TINYGIF,extended-matching
 AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"Cainiao4iPhone*")),REJECT
+DOMAIN,acs4baichuan.m.taobao.com,REJECT,extended-matching,pre-matching
 DOMAIN,adsmind.ugdtimg.com,REJECT,extended-matching,pre-matching
 DOMAIN,amdc.m.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,api.sm.cn,REJECT,extended-matching,pre-matching
 DOMAIN,apiv4-iyes.youku.com,REJECT,extended-matching,pre-matching
-DOMAIN,httpdns.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,baichuan-sdk.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,cad.youku.com,REJECT,extended-matching,pre-matching
 DOMAIN,huichuan-mc.sm.cn,REJECT,extended-matching,pre-matching
 DOMAIN,huichuan.sm.cn,REJECT,extended-matching,pre-matching
 DOMAIN,iyes.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,m-vali.cp31.ott.cibntv.net,REJECT,extended-matching,pre-matching
 DOMAIN,mc.atm.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,nbsdk-baichuan.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,pre-acs.youku.com,REJECT,extended-matching,pre-matching
 DOMAIN,vali-g1.cp31.ott.cibntv.net,REJECT,extended-matching,pre-matching
 DOMAIN,vali-ugc.cp31.ott.cibntv.net,REJECT,extended-matching,pre-matching
 DOMAIN,yk-ssp.ad.youku.com,REJECT,extended-matching,pre-matching
 DOMAIN,ykad-data.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,youku-acs.m.taobao.com,REJECT,extended-matching,pre-matching
 DOMAIN,ad.12306.cn,DIRECT,extended-matching
 DOMAIN,adashx.m.taobao.com,REJECT,extended-matching,pre-matching
 DOMAIN,ossgw.alicdn.com,REJECT,extended-matching,pre-matching
@@ -48,7 +55,6 @@ AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AG
 DOMAIN,amap-aos-info-nogw.amap.com,REJECT,extended-matching,pre-matching
 DOMAIN,free-aos-cdn-image.amap.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,v.smtcdns.com,REJECT,extended-matching,pre-matching
-DOMAIN,hd.xiaojukeji.com,REJECT,extended-matching,pre-matching
 DOMAIN,gwp.xiaojukeji.com,REJECT,extended-matching,pre-matching
 AND,((IP-ASN,45090,no-resolve),(DEST-PORT,25641),(PROTOCOL,TCP)),REJECT
 AND,((IP-ASN,63646,no-resolve),(DEST-PORT,25641),(PROTOCOL,TCP)),REJECT
@@ -56,44 +62,6 @@ DOMAIN,abyss.cyapi.cn,REJECT,extended-matching,pre-matching
 DOMAIN,ad.cyapi.cn,REJECT,extended-matching,pre-matching
 DOMAIN,gather.colorfulclouds.net,REJECT,extended-matching,pre-matching
 AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch",extended-matching),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")),REJECT
-DOMAIN,httpdns.n.netease.com,REJECT,extended-matching,pre-matching
-DOMAIN,httpdns.calorietech.com,REJECT,extended-matching,pre-matching
-DOMAIN,hc-ssp.sm.cn,REJECT,extended-matching,pre-matching
-DOMAIN,adsmind.gdtimg.com,REJECT,extended-matching,pre-matching
-DOMAIN,c2.gdt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,huatuocode.huatuo.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,info4.video.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,info6.video.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,ios.bugly.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,pro.bugly.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,ios.video.mpush.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,us.l.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,mi.gdt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,otheve.beacon.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,pgdt.gtimg.cn,REJECT,extended-matching,pre-matching
-DOMAIN,pgdt.ugdtimg.com,REJECT,extended-matching,pre-matching
-DOMAIN,qzs.gdtimg.com,REJECT,extended-matching,pre-matching
-DOMAIN,qzs.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,rmonitor.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,sdk.e.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,sdkconfig.video.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,t.gdt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,tmead.y.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,tmeadbak.y.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,tmeadcomm.y.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,tpns.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,v.gdt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,v2.gdt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,win.gdt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,wup.imtt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,tpstelemetry.tencent.com,REJECT,extended-matching,pre-matching
-DOMAIN,ii.gdt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,trace.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,trace.video.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,l.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,ugdtimg.com,REJECT,extended-matching,pre-matching
-IP-CIDR,47.110.187.87/32,REJECT,no-resolve,pre-matching
 DOMAIN-SUFFIX,wxs.qq.com,REJECT,extended-matching,pre-matching
 # 爱奇艺
 IP-CIDR,103.44.59.54/32,REJECT,no-resolve,pre-matching
@@ -121,7 +89,19 @@ URL-REGEX,"^http:\/\/[\d\.]+\/odin\/c1\/(channel\/ads|skin\/config)\?",REJECT-TI
 URL-REGEX,"^http:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/cms\/list\?",REJECT-TINYGIF,extended-matching
 URL-REGEX,"^http:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\?",REJECT-TINYGIF,extended-matching
 # 腾讯视频
+DOMAIN,adsmind.gdtimg.com,REJECT,extended-matching,pre-matching
+DOMAIN,info4.video.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,info6.video.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,ios.video.mpush.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,otheve.beacon.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,pgdt.gtimg.cn,REJECT,extended-matching,pre-matching
+DOMAIN,tpns.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,vv6.video.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,l.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-KEYWORD,trace.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-KEYWORD,trace.video.qq.com,REJECT,extended-matching,pre-matching
+IP-CIDR,47.110.187.87/32,REJECT,no-resolve,pre-matching
 URL-REGEX,"^http:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+",REJECT,extended-matching
 URL-REGEX,"^http:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+",REJECT,extended-matching
 URL-REGEX,"^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+",REJECT,extended-matching
@@ -129,78 +109,6 @@ URL-REGEX,"^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.
 DOMAIN,push.m.youku.com,DIRECT,extended-matching
 DOMAIN,un-acs.youku.com,DIRECT,extended-matching
 DOMAIN,dorangesource.alicdn.com,DIRECT,extended-matching
-DOMAIN,acs4baichuan.m.taobao.com,REJECT,extended-matching,pre-matching
-DOMAIN,api.sm.cn,REJECT,extended-matching,pre-matching
-DOMAIN,baichuan-sdk.alicdn.com,REJECT,extended-matching,pre-matching
-DOMAIN,cad.youku.com,REJECT,extended-matching,pre-matching
-DOMAIN,m-vali.cp31.ott.cibntv.net,REJECT,extended-matching,pre-matching
-DOMAIN,nbsdk-baichuan.alicdn.com,REJECT,extended-matching,pre-matching
-DOMAIN,pre-acs.youku.com,REJECT,extended-matching,pre-matching
-DOMAIN,youku-acs.m.taobao.com,REJECT,extended-matching,pre-matching
-AND,((DOMAIN-KEYWORD,api100-core-quic-,extended-matching),(DOMAIN-SUFFIX,amemv.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,api100-normal-quic-,extended-matching),(DOMAIN-SUFFIX,amemv.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,api100-normal-quic-aweme-,extended-matching),(DOMAIN-SUFFIX,amemv.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,api100-quic-core-,extended-matching),(DOMAIN-SUFFIX,amemv.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,api100-quic-normal-,extended-matching),(DOMAIN-SUFFIX,amemv.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,frontier100-aweme,extended-matching),(DOMAIN-SUFFIX,amemv.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,ma5-normal-,extended-matching),(DOMAIN-SUFFIX,zijieapi.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,polaris5-normal-,extended-matching),(DOMAIN-SUFFIX,zijieapi.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,webcast100-ws-c-,extended-matching),(DOMAIN-SUFFIX,amemv.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,tnc,extended-matching),(AND,((OR,((DOMAIN-KEYWORD,-bjlgy,extended-matching),(DOMAIN-KEYWORD,-alisc,extended-matching),(DOMAIN-KEYWORD,-aliec,extended-matching),(DOMAIN-KEYWORD,-alisg,extended-matching))),(OR,((DOMAIN-SUFFIX,snssdk.com,extended-matching),(DOMAIN-SUFFIX,isnssdk.com,extended-matching),(DOMAIN-SUFFIX,toutiaoapi.com,extended-matching),(DOMAIN-SUFFIX,bytedance.com,extended-matching),(DOMAIN-SUFFIX,zijieapi.com,extended-matching)))))),REJECT,pre-matching
-DOMAIN,frontier-aweme-hl.snssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN,frontier-quic-test.bytedance.com,REJECT,extended-matching,pre-matching
-AND,((IP-CIDR,101.126.58.201/32,no-resolve),(DEST-PORT,6443)),REJECT,pre-matching
-AND,((IP-CIDR,110.249.199.75/32,no-resolve),(DEST-PORT,6443)),REJECT,pre-matching
-AND,((IP-CIDR,111.225.147.191/32,no-resolve),(DEST-PORT,6443)),REJECT,pre-matching
-AND,((IP-CIDR,111.63.61.101/32,no-resolve),(DEST-PORT,6443)),REJECT,pre-matching
-AND,((IP-CIDR,220.243.141.0/32,no-resolve),(DEST-PORT,6443)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,-ad-,extended-matching),(DOMAIN-SUFFIX,byteimg.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,-ttam-,extended-matching),(DOMAIN-SUFFIX,ibyteimg.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,ssdk-,extended-matching),(DOMAIN-SUFFIX,pangle.io,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,pangolin,extended-matching),(DOMAIN-SUFFIX,sgsnssdk.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,lf,extended-matching),(DOMAIN-KEYWORD,-short.bytetos.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,v,extended-matching),(DOMAIN-KEYWORD,-be-pack.pglstatp-toutiao.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,sf,extended-matching),(DOMAIN-KEYWORD,-be-pack.pglstatp-toutiao.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,s,extended-matching),(DOMAIN-KEYWORD,-fe-scm.pglstatp-toutiao.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,sf,extended-matching),(DOMAIN-KEYWORD,-ttcdn-tos.pstatp.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,sf,extended-matching),(DOMAIN-KEYWORD,-fe-tos.pglstatp-toutiao.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,sf,extended-matching),(DOMAIN-KEYWORD,-static.i18n-pglstatp.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,if,extended-matching),(DOMAIN-KEYWORD,-cdn-tos.bytescm.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,if,extended-matching),(DOMAIN-KEYWORD,-analytics.bytescm.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,lf,extended-matching),(DOMAIN-KEYWORD,-analytics.bytescm.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,ads,extended-matching),(DOMAIN-KEYWORD,normal,extended-matching),(DOMAIN-SUFFIX,zijieapi.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,api,extended-matching),(DOMAIN-KEYWORD,-access-,extended-matching),(DOMAIN-SUFFIX,pangle.io,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,api,extended-matching),(DOMAIN-KEYWORD,-log-,extended-matching),(DOMAIN-SUFFIX,pangle.io,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,api,extended-matching),(DOMAIN-KEYWORD,-dual-event-,extended-matching),(DOMAIN-SUFFIX,pangle.io,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,api,extended-matching),(DOMAIN-KEYWORD,pangolin,extended-matching),(DOMAIN-SUFFIX,sgsnssdk.com,extended-matching)),REJECT,pre-matching
-AND,((DOMAIN-KEYWORD,ads,extended-matching),(DOMAIN-KEYWORD,-normal-lq,extended-matching),(DOMAIN-SUFFIX,zijieapi.com,extended-matching)),REJECT,pre-matching
-URL-REGEX,"^http:\/\/p\d+-be-pack-sign\.pglstatp-toutiao\.com\/(ad-app-package|web\.business\.image)\/",REJECT,extended-matching
-DOMAIN,mon.zijieapi.com,REJECT,extended-matching,pre-matching
-DOMAIN,lf-ad-ies.bytecdn.cn,REJECT,extended-matching,pre-matching
-DOMAIN,i.snssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN,is.snssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN,bds.snssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN,dm.bytedance.com,REJECT,extended-matching,pre-matching
-DOMAIN,dm.pstatp.com,REJECT,extended-matching,pre-matching
-DOMAIN,dm.toutiao.com,REJECT,extended-matching,pre-matching
-DOMAIN,log.snssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN,s3a.pstatp.com,REJECT,extended-matching,pre-matching
-DOMAIN,sdfp.snssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN,tosv.boe.byted.org,REJECT,extended-matching,pre-matching
-DOMAIN,tosv.byted.org,REJECT,extended-matching,pre-matching
-DOMAIN,extlog.snssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN,mssdk-bu.bytedance.com,REJECT,extended-matching,pre-matching
-DOMAIN,toblog.ctobsnssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN,mssdk.volces.com,REJECT,extended-matching,pre-matching
-DOMAIN,pangolin.snssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN,gromore.pangolin-sdk-toutiao.com,REJECT,extended-matching,pre-matching
-DOMAIN,ether-pack.pangolin-sdk-toutiao.com,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,-ad-sign.byteimg.com,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,api-access.pangolin-sdk-toutiao,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,log-api.pangolin-sdk-toutiao,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,-ad.byteoversea.com,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,video-cn.snssdk.com,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,asiad.byteactivity,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,uve.weibo.com,DIRECT,extended-matching
 DOMAIN,huodong.weibo.cn,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,biz.weibo.com,REJECT,extended-matching,pre-matching
@@ -212,11 +120,15 @@ DOMAIN,adexpo.tencentmusic.com,REJECT,extended-matching,pre-matching
 DOMAIN,adclick.tencentmusic.com,REJECT,extended-matching,pre-matching
 DOMAIN,monitor.music.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,stat.y.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,tmead.y.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,tmeadquic.y.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,oth.str.mdt.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,h.trace.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,sdk.e.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,p.l.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,us.l.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,tangram.e.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,tmeadbak.y.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,imtmp.net,REJECT,extended-matching,pre-matching
 [Body Rewrite]
 http-response-jq ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(?:list|show|event\/list2)\? '.data |= with_entries(if .key | IN("show", "event_list") then .value = [] else . end)'
@@ -253,6 +165,15 @@ http-response-jq ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core '.data.
 http-response-jq ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList '.data.scene_list |= map(select(.text != "优惠商城")) | .data.show_data[] |= (if .scene_ids then .scene_ids |= map(select(. != "scene_coupon_mall")) else . end)'
 http-response-jq ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList '.data.disorder_cards.top_banner_card.data |= if .[0].T == "yuentu_top_banner" then .[1:] else . end'
 http-response-jq ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout '.data.order_components |= map(select(.name != "passenger_common_casper"))'
+http-response-jq ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/ '.data.homeTopList |= map(select(.template.name != "fish_home_widget_banner_single")) | .data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct != "homeMultiBanner" and $ct != "mamaAD"))'
+http-response-jq ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.widget\.refresh\.get\/ '.data.homeTopList |= map(select(.template.name != "fish_home_widget_banner_single"))'
+http-response-jq ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.newitem\.page\/ '.data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct != "banner" and $ct != "mamaAD"))'
+http-response-jq ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section\/ 'walk(if type == "object" and has("components") then .components |= map(if .data.template.name == "fish_city_banner" then del(.data.item) else . end) else . end)'
+http-response-jq ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/ '.data.sections |= map(select(.template.cardEnum != "ads"))'
+http-response-jq ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ '.data.container.sections |= map(if .item.tips? then empty else . end) | .data.container.sections |= map(select(.item?.bottom? | not))'
+http-response-jq ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/ '.data.circleList[].showInfo.titleImage |= (.lightUrl = "" | .url = "" | del(.width, .height))'
+http-response-jq ^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ '.data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType == "ad" then empty else . end)'
+http-response-jq ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ '.data.cardList |= map(if has("cardData") and (.cardData | has("hotwords")) then .cardData |= del(.hotwords) else . end)'
 http-response-jq ^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/followPage 'if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end'
 http-response-jq ^https:\/\/api\.gotokeep\.com\/twins\/v4\/feed\/entryDetail 'if (getpath([]) | has("data")) then (setpath(["data"]; {})) else . end'
 http-response-jq ^https:\/\/api\.gotokeep\.com\/config\/v3\/basic '.data.homeTabs |= map(select(.name != "活动")) | .data.homeTabs[1].default = true | .data.homeTabs[2].default = false'
@@ -285,10 +206,11 @@ http-response-jq ^https:\/\/api\.cc\.163\.com\/v\d\/mgamenavigation\/navigation_
 http-response-jq ^https:\/\/api\.cc\.163\.com\/v\d\/mgamerecpage\/recommend_page\? '.data.plugins|=map(select(.module_type!="banner"))|.data.plugins|=map(select(.module_type!="show_list"))|.data.plugins|=map(select(.title!="推荐品类"))'
 http-response-jq ^https:\/\/api\.cc\.163\.com\/v\d\/entpage\/live_navbar_mobile\/ios\? '.data.top_nav |= map(select(.cn_name == "推荐" or .cn_name == "星秀" or .cn_name == "心动交友"))'
 http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/me\? 'delpaths([["reward_ad_banner"]])'
-http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? 'if (getpath(["card_items",0]) | has("priority_display")) then (setpath(["card_items",0,"priority_display"]; false)) else . end'
-http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? 'if (getpath(["card_items",0]) | has("is_show")) then (setpath(["card_items",0,"is_show"]; false)) else . end'
-http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? 'if (getpath([]) | has("preview_guide")) then (setpath(["preview_guide"]; null)) else . end'
-http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? 'delpaths([["blocks",1]])'
+http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/me\/recently-played-media\? '.media |= map(select(.type != "video"))'
+http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/feed\/song-tab\? 'del(.items[] | select(.type == "video_track_mix"))'
+http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? 'delpaths([["preview_guide"]])'
+http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/card\? 'del(.card_items[] | select(has("priority_display")))'
+http-response-jq ^https:\/\/beta-luna\.douyin\.com\/luna\/more-panel\? '.blocks |= map(select(.type != "related_video"))'
 http-response-jq ^https:\/\/(apissl|az2-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["reskinConfig"]])'
 http-response-jq ^https:\/\/(apissl|az2-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["sidebarExSquareStyle","moreList"]])'
 http-response-jq ^https:\/\/(apissl|az2-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/system\/startup\? 'delpaths([["sidebarExSquareStyle","topList"]])'
@@ -302,10 +224,11 @@ http-response-jq ^https:\/\/az2-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.home\.tabbar\.marketing\.get\.cn data-type=text data="{}" status-code=200
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn data-type=text data="{}" status-code=200
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(batch\.show\.v2|expose\.mreply|index)\.cn data-type=text data="{}" status-code=200
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbopen\.miniapp\.recommend\.cpc\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(acquire|event|close)\.cn data-type=text data="{}" status-code=200
-^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|tabbar\.marketing)\.get\.cn data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbmensa\.research\.researchservice\.(?:acquire|event|close)\.cn data-type=text data="{}" status-code=200
+^https:\/\/(?:cn-acs\.m|netflow-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.(?:batch\.show\.v2|click\.reply|expose\.m?reply|index)\.cn data-type=text data="{}" status-code=200
+^https:\/\/(?:cn-acs\.m|mtop-bff-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:homepage\.merge|tabbar\.marketing)\.get\.cn data-type=text data="{}" status-code=200
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbcps\.presentation\.fetch\.cn data-type=text data="{}" status-code=200
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cnactivitycenter data-type=text data="{}" status-code=200
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.cncreditmarket\.hit\.getactivityhit\.cn data-type=text data="{}" status-code=200
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn data-type=text data="{}" status-code=200
@@ -360,21 +283,14 @@ http-response-jq ^https:\/\/az2-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow data-type=text data="{}" status-code=200
 ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/entries|p\/v1\/trial_card\/info|v2\/product) data-type=text data="{}" status-code=200
 ^https:\/\/starplucker\.cyapi\.cn\/v3\/(config\/cypage\/\w+\/conditions|notification\/message_center|operation\/homefeatures) data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/ data-type=text data="{}" status-code=200
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/ data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.resell\.recommendorhotcate\/ data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/ data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.topic\.banner\/ data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/ data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.idle\.coin\.nextfresh\/ data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ data-type=text data="{}" status-code=200
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.near\.by\.corner\.info\/ data-type=text data="{}" status-code=200
 ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/ data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ data-type=text data="{}" status-code=200
-^https:\/\/h5\.m\.goofish\.com\/wow\/moyu\/moyu-project\/[\w-]*search[\w-]*\/pages\/ data-type=text data=" " status-code=200
 ^https:\/\/api\.gotokeep\.com\/search\/v6\/default\/keyword\/list data-type=text data="{}" status-code=200
 ^https:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v1\/ad data-type=text data="{}" status-code=200
 ^https:\/\/api\.gotokeep\.com\/guide-webapp\/v1\/popup\/getPopUp data-type=text data="{}" status-code=200
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? data-type=text data="{}" status-code=200
+^https:\/\/mp\.weixin\.qq\.com\/mp\/relatedsearchword data-type=text data="{}" status-code=200
 # 爱奇艺
 ^https?:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\? data-type=text data="{}" status-code=200
 ^https?:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show\? data-type=text data="{}" status-code=200
@@ -399,7 +315,12 @@ http-response-jq ^https:\/\/az2-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2
 ^https:\/\/api\.ys7\.com\/v3\/intelligent-app\/apps\/linkage data-type=text data="{}" status-code=200
 ^https:\/\/api\.ys7\.com\/v3\/configurations\/gray\/info\?grayTypes=185 data-type=text data="{}" status-code=200
 ^https:\/\/api\.ys7\.com\/v3\/videoclips\/square\/video\/query data-type=text data="{}" status-code=200
+^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/upsells_config\? data-type=text data="{}" status-code=200
+^https:\/\/api\.qishui\.com\/luna\/ads\/config\? data-type=text data="{}" status-code=200
 ^https:\/\/webcast-open\.douyin\.com\/webcast\/openapi\/feed\/\? data-type=text data="{}" status-code=200
+^https:\/\/beta-luna\.douyin\.com\/luna\/treasure\/entrance\/config\? data-type=text data="{}" status-code=200
+^https:\/\/beta-luna\.douyin\.com\/luna\/activities\? data-type=text data="{}" status-code=200
+^https:\/\/beta-luna\.douyin\.com\/luna\/media_ads\? data-type=text data="{}" status-code=200
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/upsells\? data-type=text data="{}" status-code=200
 ^https:\/\/beta-luna\.douyin\.com\/luna\/commerce\/v2\/commerce_info\? data-type=text data="{}" status-code=200
 ^https:\/\/api\.weibo\.cn\/2\/(?:ug\/checkin\/list|push\/daily) data-type=text data="{}" status-code=200
@@ -424,11 +345,12 @@ http-response-jq ^https:\/\/az2-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2
 ^https:\/\/az2-api\.ksapisrv\.com\/rest\/n\/ad\/ data-type=text data="{}" status-code=200
 [Script]
 Proto处理 = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true, argument=[{showUpList}]
+移除新版我的页面推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.e2e\.engine\.page\.fetch\.cn, script-path=https://kelee.one/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body=true
 移除我的页面推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.mine\.main\.cn, script-path=https://kelee.one/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body=true
-移除首页推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://kelee.one/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body=true
-移除首页推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://kelee.one/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body=true
+移除主页图标 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(?:pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://kelee.one/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body=true
 移除消息中心推广 = type=http-response, pattern=^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://kelee.one/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body=true
-移除菜鸟小程序推广 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://kelee.one/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body=true
+移除支付宝菜鸟小程序推广 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow, script-path=https://kelee.one/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body=true
+移除首页推广 = type=http-response, pattern=^https:\/\/(?:cn-acs\.m|netflow-mtop)\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://kelee.one/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body=true
 移除12306开屏广告 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://kelee.one/Resource/Script/12306/12306_remove_splashscreen_ads.js, requires-body=true
 移除12306应用内广告 = type=http-request, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://kelee.one/Resource/Script/12306/12306_remove_ads.js
 移除淘宝开屏广告 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://kelee.one/Resource/Script/Taobao/Taobao_remove_ads.js, requires-body=true
@@ -463,10 +385,6 @@ Proto处理 = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.
 移除打车页推广卡片、弹窗 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:car\/order\/content_info|order_web\/friendly_information), script-path=https://kelee.one/Resource/Script/Amap/Amap_remove_ads.js, requires-body=true
 移除打车页红点角标、天气图标 = type=http-response, pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://kelee.one/Resource/Script/Amap/Amap_remove_ads.js, requires-body=true
 彩云天气去广告 = type=http-response, pattern=^https:\/\/(wrapper\.cyapi\.cn|api\.caiyunapp\.com|cdn-w\.caiyunapp\.com)\/v1\/activity\?, script-path=https://kelee.one/Resource/Script/ColorfulClouds/ColorfulClouds_remove_ads.js, requires-body=true
-移除我的页面推广 = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/, script-path=https://kelee.one/Resource/Script/FleaMarket/FleaMarket_remove_ads.js, requires-body=true
-移除首页信息流推广 = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/, script-path=https://kelee.one/Resource/Script/FleaMarket/FleaMarket_remove_ads.js, requires-body=true
-移除首页顶部标签推广 = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/, script-path=https://kelee.one/Resource/Script/FleaMarket/FleaMarket_remove_ads.js, requires-body=true
-移除搜索结果广告 = type=http-response, pattern=^https:\/\/g-(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/, script-path=https://kelee.one/Resource/Script/FleaMarket/FleaMarket_remove_ads.js, requires-body=true
 # 芒果
 移除我的页面广告 = type=http-response, pattern=^https:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\?, script-path=https://kelee.one/Resource/Script/MangoTV/MangoTV_remove_ads.js, requires-body=true
 移除首页广告 = type=http-response, pattern=^http:\/\/mob-st\.bz\.mgtv\.com\/odin\/c1\/channel\/index\?, script-path=https://kelee.one/Resource/Script/MangoTV/MangoTV_remove_ads.js, requires-body=true
