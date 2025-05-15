@@ -2,11 +2,11 @@
 #!desc=分流规则中含有URL-REGEX类型的MITM模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-05-11 01:23:12
-#!HASH=d34f72ae796af5cac0c3a4900dc5bb74
+#!updated=2025-05-15 01:16:35
+#!HASH=2d42663f18e5576a310b3828b6483374
 
 [MITM]
-hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.*, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 180.76.76.200, 182.256.116.116, 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:20::10, 2401:b180:2000:30::1c, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com
+hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 182.256.116.116, 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:20::10, 2401:b180:2000:30::1c, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com
 [General]
 force-http-engine-hosts = %APPEND% 119.29.29.29:80,dns.weixin.qq.com:443,dns.weixin.qq.com:80,dns.weixin.qq.com:8080
 [Rule]
@@ -81,6 +81,7 @@ URL-REGEX,"^http:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/",REJECT
 IP-CIDR,8.134.241.67/32,REJECT,no-resolve
 DOMAIN,dig.bdurl.net,REJECT
 DOMAIN,dig.zjurl.cn,REJECT
+AND,((DOMAIN-KEYWORD,tnc),(AND,((OR,((DOMAIN-KEYWORD,-bjlgy),(DOMAIN-KEYWORD,-alisc),(DOMAIN-KEYWORD,-aliec),(DOMAIN-KEYWORD,-alisg))),(OR,((DOMAIN-SUFFIX,snssdk.com),(DOMAIN-SUFFIX,isnssdk.com),(DOMAIN-SUFFIX,toutiaoapi.com),(DOMAIN-SUFFIX,bytedance.com),(DOMAIN-SUFFIX,zijieapi.com)))))),REJECT
 DOMAIN,aedns.weixin.qq.com,REJECT
 DOMAIN,paydns.wechatpay.cn,REJECT
 IP-CIDR,39.156.140.30/32,REJECT,no-resolve
@@ -158,6 +159,7 @@ URL-REGEX,"^http:\/\/180\.76\.76\.220\/v\d\/resolve",REJECT
 DOMAIN,httpdns.ocloud.heytapmobi.com,REJECT
 DOMAIN,httpdns.push.heytapmobi.com,REJECT
 URL-REGEX,"^http:\/\/182\.254\.116\.116\/d",REJECT
+URL-REGEX,"^http:\/\/119\.29\.29\.98\/d\?",REJECT
 DOMAIN,dotserver.douyucdn.cn,REJECT
 DOMAIN,hdns.ksyun.com,REJECT
 URL-REGEX,"^http:\/\/162\.14\.3\.250\/v4",REJECT
@@ -186,6 +188,16 @@ URL-REGEX,"^http:\/\/api\.weibo\.cn\/httpdns\/config",REJECT
 URL-REGEX,"^http:\/\/103\.41\.167\.237\/v2\/resolv",REJECT
 IP-CIDR,118.89.204.198/23,REJECT,no-resolve
 DOMAIN,hd.xiaojukeji.com,REJECT
+URL-REGEX,"^http:\/\/203\.107\.1\.33\/191607\/resolve\?",REJECT
+URL-REGEX,"^http:\/\/119\.29\.29\.29\/d",REJECT
+DOMAIN,serveraddr.service.kugou.com,REJECT
+DOMAIN,twns.p2ptun.qq.com,REJECT
+DOMAIN,tp2p.kg.qq.com,REJECT
+IP-CIDR,81.71.61.216/32,REJECT,no-resolve
+URL-REGEX,"^http:\/\/54\.222\.159\.138:8053\/httpdns\/",REJECT
+URL-REGEX,"^http:\/\/101\.42\.130\.147:8053\/httpdns\/",REJECT
+URL-REGEX,"^http:\/\/106\.55\.220\.18:8053\/httpdns\/",REJECT
+URL-REGEX,"^http:\/\/139\.196\.12\.179:8053\/httpdns\/",REJECT
 [URL Rewrite]
 "^http:\/\/101\.35\.204\.35\/d" - reject
 "^http:\/\/103\.37\.155\.60\/fetch" - reject
@@ -212,10 +224,8 @@ DOMAIN,hd.xiaojukeji.com,REJECT
 ^https?:\/\/203\.107\.1\.97/\d+/ss - reject
 ^https?:\/\/2401:b180:2000:30::1c\/\d+\/d - reject
 ^https?:\/\/2401:b180:2000:20::10\/\d+\/d - reject
-^https?:\/\/180\.76\.76\.200\/v\d\/resolve - reject
-^https?:\/\/180\.76\.76\.112\/v\d\/resolve - reject
 ^https?:\/\/cdn\.wup\.huya\.com\/monitor\/monitor\.jsp - reject
+^https:\/\/gslbali\.ximalaya\.com\/linkeye-cloud\/httpdns\/ - reject
 [Map Local]
-^https?:\/\/119\.29\.29\.\d+\/d data-type=text data=" " status-code=200
 ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/msglb\.91160\.com\/msg\/outer\/broker\/get$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
