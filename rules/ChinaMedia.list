@@ -1,19 +1,18 @@
-# NAME: ChinaMediaAll
+# NAME: ChinaMedia
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-04-29 10:09:31
+# UPDATED: 2025-05-17 01:17:28
 # DESCRIPTION: ChinaMedia分流规则(bilibili,微博,小红书,快手,抖音,TikTok,Kuaishou,Douyin,Xiaohongshu,Weibo,Kuaishou,Douyin,Xiaohongshu)
-# HASH: 2ac6f60bf838e812d4b46c4caa220e8b
+# HASH: 9fca354ed9b7deb3d47a5b8d8eb63c40
 # DOMAIN: 0
-# DOMAIN-SUFFIX: 87
+# DOMAIN-SUFFIX: 76
 # IP-CIDR: 29
 # IP-CIDR6: 29
-# TOTAL: 145
+# TOTAL: 134
 
 DOMAIN-SUFFIX,163yun.com
 DOMAIN-SUFFIX,acg.tv
 DOMAIN-SUFFIX,acgvideo.com
-DOMAIN-SUFFIX,amemv.com
 DOMAIN-SUFFIX,animetamashi.cn
 DOMAIN-SUFFIX,animetamashi.com
 DOMAIN-SUFFIX,anitama.cn
@@ -59,10 +58,6 @@ DOMAIN-SUFFIX,bilivideo.cn
 DOMAIN-SUFFIX,bilivideo.com
 DOMAIN-SUFFIX,bilivideo.net
 DOMAIN-SUFFIX,corari.com
-DOMAIN-SUFFIX,douyincdn.com
-DOMAIN-SUFFIX,douyinpic.com
-DOMAIN-SUFFIX,douyinstatic.com
-DOMAIN-SUFFIX,douyinvod.com
 DOMAIN-SUFFIX,dreamcast.hk
 DOMAIN-SUFFIX,dyhgames.com
 DOMAIN-SUFFIX,hdslb.com
@@ -71,10 +66,7 @@ DOMAIN-SUFFIX,hdslb.com.w.kunlunpi.com
 DOMAIN-SUFFIX,hdslb.net
 DOMAIN-SUFFIX,hdslb.org
 DOMAIN-SUFFIX,hz.netease.com
-DOMAIN-SUFFIX,idouyinvod.com
 DOMAIN-SUFFIX,im9.com
-DOMAIN-SUFFIX,ixigua.com
-DOMAIN-SUFFIX,ixiguavideo.com
 DOMAIN-SUFFIX,mam.netease.com
 DOMAIN-SUFFIX,maoercdn.com
 DOMAIN-SUFFIX,mcbbs.net
@@ -84,12 +76,9 @@ DOMAIN-SUFFIX,music.126.net
 DOMAIN-SUFFIX,music.163.com
 DOMAIN-SUFFIX,music.163.com.163jiasu.com
 DOMAIN-SUFFIX,pgdt.gtimg.cn
-DOMAIN-SUFFIX,pstatp.com
 DOMAIN-SUFFIX,qqvideo.gtimg.com
 DOMAIN-SUFFIX,sharejoytech.com
 DOMAIN-SUFFIX,smtcdns.net
-DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,toutiao.com
 DOMAIN-SUFFIX,upos-hz-mirrorakam.akamaized.net
 DOMAIN-SUFFIX,uposdash-302-bilivideo.yfcdn.net
 DOMAIN-SUFFIX,v.qq.com
