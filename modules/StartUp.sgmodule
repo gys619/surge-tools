@@ -1,6 +1,6 @@
 #!name=墨鱼去开屏
-#!desc=🔗 [2025/5/25 12:10:41] 原脚本https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
-#!HASH=e3ae92e26b3135fce9f2f0b09104612c
+#!desc=🔗 [2025/5/26 08:15:28] 原脚本https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
+#!HASH=3713e78bb799027cae53bdc60d73341b
 
 [URL Rewrite]
 # > kanlixiang
@@ -1131,6 +1131,8 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do data-type
 
 # > zhuishushenqi
 ^https?:\/\/adx-cn\.anythinktech\.com\/bid data-type=text data=" " status-code=200
+
+^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/amdc\/mobileDispatch data-type=text data=" " status-code=200
 
 # > zhangshangdaojucheng
 ^https?:\/\/djcapp\.game\.qq\.com\/daoju\/igw\/main\/\?_service=welink\.ad\.list data-type=text data=" " status-code=200
