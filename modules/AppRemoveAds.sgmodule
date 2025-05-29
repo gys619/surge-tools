@@ -2,8 +2,8 @@
 #!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,快手,qq音乐)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-05-19 01:22:39
-#!HASH=a2909e44ec65113e860bc13fb507059c
+#!updated=2025-05-29 01:20:02
+#!HASH=66b418b6087a777594eb808648c1f907
 
 [MITM]
 hostname = %APPEND% *-mtop.cainiao.com, *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, 112.53.55.225, 116.85.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 852b95d36.xwlpk.cn, acs.m.goofish.com, acs.m.taobao.com, acs.youku.com, ad.12306.cn, api.alipan.com, api.bilibili.com, api.caiyunapp.com, api.cc.163.com, api.gotokeep.com, api.live.bilibili.com, api.pinduoduo.com, api.qishui.com, api.udache.com, api.yangkeduo.com, api.ys7.com, apissl.gifshow.com, apissl.ksapisrv.com, app-v1.ecoliving168.com, app.bilibili.com, appapi.cc.163.com, az2-api-idc.ksapisrv.com, az2-api-js.gifshow.com, az2-api.ksapisrv.com, az2-live.ksapisrv.com, az4-api-idc.ksapisrv.com, az4-api.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, cc.163.com, cdn-w.caiyunapp.com, ci.xiaohongshu.com, cn-acs.m.cainiao.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, edith.xiaohongshu.com, freight.xiaojukeji.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, i.ys7.com, kad.gotokeep.com, m5-zb.amap.com, m5.amap.com, member.alipan.com, mobile.12306.cn, mp.weixin.qq.com, mshare.cc.163.com, oss.amap.com, poplayer.template.alibaba.com, push.m.youku.com, rec.xiaohongshu.com, res.xiaojukeji.com, sns.amap.com, starplucker.cyapi.cn, un-acs.youku.com, vv.video.qq.com, webcast-open.douyin.com, weibo.com, www.xiaohongshu.com
@@ -89,12 +89,47 @@ URL-REGEX,"^http:\/\/[\d\.]+\/odin\/c1\/(channel\/ads|skin\/config)\?",REJECT-TI
 URL-REGEX,"^http:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/cms\/list\?",REJECT-TINYGIF,extended-matching
 URL-REGEX,"^http:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\?",REJECT-TINYGIF,extended-matching
 # 腾讯视频
+DOMAIN,ugchsy.gtimg.com,REJECT,extended-matching,pre-matching
+DOMAIN,btrace.video.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,api.poll.video.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,activity.video.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,p.l.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,rpt.gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,trace.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,tetrack.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,tpns.tencent.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,stat.tpns.tencent.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,static-res.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,omgmta.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN-SUFFIX,omgmta1.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,tux.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,iacc.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,p2.l.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,v3.gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,xs.gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,aegis.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,rdelivery.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,wallpaper-1258344696.file.myqcloud.com,REJECT,extended-matching,pre-matching
+DOMAIN,wallpaper-test-1258344696.file.myqcloud.com,REJECT,extended-matching,pre-matching
+DOMAIN,c2.gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,huatuocode.huatuo.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,pro.bugly.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,pgdt.gtimg.cn,REJECT,extended-matching,pre-matching
+DOMAIN,qzs.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,rmonitor.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,sdkconfig.video.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,t.gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,v.gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,v2.gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,win.gdt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,wup.imtt.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,tpstelemetry.tencent.com,REJECT,extended-matching,pre-matching
+DOMAIN,ii.gdt.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,adsmind.gdtimg.com,REJECT,extended-matching,pre-matching
 DOMAIN,info4.video.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,info6.video.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,ios.video.mpush.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,otheve.beacon.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,pgdt.gtimg.cn,REJECT,extended-matching,pre-matching
 DOMAIN,tpns.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,vv6.video.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
@@ -102,6 +137,9 @@ DOMAIN-SUFFIX,l.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-KEYWORD,trace.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-KEYWORD,trace.video.qq.com,REJECT,extended-matching,pre-matching
 IP-CIDR,47.110.187.87/32,REJECT,no-resolve,pre-matching
+IP-CIDR,183.201.213.194/24,REJECT,no-resolve,pre-matching
+IP-CIDR,119.29.29.98/32,REJECT,no-resolve,pre-matching
+IP-CIDR,119.29.29.99/32,REJECT,no-resolve,pre-matching
 URL-REGEX,"^http:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+",REJECT,extended-matching
 URL-REGEX,"^http:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+",REJECT,extended-matching
 URL-REGEX,"^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+",REJECT,extended-matching
@@ -125,7 +163,6 @@ DOMAIN,tmeadquic.y.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,oth.str.mdt.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,h.trace.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,sdk.e.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,p.l.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,us.l.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,tangram.e.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,tmeadbak.y.qq.com,REJECT,extended-matching,pre-matching
