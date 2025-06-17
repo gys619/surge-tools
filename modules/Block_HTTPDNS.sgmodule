@@ -1,12 +1,12 @@
 #!name=HTTPDNS拦截器
-#!desc=🔗 [2025/5/15 00:34:15] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
-#!HASH=420036d3fe6891271af5b86e8e71d2a5
+#!desc=🔗 [2025/6/18 00:09:06] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
+#!HASH=d21ffb71a800c5f30626f52ca484807e
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], VirgilClyne[https://github.com/VirgilClyne]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
 #!tag=DNS
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-05-13 21:58:49
+#!date=2025-06-16 12:29:05
 
 [Rule]
 DOMAIN,yyapp-httpdns.gslb.yy.com,REJECT
@@ -24,7 +24,6 @@ AND,((DOMAIN-KEYWORD,tnc),(AND,((OR,((DOMAIN-KEYWORD,-bjlgy),(DOMAIN-KEYWORD,-al
 DOMAIN,dns.weixin.qq.com,REJECT
 DOMAIN,dns.weixin.qq.com.cn,REJECT
 DOMAIN,aedns.weixin.qq.com,REJECT
-DOMAIN,paydns.wechatpay.cn,REJECT
 IP-CIDR,39.156.140.30/32,REJECT,no-resolve
 IP-CIDR,39.156.140.47/32,REJECT,no-resolve
 IP-CIDR,39.156.140.245/32,REJECT,no-resolve
