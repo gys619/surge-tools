@@ -1,5 +1,5 @@
-#!HASH=e10c1c7cb19890571b7e315b1d8f7687
-#规则数量:9598
+#!HASH=557307d8559728b4e556cdbfd9c1e304
+#规则数量:9599
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -586,11 +586,12 @@ DOMAIN,ads.mojicdn.com
 DOMAIN,v1.log.moji.com
 DOMAIN-SUFFIX,ad.cmvideo.cn
 DOMAIN,ggc.cmvideo.cn
-DOMAIN,ggic03.miguvideo.com
-DOMAIN,ggmk.miguvideo.com
 DOMAIN,ggv.cmvideo.cn
 DOMAIN,ggx.cmvideo.cn
 DOMAIN,ggx03.miguvideo.com
+DOMAIN,ggic03.miguvideo.com
+DOMAIN,ggmk.miguvideo.com
+DOMAIN,ggadoffline.miguvideo.com
 DOMAIN,sdkconfig.ad.xiaomi.com
 DOMAIN,dflow.bz.mgtv.com
 DOMAIN,encounter.bz.mgtv.com
