@@ -1,0 +1,23 @@
+#!name=小米音箱去广告
+#!desc=🔗 [2025/7/8 18:00:15] 移除开屏广告、应用内横幅广告及弹窗广告。
+#!HASH=274de4f7638d7a73f56e4a918ec52ce7
+#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaomiSpeaker.png
+#!openUrl=https://apps.apple.com/app/id1270594280
+#!tag=去广告
+#!loon_version=3.2.4(787)
+#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!date=2025-07-07 19:51:31
+
+[Map Local]
+# 开屏广告、首页横幅推广、音源弹窗推广
+^https:\/\/marketing-aibox\.v\.mitvos\.com\/advertise\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# 促销弹窗
+^https:\/\/marketing-aibox\.v\.mitvos\.com\/payGuide\/halfScreenMulti\/cache\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[MITM]
+hostname = %APPEND% marketing-aibox.v.mitvos.com
+
+# 🔗 模块链接
+#SUBSCRIBED http://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lpx/XiaomiSpeaker_remove_ads.lpx/_end_/XiaomiSpeaker_remove_ads.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true
