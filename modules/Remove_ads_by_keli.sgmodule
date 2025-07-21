@@ -1,12 +1,12 @@
 #!name=可莉广告过滤器
-#!desc=🔗 [2025/7/11 09:38:26] 可莉自用的广告过滤器
-#!HASH=4c2aee245f472e372e8bbd5c66fd92cc
+#!desc=🔗 [2025/7/22 00:10:35] 可莉自用的广告过滤器
+#!HASH=e403beb57a9ed9c6bc8e3c77df18ee8b
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/KeLee.png
 #!tag=去广告
 #!loon_version=3.2.4(787)
 #!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-07-07 19:27:38
+#!date=2025-07-16 02:25:05
 
 [Rule]
 DOMAIN,acdn.adnxs.com,REJECT
@@ -63,7 +63,6 @@ DOMAIN,open-pixon.ads-pixiv.net,REJECT
 ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit$ - reject
 ^https?:\/\/tower\.ubixioe\.com\/mob\/mediation - reject
 ^https?:\/\/sdk1xyajs\.data\.kuiniuca\.com - reject
-^https:\/\/api\.wfdata\.club\/v2\/yesfeng\/yesList - reject
 ^https:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage - reject
 
 [Body Rewrite]
