@@ -1,7 +1,5 @@
 # Surge Tools
 
-[![GitHub license](https://img.shields.io/github/license/guoyansheng/surge-tools?style=flat-square)](https://github.com/gys619/surge-tools/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/guoyansheng/surge-tools?style=flat-square)](https://github.com/gys619/surge-tools/stargazers)
 
 一个用于合并和管理 Surge 规则和模块的工具。A tool for merging and managing Surge rules and modules.
 
@@ -110,15 +108,15 @@ surge-tools/
 - [ScriptHub](https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/modules/script-hub.surge.sgmodule)
 - [SubStore](https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Surge-Beta.sgmodule)
 - [模块使用教程](https://mylucky.cyou/post/20240107003508.html)
-
+- [可莉插件网站surge适配版模块@baby](https://raw.githubusercontent.com/Yu9191/Rewrite/refs/heads/main/pluginhub.sgmodule) 需要配合scriptHub和可莉的插件中心使用
 ### 规则资源
 - [分流规则](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule)
 - [复写规则](https://github.com/blackmatrix7/ios_rule_script/tree/master/rewrite)
 
 ### Loon相关资源
-
-- [Loon资源库](https://github.com/luestr/ProxyResource)
-- [去广告规则](https://github.com/fmz200/wool_scripts)
+- [可莉的插件中心](https://pluginhub.kelee.one)
+- [可莉的插件仓库](https://github.com/luestr/ProxyResource)
+- [去广告仓库](https://github.com/fmz200/wool_scripts)
 
 ## 👏 致谢 Credits
 
