@@ -1,11 +1,11 @@
 #!name=HTTPDNS拦截器
-#!desc=🔗 [2025/7/23 00:09:06] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
-#!HASH=8ce2a6a8c6f47ec867fc27e2aa41b9d5
+#!desc=🔗 [2025/7/25 00:09:10] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
+#!HASH=08a6f94242696c57e7ecdbd9fd3bfbaf
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], VirgilClyne[https://github.com/VirgilClyne]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
 #!tag=去广告, 依赖
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
+#!homepage=https://pluginhub.kelee.one
 #!date=2025-06-16 12:29:05
 
 [Rule]
