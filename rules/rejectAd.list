@@ -1,5 +1,5 @@
-#!HASH=a91e24047da5c007df9b2a88ed577dc3
-#规则数量:9598
+#!HASH=1b62ec721f94b630b959d48b7bf4ca7f
+#规则数量:9607
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -19,6 +19,10 @@ DOMAIN-SUFFIX,gepush.com
 DOMAIN-SUFFIX,igexin.com
 DOMAIN-SUFFIX,log.aliyuncs.com
 DOMAIN-SUFFIX,zlsdk.1rtb.net
+DOMAIN-SUFFIX,ott.cibntv.net
+DOMAIN-SUFFIX,cdntips.net
+DOMAIN-SUFFIX,tfogc.com
+DOMAIN-SUFFIX,file.myqcloud.com
 DOMAIN-KEYWORD,volc
 DOMAIN-KEYWORD,umeng
 DOMAIN,api.liquidlink.cn
@@ -734,6 +738,7 @@ DOMAIN-SUFFIX,brand.sogou.com
 DOMAIN-SUFFIX,bsiet.husky.sogou.com
 DOMAIN-SUFFIX,jdqd.jd.com
 DOMAIN-SUFFIX,shouji.sougou.com
+DOMAIN-SUFFIX,push-service-ios.sginput.qq.com
 DOMAIN-SUFFIX,wxsnsdythumb.wxs.qq.com
 DOMAIN,ads-shopping.shouqianba.com
 DOMAIN,aaid.uyunad.com
@@ -1092,6 +1097,10 @@ DOMAIN-SUFFIX,adwangmai.com
 DOMAIN-SUFFIX,yunxinfw.com
 DOMAIN-SUFFIX,bridgeoos.com
 DOMAIN-SUFFIX,cloooud.com
+DOMAIN-SUFFIX,baihemob.com
+DOMAIN-SUFFIX,ad.bwton.com
+DOMAIN-SUFFIX,api.wxcjgg.cn
+DOMAIN-SUFFIX,shunchangzhixing.com
 IP-CIDR,114.132.165.205/32
 DOMAIN-SUFFIX,beacon.sina.com.cn
 DOMAIN,u1.img.mobile.sina.cn

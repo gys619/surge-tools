@@ -1,6 +1,6 @@
 #!name=可莉广告过滤器
-#!desc=🔗 [2025/7/25 00:09:19] 可莉自用的广告过滤器
-#!HASH=6bc8b123bc4bc0d3514e0af4f6ccb046
+#!desc=🔗 [2025/8/1 00:09:28] 可莉自用的广告过滤器
+#!HASH=0a6818b0f4c71e7de42ccfcbb76c5224
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/KeLee.png
 #!tag=去广告
@@ -66,7 +66,6 @@ DOMAIN,open-pixon.ads-pixiv.net,REJECT
 ^https:\/\/app\.10099\.com\.cn\/contact-web\/api\/version\/getFlashScreenPage - reject
 
 [Body Rewrite]
-http-response-jq ^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/myTab\? 'delpaths([["data","banners"]])'
 http-response ^https?:\/\/cmds\.omesoft\.com\/HypnotistWS\.asmx <GetADResult>\.\*\?<\/GetADResult> <GetADResult>{"ret":0,"msg":"正常","err_code":0,"data":{"ad":[]}}</GetADResult>
 http-response-jq ^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2 '.data.list=[]'
 
