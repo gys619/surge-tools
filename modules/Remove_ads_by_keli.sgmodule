@@ -1,11 +1,11 @@
 #!name=可莉广告过滤器
-#!desc=🔗 [2025/8/1 00:09:28] 可莉自用的广告过滤器
-#!HASH=0a6818b0f4c71e7de42ccfcbb76c5224
+#!desc=🔗 [2025/8/12 19:54:20] 可莉自用的广告过滤器
+#!HASH=33d6d54cc62e40eb25b2d8b2b81daff4
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/KeLee.png
 #!tag=去广告
 #!loon_version=3.2.4(787)
-#!homepage=https://pluginhub.kelee.one
+#!homepage=https://hub.kelee.one
 #!date=2025-07-16 02:25:05
 
 [Rule]
