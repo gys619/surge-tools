@@ -1,6 +1,6 @@
 #!name=广告拦截&净化合集
-#!desc=🔗 [2025/8/12 19:54:16] (支持约564款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
-#!HASH=4958d7b08718101b53abc0da8183216e
+#!desc=🔗 [2025/8/16 00:09:12] (支持约564款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
+#!HASH=d685a5e66c444dbb90946f4efdb20d3b
 #!author=奶思[https://github.com/fmz200]
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdblockPlus.png
 #!category=奶思的模块
@@ -742,7 +742,7 @@ https://access.mypikpak.com/access_controller/v1/area_accessible - reject
 # hostname = cms.daydaycook.com.cn, api.daydaycook.com.cn
 ^https?:\/\/cms\.daydaycook\.com\.cn\/api\/cms\/advertisement\/ - reject
 ^https?:\/\/api\.daydaycook\.com\.cn\/daydaycook\/server\/ad\/ - reject
-^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone https://$1.spotify.com/artistview/v1/artist/$2&platform=ipad header
+^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone https://spclient.wg.spotify.com/artistview/v1/artist/$1&platform=ipad header
 # 国际版Soul去广告
 ^https?:\/\/api-global\.soulapp\.me\/app\/open\/get - reject
 # hostname = mpcs.suning.com, image.suning.com, luckman.suning.com
@@ -2003,7 +2003,7 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON data-typ
 
 ^https?:\/\/img0[1-9]{1}\.luckincoffeecdn\.com\/group\d/M00/[A-Z0-9]{2}/[A-Z0-9]{2}/[a-zA-Z0-9]{29}\.(jpg|jpeg)_\.webp data-type=text data=" " status-code=200
 
-# hostname = gae2-spclient.spotify.com, guc3-spclient.spotify.com, spclient.wg.spotify.com
+# hostname = *-spclient.spotify.com, spclient.wg.spotify.com
 ^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/pendragon\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 # 信息流，帖子详情页等各种广告
