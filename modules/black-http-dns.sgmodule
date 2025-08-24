@@ -2,8 +2,8 @@
 #!desc=分流规则中含有URL-REGEX类型的MITM模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-06-18 01:20:59
-#!HASH=c3e718dd3d70014c9562e2229da9745d
+#!updated=2025-08-24 01:25:30
+#!HASH=8df3e289dbf4808342bb6b5bb69feb33
 
 [MITM]
 hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 182.256.116.116, 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:20::10, 2401:b180:2000:30::1c, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com, zijieapi.com
@@ -82,10 +82,6 @@ URL-REGEX,"^http:\/\/103\.44\.58\.64\/md\?",REJECT
 URL-REGEX,"^http:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns",REJECT
 DOMAIN,dns2.q2cdn.com,REJECT
 URL-REGEX,"^http:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/",REJECT
-IP-CIDR,8.134.241.67/32,REJECT,no-resolve
-DOMAIN,dig.bdurl.net,REJECT
-DOMAIN,dig.zjurl.cn,REJECT
-AND,((DOMAIN-KEYWORD,tnc),(AND,((OR,((DOMAIN-KEYWORD,-bjlgy),(DOMAIN-KEYWORD,-alisc),(DOMAIN-KEYWORD,-aliec),(DOMAIN-KEYWORD,-alisg))),(OR,((DOMAIN-SUFFIX,snssdk.com),(DOMAIN-SUFFIX,isnssdk.com),(DOMAIN-SUFFIX,toutiaoapi.com),(DOMAIN-SUFFIX,bytedance.com),(DOMAIN-SUFFIX,zijieapi.com)))))),REJECT
 DOMAIN,aedns.weixin.qq.com,REJECT
 IP-CIDR,39.156.140.30/32,REJECT,no-resolve
 IP-CIDR,39.156.140.47/32,REJECT,no-resolve

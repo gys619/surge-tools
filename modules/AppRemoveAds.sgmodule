@@ -2,8 +2,8 @@
 #!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,快手,qq音乐)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-08-18 06:41:24
-#!HASH=ba42fb8989af03dc32f6458f46a9f992
+#!updated=2025-08-24 01:25:33
+#!HASH=538903a92267937d6965742afdef550b
 
 [MITM]
 hostname = %APPEND% *-mtop.cainiao.com, *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, 116.85.1.6, 116.85.1.7, 116.85.2.14, 116.85.2.15, 117.51.168.12, 117.51.168.13, 117.51.169.11, 117.51.169.4, 120.241.142.11, 120.241.142.13, 120.241.143.11, 120.241.143.6, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 157.255.76.12, 157.255.76.15, 157.255.76.17, 157.255.76.19, 2402:4e00:4040::15, 2402:4e00:4040::16, 2402:4e00:4040::5, 2402:4e00:4040::b, 2402:4e00:4040::c, 2402:4e00:4040::f, 2402:840:d001::3, 2402:840:d001::4, 2402:840:d002::10, 2402:840:d002::f, 2408:8756:c5f:a00::20, 2408:8756:c5f:a00::21, 2408:8756:c5f:a00::27, 2408:8756:c5f:a00::28, 2409:8c54:872:40::10, 2409:8c54:872:40::11, 2409:8c54:872::11, 2409:8c54:872::13, 240e:97c:34:510::15, 240e:97c:34:510::6, 240e:97c:34:540::10, 240e:97c:34:540::13, 852b95d36.xwlpk.cn, acs.m.goofish.com, acs.m.taobao.com, acs.youku.com, ad.12306.cn, api.alipan.com, api.bilibili.com, api.caiyunapp.com, api.cc.163.com, api.gotokeep.com, api.live.bilibili.com, api.pinduoduo.com, api.qishui.com, api.udache.com, api.ys7.com, apissl.gifshow.com, apissl.ksapisrv.com, app-v1.ecoliving168.com, app.bilibili.com, appapi.cc.163.com, az2-api-idc.ksapisrv.com, az2-api-js.gifshow.com, az2-api.ksapisrv.com, az2-live.ksapisrv.com, az4-api-idc.ksapisrv.com, az4-api.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, cc.163.com, cdn-w.caiyunapp.com, ci.xiaohongshu.com, cn-acs.m.cainiao.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, edith.xiaohongshu.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, i.ys7.com, line3-h5-mobile-api.biligame.com, lion.didialift.com, live.bilibili.com, m5-zb.amap.com, m5.amap.com, member.alipan.com, mobile.12306.cn, mp.weixin.qq.com, mshare.cc.163.com, oss.amap.com, poplayer.template.alibaba.com, push.m.youku.com, rec.xiaohongshu.com, res.xiaojukeji.com, sns.amap.com, starplucker.cyapi.cn, un-acs.youku.com, vv.video.qq.com, webcast-open.douyin.com, weibo.com, www.xiaohongshu.com
@@ -164,12 +164,6 @@ DOMAIN,us.l.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,tangram.e.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,tmeadbak.y.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN-SUFFIX,imtmp.net,REJECT,extended-matching,pre-matching
-[URL Rewrite]
-^(https:\/\/api\.bilibili\.com\/pgc\/page\/channel\?.*)(&mobi_app=iphone)(&.*)$ $1$2_i$3 header
-# CC直播
-^https:\/\/cc\.163\.com\/act\/m\/daily\/ad_ - reject
-# 萤石云视频
-^https:\/\/api\.ys7\.com\/api\/ads - reject
 [Body Rewrite]
 http-response-jq ^https:\/\/api\.bilibili\.com\/x\/pd-proxy\/tracker\? '.data[][]?="stun.chat.bilibili.com:3478"'
 http-response-jq ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(list|show|event\/list2)\? '.data |= with_entries(if .key | IN("show", "event_list") then .value = [] else . end)'
@@ -310,9 +304,9 @@ http-response-jq ^https:\/\/az2-api-js\.gifshow\.com\/rest\/n\/user\/profile\/v2
 ^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? data-type=text data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}" status-code=200 header="Content-Type:text/plain"
 ^https:\/\/ap[ip]\.bilibili\.com\/x\/(resource\/(top\/activity|patch\/tab)|v2\/search\/square|vip\/ads\/materials)\? data-type=text data="{"code":-404,"message":"-404","ttl":1,"data":null}" status-code=200 header="Content-Type:text/plain"
-^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA"
-^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA=="
-^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.view\.v1\.View\/TFInfo$ data-type=base64 data="AAAAAAIIAQ=="
+^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ data-type=base64 data="AAAAABMKEQgCEgl0ZWVuYWdlcnMgAioA"
+^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA=="
+^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.view\.v1\.View\/TFInfo$ data-type=base64 data="AAAAAAIIAQ=="
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.app\.home\.tabbar\.marketing\.get\.cn data-type=text data="{}" status-code=200
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.adkeyword\.get\.cn data-type=text data="{}" status-code=200
 ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.cncommunity\.my\.station\.query\.cn data-type=text data="{}" status-code=200
@@ -511,3 +505,8 @@ ProtoBuf处理 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\
 移除开屏广告 preload = type=http-response, pattern=^https:\/\/bootpreload\.uve\.weibo\.com\/v[12]\/ad\/preload, script-path=https://kelee.one/Resource/JavaScript/Weibo/Weibo_remove_ads.js, requires-body=true
 移除开屏广告 sdkad = type=http-response, pattern=^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php, script-path=https://kelee.one/Resource/JavaScript/Weibo/Weibo_remove_ads.js, requires-body=true
 移除开屏广告 wbapplua = type=http-response, pattern=^https:\/\/wbapp\.uve\.weibo\.com\/(?:preload\/get_ad|wbapplua\/wbpullad\.lua), script-path=https://kelee.one/Resource/JavaScript/Weibo/Weibo_remove_ads.js, requires-body=true
+[URL Rewrite]
+# CC直播
+^https:\/\/cc\.163\.com\/act\/m\/daily\/ad_ - reject
+# 萤石云视频
+^https:\/\/api\.ys7\.com\/api\/ads - reject
