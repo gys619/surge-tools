@@ -1,4 +1,4 @@
-#!HASH=8f1af1f16f5b501d9262031691b7266a
+#!HASH=4355eb72aebb04291d41ad4850546c9f
 #规则数量:9533
 #不支持的规则数量:0
 #已排除的规则数量:0
@@ -953,8 +953,6 @@ DOMAIN,vcardsdkservice.vivo.com.cn
 DOMAIN-KEYWORD,stsdk.vivo.com.cn
 DOMAIN-KEYWORD,stsdk.vivoglobal.com
 DOMAIN-KEYWORD,paradisestatic.vivo.com.cn
-DOMAIN-SUFFIX,mi.gdt.qq.com
-DOMAIN,taichi.51y5.net
 DOMAIN-KEYWORD,app.51y5.net
 DOMAIN-KEYWORD,apiinit.amap.com
 DOMAIN-KEYWORD,c.51y5.net
@@ -973,6 +971,8 @@ DOMAIN-KEYWORD,insurance.lianwifi.com
 DOMAIN-KEYWORD,config.51y5.net
 DOMAIN-KEYWORD,static.wkanx.com
 DOMAIN-KEYWORD,config.y5en.com
+DOMAIN-SUFFIX,mi.gdt.qq.com
+DOMAIN,taichi.51y5.net
 DOMAIN-SUFFIX,dsp.youdao.com
 DOMAIN-SUFFIX,union.youdao.com
 DOMAIN,ad.bn.netease.com
