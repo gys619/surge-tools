@@ -1,5 +1,5 @@
-#!HASH=4355eb72aebb04291d41ad4850546c9f
-#规则数量:9533
+#!HASH=b6f4e35d8d18983192c229e677c5a143
+#规则数量:9532
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -25,13 +25,11 @@ DOMAIN-SUFFIX,tfogc.com
 DOMAIN-SUFFIX,file.myqcloud.com
 DOMAIN-KEYWORD,volc
 DOMAIN-KEYWORD,umeng
-DOMAIN,api.liquidlink.cn
 DOMAIN-SUFFIX,v3.fstats.xyz
 DOMAIN-SUFFIX,wss.haoyundmn.com
 DOMAIN-SUFFIX,new.xiongzhangad.com
 DOMAIN-SUFFIX,alexametrics.com
 DOMAIN-KEYWORD,in-page-push
-DOMAIN,ad.mcloud.139.com
 DOMAIN,ad.51wnl-cq.com
 DOMAIN,adextra.51wnl-cq.com
 DOMAIN,log.51wnl-cq.com
@@ -1153,6 +1151,7 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,no-resolve
 DOMAIN,apppv.zol.com.cn
 DOMAIN,pvnapp.zol.com.cn
 IP-CIDR,120.240.95.37/32,no-resolve
+DOMAIN,ad.mcloud.139.com
 DOMAIN-SUFFIX,m1.ad.10010.com
 DOMAIN,ad.21cn.com
 DOMAIN,ad.k.21cn.com
