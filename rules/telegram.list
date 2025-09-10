@@ -1,15 +1,15 @@
 # NAME: Telegram
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-02-08 17:32:47
+# UPDATED: 2025-09-10 01:12:51
 # DESCRIPTION: Telegram 分流规则
-# HASH: 0d141d94b9d377134338994bd4011acf
+# HASH: 4f850686a3d82172c6e33e83d5c5c353
 # DOMAIN-SUFFIX: 22
 # DOMAIN-KEYWORD: 1
-# IP-CIDR: 4
+# IP-CIDR: 6
 # IP-CIDR6: 4
 # DOMAIN: 0
-# TOTAL: 31
+# TOTAL: 33
 
 DOMAIN-SUFFIX,cdn-telegram.org
 DOMAIN-SUFFIX,comments.app
@@ -35,7 +35,9 @@ DOMAIN-SUFFIX,tx.me
 DOMAIN-SUFFIX,usercontent.dev
 DOMAIN-KEYWORD,nicegram
 IP-CIDR,109.239.140.0/24,no-resolve
+IP-CIDR,139.59.210.98/32,no-resolve
 IP-CIDR,149.154.160.0/20,no-resolve
+IP-CIDR,196.55.216.167/32,no-resolve
 IP-CIDR,5.28.192.0/18,no-resolve
 IP-CIDR,91.108.0.0/16,no-resolve
 IP-CIDR6,2001:67c:4e8::/48,no-resolve
