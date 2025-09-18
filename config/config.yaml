@@ -13,7 +13,7 @@ rules:
         - "https://github.com/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Surge/Hijacking/Hijacking_Resolve.list"
         - "https://github.com/thNylHx/Tools/raw/main/Ruleset/Surge/Block/Ads_ml.list"
       exclude_rules:  # 需要排除的单条规则
-        - ""
+        - "DOMAIN,ad.zijieapi.com"
       exclude_rule_sets:  # 需要排除的规则集
         - ""
       rule_preference:  # 规则优先级顺序
