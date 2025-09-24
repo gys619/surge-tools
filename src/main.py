@@ -44,25 +44,9 @@ def optimize_rules(rules: dict) -> dict:
     domains = {(policy, domain) for policy, domain in domains if is_valid_domain(domain)}
     domain_suffixes = {(policy, suffix) for policy, suffix in domain_suffixes if is_valid_domain(suffix)}
     
-    # 3. 优化 DOMAIN 和 DOMAIN-SUFFIX 的关系
-    # 创建后缀树来加速查找
-    suffix_tree = set()
-    for _, suffix in domain_suffixes:
-        parts = suffix.split('.')
-        for i in range(len(parts)):
-            suffix_tree.add('.'.join(parts[i:]))
-    
-    # 过滤被后缀规则覆盖的域名
-    filtered_domains = set()
-    for policy, domain in domains:
-        parts = domain.split('.')
-        covered = False
-        for i in range(len(parts)):
-            if '.'.join(parts[i:]) in suffix_tree:
-                covered = True
-                break
-        if not covered:
-            filtered_domains.add((policy, domain))
+    # 3. 保留所有有效的 DOMAIN 规则
+    # DOMAIN 和 DOMAIN-SUFFIX 规则有不同的匹配逻辑，应该都保留
+    filtered_domains = domains
     
     # 4. 优化 DOMAIN-KEYWORD（使用集合操作）
     filtered_keywords = set()
@@ -104,9 +88,9 @@ def optimize_rules(rules: dict) -> dict:
     if ip_cidrs6:
         optimized['IP-CIDR6'] = sorted(ip_cidrs6)
     
-    # 8. 复制其他类型的规则
+    # 8. 复制其他类型的规则（包括IP-ASN等）
     for rule_type in rules:
-        if rule_type not in optimized:
+        if rule_type not in optimized and rules[rule_type]:
             optimized[rule_type] = sorted(set(rules[rule_type]))
     
     return optimized

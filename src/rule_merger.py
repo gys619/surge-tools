@@ -37,6 +37,7 @@ class RuleMerger:
             'DOMAIN-KEYWORD': set(),
             'IP-CIDR': set(),
             'IP-CIDR6': set(),
+            'IP-ASN': set(),
             'URL-REGEX': set()
         }
         

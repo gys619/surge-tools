@@ -22,7 +22,7 @@ class RuleParser:
     def __init__(self):
         self.rule_types = {
             'DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD',
-            'IP-CIDR', 'IP-CIDR6', 'URL-REGEX'
+            'IP-CIDR', 'IP-CIDR6', 'IP-ASN', 'URL-REGEX'
         }
         
     def parse_line(self, line: str) -> Rule:
@@ -66,7 +66,7 @@ class RuleParser:
                 return 'DOMAIN-SUFFIX', content[2:]
             return None, content
         
-    def should_exclude(self, rule: Rule, exclude_rules: List[str]) -> bool:
+    def should_exclude(self, rule: Rule, exclude_rules) -> bool:
         for exclude in exclude_rules:
             exclude_type, exclude_content = self.parse_exclude_rule(exclude)
             
