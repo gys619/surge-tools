@@ -1,80 +1,112 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-09-24 01:56:49
+# UPDATED: 2025-09-24 05:01:01
 # DESCRIPTION: AI分流规则
-# HASH: 02339002ed2bf4b260a22efade55d4b8
-# DOMAIN: 13
-# DOMAIN-SUFFIX: 44
-# DOMAIN-KEYWORD: 8
+# HASH: 239d1d6be84f094f6aeef44bd685a711
+# DOMAIN: 24
+# DOMAIN-SUFFIX: 68
+# DOMAIN-KEYWORD: 5
 # IP-CIDR: 2
 # IP-ASN: 0
-# TOTAL: 67
+# TOTAL: 99
 
 DOMAIN,ai.google.dev
+DOMAIN,alkalicore-pa.clients6.google.com
+DOMAIN,api.github.com
+DOMAIN,apple-relay.apple.com
+DOMAIN,apple-relay.cloudflare.com
 DOMAIN,browser-intake-datadoghq.com
 DOMAIN,chat.openai.com.cdn.cloudflare.net
 DOMAIN,cloudconsole-pa.clients6.google.com
+DOMAIN,copilot.microsoft.com
+DOMAIN,gateway.ai.cloudflare.com
 DOMAIN,gemini.google.com
+DOMAIN,guzzoni.smoot.apple.com
 DOMAIN,jules.google.com
 DOMAIN,makersuite.google.com
+DOMAIN,o33249.ingest.sentry.io
 DOMAIN,openai-api.arkoselabs.com
+DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,sora-cdn.oaistatic.com
 DOMAIN,static.cloudflareinsights.com
+DOMAIN,waa-pa.clients6.google.com
 DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,algolia.net
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,api.statsig.com
 DOMAIN-SUFFIX,apis.google.com
+DOMAIN-SUFFIX,augment.com
+DOMAIN-SUFFIX,augmentcode.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,brave.com
+DOMAIN-SUFFIX,cdn.oaistatic.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,chorus.sh
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,clients6.google.com
+DOMAIN-SUFFIX,clipdrop.co
 DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,codeiumdata.com
+DOMAIN-SUFFIX,cursor.sh
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,diabrowser.engineering
+DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,forefront.ai
+DOMAIN-SUFFIX,geller-pa.googleapis.com
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,microsoftonline.com
+DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,observeit.net
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,openart.ai
 DOMAIN-SUFFIX,openrouter.ai
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,ping0.cc
+DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-SUFFIX,windsurf.com
-DOMAIN-KEYWORD,augmentcode
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,zed.dev
+DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
 DOMAIN-KEYWORD,cici
 DOMAIN-KEYWORD,colab
 DOMAIN-KEYWORD,developerprofiles
-DOMAIN-KEYWORD,generativelanguage
 DOMAIN-KEYWORD,huggingface
-DOMAIN-KEYWORD,notebooklm
-DOMAIN-KEYWORD,zed
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
