@@ -1,16 +1,29 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-09-24 01:26:13
+# UPDATED: 2025-09-24 01:56:49
 # DESCRIPTION: AI分流规则
-# HASH: 1e8c85067c891685690ef743534434e2
-# DOMAIN: 1
+# HASH: 02339002ed2bf4b260a22efade55d4b8
+# DOMAIN: 13
 # DOMAIN-SUFFIX: 44
 # DOMAIN-KEYWORD: 8
 # IP-CIDR: 2
-# TOTAL: 55
+# IP-ASN: 0
+# TOTAL: 67
 
 DOMAIN,ai.google.dev
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,cloudconsole-pa.clients6.google.com
+DOMAIN,gemini.google.com
+DOMAIN,jules.google.com
+DOMAIN,makersuite.google.com
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,static.cloudflareinsights.com
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,algolia.net
 DOMAIN-SUFFIX,anthropic.com
