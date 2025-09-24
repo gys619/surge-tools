@@ -1,16 +1,17 @@
-# NAME: GlobalMediaAll
+# NAME: GlobalMedia
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-04-29 10:09:30
+# UPDATED: 2025-09-24 01:56:48
 # DESCRIPTION: GlobalMedia分流规则(youtube,youtube music)
-# HASH: 530a814cfc115b0a7a10b816c163b5cb
-# DOMAIN: 0
+# HASH: d100c0a60bd8a7dea1fc330477ee28a4
+# DOMAIN: 1
 # DOMAIN-SUFFIX: 179
 # DOMAIN-KEYWORD: 0
 # IP-CIDR: 2
 # IP-CIDR6: 1
-# TOTAL: 182
+# TOTAL: 183
 
+DOMAIN,music.youtube.com
 DOMAIN-SUFFIX,ggpht.cn
 DOMAIN-SUFFIX,ggpht.com
 DOMAIN-SUFFIX,googlevideo.com
