@@ -44,8 +44,8 @@ def optimize_rules(rules: dict) -> dict:
     domains = {(policy, domain) for policy, domain in domains if is_valid_domain(domain)}
     domain_suffixes = {(policy, suffix) for policy, suffix in domain_suffixes if is_valid_domain(suffix)}
     
-    # 3. 保留所有有效的 DOMAIN 规则
-    # DOMAIN 和 DOMAIN-SUFFIX 规则有不同的匹配逻辑，应该都保留
+    # 3. 暂时禁用DOMAIN优化以确保规则完整性
+    # TODO: 可以在未来启用更安全的优化逻辑
     filtered_domains = domains
     
     # 4. 优化 DOMAIN-KEYWORD（使用集合操作）
