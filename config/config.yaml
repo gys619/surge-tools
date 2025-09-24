@@ -110,7 +110,13 @@ rules:
       urls:
         - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/OpenAI/OpenAI.list"
         - "https://raw.githubusercontent.com/gys619/surge-tools/refs/heads/main/rules/AI.list"
-        
+        - "https://raw.githubusercontent.com/vitoliu93/vpn_rules/refs/heads/main/ai.list"
+      exclude_rules: []
+      rule_preference:
+        - "DOMAIN"
+        - "DOMAIN-SUFFIX"
+        - "DOMAIN-KEYWORD"
+        - "IP-CIDR"
 
 
 
