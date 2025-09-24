@@ -1,25 +1,40 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-05-09 01:18:18
+# UPDATED: 2025-09-24 01:26:13
 # DESCRIPTION: AI分流规则
-# HASH: 5f0b5eadcb39def8c64b625c18fa8788
-# DOMAIN: 0
-# DOMAIN-SUFFIX: 25
-# DOMAIN-KEYWORD: 0
+# HASH: 1e8c85067c891685690ef743534434e2
+# DOMAIN: 1
+# DOMAIN-SUFFIX: 44
+# DOMAIN-KEYWORD: 8
 # IP-CIDR: 2
-# TOTAL: 27
+# TOTAL: 55
 
+DOMAIN,ai.google.dev
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,api.statsig.com
+DOMAIN-SUFFIX,apis.google.com
 DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,brave.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,clients6.google.com
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,diabrowser.engineering
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,forefront.ai
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,intercom.io
@@ -31,9 +46,22 @@ DOMAIN-SUFFIX,observeit.net
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,openrouter.ai
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,ping0.cc
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,turn.livekit.cloud
+DOMAIN-SUFFIX,windsurf.com
+DOMAIN-KEYWORD,augmentcode
+DOMAIN-KEYWORD,cici
+DOMAIN-KEYWORD,colab
+DOMAIN-KEYWORD,developerprofiles
+DOMAIN-KEYWORD,generativelanguage
+DOMAIN-KEYWORD,huggingface
+DOMAIN-KEYWORD,notebooklm
+DOMAIN-KEYWORD,zed
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
