@@ -1,12 +1,12 @@
 #!name=广告拦截&净化合集
-#!desc=🔗 [2025/9/24 08:50:56] (支持约564款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
-#!HASH=bf9bfbe12e89c87e5605725b575bf102
+#!desc=🔗 [2025/9/25 00:09:14] (支持约564款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
+#!HASH=4c578a083a6f228cec68db3a673ca50a
 #!author=奶思[https://github.com/fmz200]
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdblockPlus.png
 #!category=奶思的模块
 #!homepage=https://github.com/fmz200/wool_scripts
 #!raw-url=https://github.com/fmz200/wool_scripts/raw/main/Loon/plugin/blockAds.plugin
-#!tg-group=https://t.me/lanjieguanggao
+#!tg-channel=https://t.me/inaisi
 #!tag=去广告, fmz200, 奶思
 #!system=ios
 #!date=2025-09-23 20:00:00
