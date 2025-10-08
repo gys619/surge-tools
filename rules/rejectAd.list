@@ -1,5 +1,5 @@
-#!HASH=abcff3d114a751c042a19e583f4dd2aa
-#规则数量:2743
+#!HASH=76bcf1586929211fa29a72223d203aa9
+#规则数量:2741
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -115,6 +115,7 @@ DOMAIN-SUFFIX,logger.adthrive.com
 DOMAIN-SUFFIX,ads.stickyadstv.com
 DOMAIN-SUFFIX,adnxs.com
 DOMAIN-SUFFIX,presage.io
+DOMAIN-SUFFIX,mradx.net
 DOMAIN-SUFFIX,3dns-2.adobe.com 
 DOMAIN-SUFFIX,3dns-3.adobe.com 
 DOMAIN-SUFFIX,activate.adobe.com 
@@ -556,7 +557,6 @@ DOMAIN-SUFFIX,newton-api.ele.me
 DOMAIN-SUFFIX,facebookma.cn
 DOMAIN-SUFFIX,atdmt.com
 DOMAIN-SUFFIX,staticxx.facebook.com
-DOMAIN,i.snssdk.com
 DOMAIN,i-lq.snssdk.com
 DOMAIN,dig.bdurl.net
 DOMAIN,activity-ag.awemeughun.com
@@ -564,7 +564,6 @@ DOMAIN,mcs.snssdk.com
 DOMAIN,tnc3-alisc1.snssdk.com
 DOMAIN,security-lq.snssdk.com
 DOMAIN,tnc3-aliec2.snssdk.com
-DOMAIN,i.snssdk.com
 DOMAIN,v6-novelapp.ixigua.com
 DOMAIN,msync-im1-vip6-std.easemob.com
 DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net
@@ -2374,7 +2373,6 @@ DOMAIN-SUFFIX,log.aliyuncs.com
 DOMAIN-SUFFIX,zlsdk.1rtb.net
 DOMAIN-SUFFIX,cdntips.net
 DOMAIN-SUFFIX,tfogc.com
-DOMAIN-SUFFIX,file.myqcloud.com
 DOMAIN-KEYWORD,volc
 DOMAIN-KEYWORD,umeng
 DOMAIN-SUFFIX,ad-stir.com 
