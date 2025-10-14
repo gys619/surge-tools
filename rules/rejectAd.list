@@ -1,4 +1,4 @@
-#!HASH=76bcf1586929211fa29a72223d203aa9
+#!HASH=ebf1f11874777ddca4bd742db519ebcd
 #规则数量:2741
 #不支持的规则数量:0
 #已排除的规则数量:0
@@ -2373,7 +2373,7 @@ DOMAIN-SUFFIX,log.aliyuncs.com
 DOMAIN-SUFFIX,zlsdk.1rtb.net
 DOMAIN-SUFFIX,cdntips.net
 DOMAIN-SUFFIX,tfogc.com
-DOMAIN-KEYWORD,volc
+AND,((NOT,((DOMAIN,volcengine-kdocs-cache.wpscdn.cn))), (NOT,((DOMAIN,vod-settings.volcvod.com))), (NOT,((DOMAIN,volcengine-kdocs-cache.wpscdn.cn))), (OR,((DOMAIN-KEYWORD,volc))))
 DOMAIN-KEYWORD,umeng
 DOMAIN-SUFFIX,ad-stir.com 
 DOMAIN-SUFFIX,adadapted.com 
