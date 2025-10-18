@@ -1,6 +1,6 @@
 #!name=墨鱼去开屏
-#!desc=🔗 [2025/10/8 20:36:43] 原脚本https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
-#!HASH=76b4b6fab94928df5b3d6cf735b27548
+#!desc=🔗 [2025/10/18 18:45:57] 原脚本https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
+#!HASH=cbb5e043d8dd45e145e4058dab6ac964
 
 [Rule]
 # > 12306
@@ -8,6 +8,8 @@ DOMAIN,ad.12306.cn,DIRECT
 DOMAIN-SUFFIX,shenshiads.com,REJECT
 # > lexiaotong
 DOMAIN-SUFFIX,yfanads.com,REJECT
+# > nongyeyinhang
+DOMAIN-SUFFIX,msmp.abchina.com.cn,REJECT
 DOMAIN-SUFFIX,iyes.youku.com,REJECT
 
 [URL Rewrite]
@@ -23,7 +25,7 @@ http-response-jq ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba.*mytab '.dat
 
 [Map Local]
 # > Version
-^https?:\/\/2025.10.08/c397/v2.0.621 data-type=text data=" " status-code=200
+^https?:\/\/2025.10.18/c398/v2.0.622 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
@@ -683,9 +685,6 @@ https://access.mypikpak.com/access_controller/v1/area_accessible data-type=text 
 # > pufayinhang
 ^https?:\/\/lban\.spdb\.com\.cn\/mspmk-web-component\/(getAdvList|prefetchAdvList)\.ah data-type=text data=" " status-code=200
 
-# > pupumarket
-^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement data-type=text data=" " status-code=200
-
 # > pica
 ^https?:\/\/.*tipatipa\.xyz\/announcements data-type=text data=" " status-code=200
 
@@ -734,6 +733,8 @@ https://homefront.qunar.com/front/splash/ad data-type=text data=" " status-code=
 
 # > quchenshi
 ^https?:\/\/mystore-gw\.watsonsvip\.com\.cn\/gfu\/popup\/advert\/launch data-type=text data=" " status-code=200
+
+^http:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/\w+\/resolv data-type=text data=" " status-code=200
 
 # > qihangjiaoyu
 ^https?:\/\/mobile\.iqihang\.com\/api\/ark\/web\/v\d\/advert data-type=text data=" " status-code=200
@@ -1309,11 +1310,13 @@ quark = type=http-response, pattern=^https?:\/\/open-cms-api\.(uc|quark)\.cn\/op
 # > manmanmai
 replaceBody = type=http-response, pattern=^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=splashAD-%3Eddgksf2013
 
-# > nongyeyinhang
 abchina = type=http-response, pattern=^https?:\/\/mobilepaas\.abchina\.com\.cn:441\/mgw\.htm, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/abchina.js, timeout=60
 
 # > ocleancare*
 replaceBody = type=http-response, pattern=^https?:\/\/careapi\.oclean\.com\/mall\/v\d\/User\/GetUserCenter, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=banner%22-%3Eddgksf2013%22
+
+# > pupumarket
+replaceBody = type=http-response, pattern=^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/advertisement\/v, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=launch_time_close%22%3A%5Cd%2B-%3Elaunch_time_close%22%3A1660716799999
 
 pupumarket = type=http-response, pattern=^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v\d\?position, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pupumarket.js, requires-body=true, max-size=-1, timeout=60
 
