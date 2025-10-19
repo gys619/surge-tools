@@ -383,9 +383,6 @@ class ModuleMerger:
             'sections': ordered_sections
         }
         
-        print("merge_module result type:", type(result))
-        print("merge_module result content:", result)
-
         return result
 
     def format_module_content(self, merged_data: Dict) -> str:
