@@ -14,6 +14,7 @@ rules:
         - "https://raw.githubusercontent.com/thNylHx/Tools/refs/heads/main/Ruleset/Surge/Block/Ads_all.list"
       exclude_rules:  # 需要排除的单条规则
         - "ad.zijieapi.com" # 汽水看广告得免费时长域名
+        - "analytics.meituan.net" #美团领券会不显示组件--Privacy_All_No_Resolve.list
       exclude_rule_sets:  # 需要排除的规则集
         - ""
       rule_preference:  # 规则优先级顺序
