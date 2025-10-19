@@ -1,15 +1,16 @@
 # NAME: GlobalMedia
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-10-19 14:23:02
+# UPDATED: 2025-10-19 14:38:25
 # DESCRIPTION: GlobalMedia分流规则(youtube,youtube music)
-# HASH: 21a9844f636c9853a6b9fae89562d147
+# HASH: b2f8e3b5d4aa79a0ded4db876e25bba8
 # DOMAIN: 1
 # DOMAIN-SUFFIX: 179
 # IP-CIDR: 2
 # IP-CIDR6: 1
 # DOMAIN-KEYWORD: 1
-# TOTAL: 184
+# USER-AGENT: 7
+# TOTAL: 191
 
 DOMAIN,music.youtube.com
 DOMAIN-SUFFIX,ggpht.cn
@@ -195,3 +196,10 @@ IP-CIDR,172.110.32.0/21,no-resolve
 IP-CIDR,216.73.80.0/20,no-resolve
 IP-CIDR6,2620:120:e000::/40,no-resolve
 DOMAIN-KEYWORD,youtube
+USER-AGENT,*YouTubeMusic*
+USER-AGENT,*com.google.ios.youtubemusic*
+USER-AGENT,*youtube*
+USER-AGENT,YouTube*
+USER-AGENT,YouTubeMusic*
+USER-AGENT,com.google.ios.youtube*
+USER-AGENT,com.google.ios.youtubemusic*

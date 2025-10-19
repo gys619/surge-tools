@@ -1,15 +1,17 @@
 # NAME: Netflix
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-09-24 01:56:47
+# UPDATED: 2025-10-19 14:38:25
 # DESCRIPTION: Netflix 分流规则
-# HASH: e2c570da0d34e5a127dc9a0a027650fc
+# HASH: 34e23cf35c940035d265cd8d040e313d
 # DOMAIN: 3
 # DOMAIN-SUFFIX: 30
-# IP-CIDR: 1115
 # DOMAIN-KEYWORD: 3
+# IP-CIDR: 1115
 # IP-CIDR6: 4
-# TOTAL: 1155
+# USER-AGENT: 1
+# PROCESS-NAME: 1
+# TOTAL: 1157
 
 DOMAIN,e13252.dscg.akamaiedge.net
 DOMAIN,h-netflix.online-metrix.net
@@ -44,6 +46,9 @@ DOMAIN-SUFFIX,nflxso.net
 DOMAIN-SUFFIX,nflxvideo.net
 DOMAIN-SUFFIX,onetrust.com
 DOMAIN-SUFFIX,us-west-2.amazonaws.com
+DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
+DOMAIN-KEYWORD,dualstack.apiproxy-
+DOMAIN-KEYWORD,dualstack.ichnaea-web-
 IP-CIDR,103.87.204.0/22,no-resolve
 IP-CIDR,107.23.255.0/26,no-resolve
 IP-CIDR,108.128.160.0/23,no-resolve
@@ -1159,10 +1164,9 @@ IP-CIDR,99.79.20.192/26,no-resolve
 IP-CIDR,99.80.34.48/28,no-resolve
 IP-CIDR,99.80.34.64/26,no-resolve
 IP-CIDR,99.80.88.0/25,no-resolve
-DOMAIN-KEYWORD,apiproxy-device-prod-nlb-
-DOMAIN-KEYWORD,dualstack.apiproxy-
-DOMAIN-KEYWORD,dualstack.ichnaea-web-
 IP-CIDR6,2607:fb10::/32,no-resolve
 IP-CIDR6,2620:10c:7000::/44,no-resolve
 IP-CIDR6,2a00:86c0::/32,no-resolve
 IP-CIDR6,2a03:5640::/32,no-resolve
+USER-AGENT,Argo*
+PROCESS-NAME,com.netflix.mediaclient

@@ -1,15 +1,16 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-10-19 14:23:02
+# UPDATED: 2025-10-19 14:38:26
 # DESCRIPTION: AI分流规则
-# HASH: c66326d02845a9a83a850490f47b5d86
+# HASH: e9d5d83cce6ec5ca41db358d88e324e9
 # DOMAIN: 24
 # DOMAIN-SUFFIX: 68
 # DOMAIN-KEYWORD: 5
 # IP-CIDR: 2
 # IP-ASN: 1
-# TOTAL: 100
+# DOMAIN-KEYWORDS: 1
+# TOTAL: 101
 
 DOMAIN,ai.google.dev
 DOMAIN,alkalicore-pa.clients6.google.com
@@ -111,3 +112,4 @@ DOMAIN-KEYWORD,huggingface
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 IP-ASN,20473,no-resolve
+DOMAIN-KEYWORDS,grok

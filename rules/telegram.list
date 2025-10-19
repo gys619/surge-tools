@@ -1,16 +1,18 @@
 # NAME: Telegram
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-10-19 14:23:02
+# UPDATED: 2025-10-19 14:38:25
 # DESCRIPTION: Telegram 分流规则
-# HASH: a4ba1ab9597d51677f24dc16d904e2da
+# HASH: 6f88d8c5d11765fff614e19910d5f5d7
 # DOMAIN: 2
 # DOMAIN-SUFFIX: 22
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 6
 # IP-CIDR6: 4
 # IP-ASN: 5
-# TOTAL: 40
+# PROCESS-NAME: 5
+# OR: 1
+# TOTAL: 46
 
 DOMAIN,api.imem.app
 DOMAIN,api.swiftgram.app
@@ -52,3 +54,9 @@ IP-ASN,44907,no-resolve
 IP-ASN,59930,no-resolve
 IP-ASN,62014,no-resolve
 IP-ASN,62041,no-resolve
+PROCESS-NAME,nekox.messenger
+PROCESS-NAME,org.telegram.messenger
+PROCESS-NAME,telegram-desktop
+PROCESS-NAME,tw.nekomimi.nekogram
+PROCESS-NAME,xyz.nextalone.nagram
+OR,((IP-ASN,44907,no-resolve),(IP-ASN,59930,no-resolve),(IP-ASN,62014,no-resolve),(IP-ASN,62041,no-resolve),(IP-ASN,211157,no-resolve))

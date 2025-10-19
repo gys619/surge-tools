@@ -1,14 +1,16 @@
 # NAME: ChinaMedia
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-09-24 01:56:48
+# UPDATED: 2025-10-19 14:38:26
 # DESCRIPTION: ChinaMedia分流规则(bilibili,微博,小红书,快手,抖音,TikTok,Kuaishou,Douyin,Xiaohongshu,Weibo,Kuaishou,Douyin,Xiaohongshu)
-# HASH: 47ff746a3c1c423758729761c315d3ef
+# HASH: e6d941c9092ceb70eef31ad41ef7fc12
 # DOMAIN: 70
 # DOMAIN-SUFFIX: 87
 # IP-CIDR: 29
 # IP-CIDR6: 29
-# TOTAL: 215
+# USER-AGENT: 6
+# PROCESS-NAME: 6
+# TOTAL: 227
 
 DOMAIN,00713915daab0be43def5c338c02c80b.dlied1.cdntips.net
 DOMAIN,0gr4uqmtt8y41hcjsgrzdrc31.ourdvsss.com
@@ -225,3 +227,15 @@ IP-CIDR6,::ffff:58.58.0.90/128,no-resolve
 IP-CIDR6,::ffff:60.171.183.161/128,no-resolve
 IP-CIDR6,::ffff:60.171.183.186/128,no-resolve
 IP-CIDR6,::ffff:60.171.183.98/128,no-resolve
+USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*
+USER-AGENT,*bili*
+USER-AGENT,Bilibili*
+USER-AGENT,NeteaseMusic*
+USER-AGENT,bili*
+USER-AGENT,bili-inter*
+PROCESS-NAME,com.bilibili.app.blue
+PROCESS-NAME,com.bilibili.app.in
+PROCESS-NAME,com.bilibili.comic
+PROCESS-NAME,com.bilibili.comic.intl
+PROCESS-NAME,tv.danmaku.bili
+PROCESS-NAME,tv.danmaku.bilibilihd
