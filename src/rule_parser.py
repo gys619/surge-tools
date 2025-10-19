@@ -20,10 +20,7 @@ class Rule:
 
 class RuleParser:
     def __init__(self):
-        self.rule_types = {
-            'DOMAIN', 'DOMAIN-SUFFIX', 'DOMAIN-KEYWORD',
-            'IP-CIDR', 'IP-CIDR6', 'IP-ASN', 'URL-REGEX'
-        }
+        self.domain_rule_types = {'DOMAIN', 'DOMAIN-SUFFIX'}
         
     def parse_line(self, line: str) -> Rule:
         line = line.strip()
@@ -34,10 +31,7 @@ class RuleParser:
         if len(parts) < 2:
             return None
             
-        rule_type = parts[0].strip()
-        if rule_type not in self.rule_types:
-            return None
-            
+        rule_type = parts[0].strip().upper()
         content = parts[1].strip()
         return Rule(type=rule_type, content=content, original=line)
         
@@ -56,10 +50,10 @@ class RuleParser:
         """
         if ',' in exclude_rule:  # 完整规则
             rule_type, content = exclude_rule.split(',', 1)
-            return rule_type.strip(), content.strip()
+            return rule_type.strip().upper(), content.strip()
         elif ':' in exclude_rule:  # 类型指定
             rule_type, content = exclude_rule.split(':', 1)
-            return rule_type.strip(), content.strip()
+            return rule_type.strip().upper(), content.strip()
         else:  # 仅内容或通配符
             content = exclude_rule.strip()
             if content.startswith('*.'):
@@ -76,7 +70,7 @@ class RuleParser:
                 
             # 处理通配符
             if exclude_content.startswith('*.'):
-                if rule.type in ['DOMAIN', 'DOMAIN-SUFFIX']:
+                if rule.type in self.domain_rule_types:
                     base_domain = exclude_content[2:]
                     if rule.content.endswith(base_domain):
                         return True

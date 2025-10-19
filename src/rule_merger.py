@@ -31,15 +31,7 @@ class RuleMerger:
     def merge_rules(self, rule_set_name: str) -> Dict:
         logging.info(f"开始处理规则集: {rule_set_name}")
         rule_config = self.config['rules']['sources'][rule_set_name]
-        rules: Dict[str, Set[str]] = {  # 使用 Set 而不是 List 来存储规则
-            'DOMAIN': set(),
-            'DOMAIN-SUFFIX': set(),
-            'DOMAIN-KEYWORD': set(),
-            'IP-CIDR': set(),
-            'IP-CIDR6': set(),
-            'IP-ASN': set(),
-            'URL-REGEX': set()
-        }
+        rules: Dict[str, Set[str]] = {}
         
         # 获取排除规则，过滤掉空值
         exclude_rules = set(rule for rule in rule_config.get('exclude_rules', []) if rule)
@@ -64,7 +56,7 @@ class RuleMerger:
                 for line in lines:
                     rule = self.parser.parse_line(line)
                     if rule and not self.parser.should_exclude(rule, exclude_rules):
-                        rules[rule.type].add(rule.original)  # 存储原始行，而不是 Rule 对象
+                        rules.setdefault(rule.type, set()).add(rule.original)  # 存储原始行，而不是 Rule 对象
             else:
                 logging.warning(f"获取规则失败: {url}")
         
@@ -73,7 +65,7 @@ class RuleMerger:
             return None
             
         # 如果规则为空，返回 None
-        total_rules = sum(len(rules[rule_type]) for rule_type in rules)
+        total_rules = sum(len(rule_values) for rule_values in rules.values())
         if total_rules == 0:
             logging.warning(f"规则集 {rule_set_name} 合并后为空")
             return None
@@ -88,9 +80,9 @@ class RuleMerger:
                 ordered_rules[rule_type] = sorted(rules[rule_type])  # 对规则进行排序
         
         # 然后添加其他规则类型
-        for rule_type in rules:
-            if rule_type not in ordered_rules and rules[rule_type]:
-                ordered_rules[rule_type] = sorted(rules[rule_type])
+        for rule_type, rule_values in rules.items():
+            if rule_type not in ordered_rules and rule_values:
+                ordered_rules[rule_type] = sorted(rule_values)
         
         return {
             'metadata': {
