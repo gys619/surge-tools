@@ -1,6 +1,6 @@
 #!name=哔哩哔哩去广告
-#!desc=🔗 [2025/9/29 09:04:38] 过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数，增加空降助手以便跳过视频中插入的广告。此插件仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。\n\n空降助手是第三方提供的功能，依赖于Android版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关。
-#!HASH=4c64bbb4ac8048d492ac32cb849d171f
+#!desc=🔗 [2025/10/24 00:55:05] 过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数，增加空降助手以便跳过视频中插入的广告。此插件仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。\n\n空降助手是第三方提供的功能，依赖于Android版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关。
+#!HASH=ac41bcdfbf31457879c1a8719e4254ee
 #!author=kokoryh[https://github.com/kokoryh]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Bilibili.png
 #!openUrl=https://apps.apple.com/app/id736536022
@@ -9,7 +9,7 @@
 #!system_version=15
 #!loon_version=3.2.9(837)
 #!homepage=https://hub.kelee.one
-#!date=2025-09-27 01:20:12
+#!date=2025-10-22 01:24:04
 #!arguments=showUpList:"auto",purifyTopReplies:true,purifyWebpage:true,airborne:false,logLevel:"off"
 
 [Rule]
@@ -53,10 +53,10 @@ http-response-jq ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? '.data.
 
 ProtoBuf处理 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://kelee.one/Resource/JavaScript/Bilibili/Bilibili_proto_response_kokoryh.js, requires-body=true, binary-body-mode=true, argument="[{{{showUpList}}}, {{{purifyTopReplies}}}, {{{airborne}}}, {{{logLevel}}}]"
 
-移除直播间网页广告 = type=http-response, pattern=^https:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\?, script-path=https://kelee.one/Resource/JavaScript/Bilibili/webpage_Bilibili_remove_ads_kokoryh.js, requires-body=true
+移除直播间网页广告 = type=http-response, pattern=^https:\/\/(live|www)\.bilibili\.com\/blackboard\/era\/.+\.html\?, script-path=https://kelee.one/Resource/JavaScript/Bilibili/webpage_Bilibili_remove_ads_kokoryh.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, live.bilibili.com, line3-h5-mobile-api.biligame.com
+hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, live.bilibili.com, www.bilibili.com, line3-h5-mobile-api.biligame.com
 
 # 🔗 模块链接
 #SUBSCRIBED http://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx/_end_/Bilibili_remove_ads.sgmodule?type=loon-plugin&target=surge-module&del=true&jqEnabled=true
