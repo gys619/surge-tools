@@ -172,6 +172,7 @@ modules:
       urls:
         #哔哩哔哩
         - "https://raw.githubusercontent.com/gys619/surge-tools/refs/heads/main/modules/Bilibili_remove_ads.sgmodule"
+        - "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/split/partB/bilibili.sgmodule"
         # 菜鸟
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E8%8F%9C%E9%B8%9F%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule"
         # 12306
