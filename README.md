@@ -116,7 +116,8 @@ surge-tools/
 ### Loon相关资源
 - [可莉的插件中心](https://pluginhub.kelee.one)
 - [可莉的插件仓库](https://github.com/luestr/ProxyResource)
-- [去广告仓库](https://github.com/fmz200/wool_scripts)
+- [奶思去广告仓库](https://github.com/fmz200/wool_scripts)
+- [奶思去广告直达](https://github.com/fmz200/wool_scripts/blob/main/README-RULE.md)
 
 ## 👏 致谢 Credits
 
