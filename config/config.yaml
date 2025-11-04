@@ -207,6 +207,7 @@ modules:
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E6%B1%BD%E6%B0%B4%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule"
         # 微博
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%BE%AE%E5%8D%9A%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule"
+        - "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/weibo.module"
         # 快手
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%BF%AB%E6%89%8B%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule"
         # qq音乐
