@@ -1,12 +1,12 @@
 #!name=HTTPDNS拦截器
-#!desc=🔗 [2025/10/30 08:58:59] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
-#!HASH=c331a227d471ea4a5fc76bc9e6cea22d
+#!desc=🔗 [2025/11/11 22:04:37] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
+#!HASH=c2b6735c5406cadc5280280b61e70db3
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], VirgilClyne[https://github.com/VirgilClyne]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
 #!tag=去广告, 依赖
 #!loon_version=3.2.4(787)
 #!homepage=https://hub.kelee.one
-#!date=2025-08-20 00:30:31
+#!date=2025-11-10 18:52:24
 
 [Rule]
 DOMAIN,yyapp-httpdns.gslb.yy.com,REJECT
@@ -81,6 +81,7 @@ URL-REGEX,"^http:\/\/112\.65\.200\.117\/resolve",REJECT
 URL-REGEX,"^http:\/\/112\.64\.218\.119\/resolve",REJECT
 URL-REGEX,"^http:\/\/114\.116\.215\.110\/resolve",REJECT
 URL-REGEX,"^http:\/\/116\.63\.10\.31\/resolve",REJECT
+URL-REGEX,"^http:\/\/203\.119\.206\.8\/\d+\/resolve\?",REJECT
 DOMAIN,httpdns.browser.miui.com,REJECT
 DOMAIN,resolver.msg.xiaomi.net,REJECT
 DOMAIN,httpdns.alicdn.com,REJECT
