@@ -2,8 +2,8 @@
 #!desc=分流规则中含有URL-REGEX类型的MITM模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-10-30 01:20:12
-#!HASH=00f375c138c8c37de44523377ebd8663
+#!updated=2025-11-12 01:19:33
+#!HASH=230d1427eb26446d5bd4bd61d324dfc4
 
 [MITM]
 hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 182.256.116.116, 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:20::10, 2401:b180:2000:30::1c, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com, zijieapi.com
@@ -137,6 +137,7 @@ URL-REGEX,"^http:\/\/112\.65\.200\.117\/resolve",REJECT
 URL-REGEX,"^http:\/\/112\.64\.218\.119\/resolve",REJECT
 URL-REGEX,"^http:\/\/114\.116\.215\.110\/resolve",REJECT
 URL-REGEX,"^http:\/\/116\.63\.10\.31\/resolve",REJECT
+URL-REGEX,"^http:\/\/203\.119\.206\.8\/\d+\/resolve\?",REJECT
 DOMAIN,httpdns.browser.miui.com,REJECT
 DOMAIN,resolver.msg.xiaomi.net,REJECT
 DOMAIN,httpdns.danuoyi.tbcache.com,REJECT
