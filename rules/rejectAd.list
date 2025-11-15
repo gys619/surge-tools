@@ -1,5 +1,5 @@
-#!HASH=1d6b0dfdedfdd6cd025610a6d7bd1c9f
-#规则数量:2746
+#!HASH=fa12b220f0da2f21233b967bd05337da
+#规则数量:2742
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -402,12 +402,8 @@ DOMAIN,afd.baidu.com
 DOMAIN,afdconf.baidu.com
 DOMAIN,httpdns.baidubce.com
 DOMAIN,lc.map.baidu.com
+DOMAIN,180.76.76.200
 IP-CIDR,180.76.76.200/32,no-resolve
-DOMAIN-KEYWORD,api.sobot.com
-DOMAIN-SUFFIX,cm.ad.bilibili.com
-DOMAIN-SUFFIX,cm.adcommon.bilibili.com
-DOMAIN-SUFFIX,cm.game.bilibili.com
-DOMAIN-SUFFIX,cm.track.biligame.bilibili.com
 DOMAIN,advertise.baicizhan.com
 DOMAIN,advertise.baicizhan.org
 DOMAIN-SUFFIX,admx.baixing.com
