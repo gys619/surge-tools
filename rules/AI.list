@@ -1,5 +1,5 @@
-#!HASH=97db3cf12b7f9fbae9c89263211a5469
-#规则数量:77
+#!HASH=4378dcfde9bbe7cb4cb38f73606b23d4
+#规则数量:76
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -24,7 +24,6 @@ DOMAIN,api.githubcopilot.com
 DOMAIN,copilot-proxy.githubusercontent.com
 DOMAIN,copilot.microsoft.com
 DOMAIN,sydney.bing.com
-DOMAIN,www.bing.com
 DOMAIN,ai.google.dev
 DOMAIN,aida.googleapis.com
 DOMAIN,aistudio.google.com
