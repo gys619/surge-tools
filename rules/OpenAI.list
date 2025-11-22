@@ -1,17 +1,17 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-11-21 01:18:34
+# UPDATED: 2025-11-22 01:15:51
 # DESCRIPTION: AI分流规则
-# HASH: e9b8834ad984717d987c68da2de8fbdd
-# DOMAIN: 48
+# HASH: 87ccb41bc12e4d2cb882b7a81368cef5
+# DOMAIN: 47
 # DOMAIN-SUFFIX: 49
 # IP-CIDR: 3
 # IP-CIDR6: 1
 # DOMAIN-KEYWORD: 1
 # IP-ASN: 1
 # AND: 2
-# TOTAL: 105
+# TOTAL: 104
 
 DOMAIN,ai.google.dev
 DOMAIN,aida.googleapis.com
@@ -60,7 +60,6 @@ DOMAIN,sydney.bing.com
 DOMAIN,trae-api-sg.mchost.guru
 DOMAIN,turn.livekit.cloud
 DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
-DOMAIN,www.bing.com
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,algolia.net
 DOMAIN-SUFFIX,anthropic.com
