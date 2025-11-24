@@ -114,6 +114,8 @@ rules:
         # - "https://raw.githubusercontent.com/vitoliu93/vpn_rules/refs/heads/main/ai.list"
         - "https://raw.githubusercontent.com/gys619/surge-tools/refs/heads/main/rules/AI.list"
         - "https://raw.githubusercontent.com/shelken/subconverter/refs/heads/master/custom/OpenAI.list"
+        - "https://raw.githubusercontent.com/Ella668/Loon/fbd0640ed39a4c39e055ac534236361123dd2c26/AI%20suite.list"
+        - "https://raw.githubusercontent.com/tututo/RuleFiles/440169a4b6014c5697a6c94e57035475268d5d4a/Surge/Surge%203/Provider/AI%20Suite.list"
       exclude_rules: []
       rule_preference:
         - "DOMAIN"
