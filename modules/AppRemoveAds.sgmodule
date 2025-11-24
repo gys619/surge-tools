@@ -2,11 +2,11 @@
 #!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,快手,qq音乐)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-11-20 01:17:49
-#!HASH=5f858381cfc6885ac1fe9a45ccb006b2
+#!updated=2025-11-24 06:56:43
+#!HASH=fb54c709598ad09841ed47e9146bdedd
 
 [MITM]
-hostname = %APPEND% *-mtop.cainiao.com, *.amap.com, *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, 852b95d36.xwlpk.cn, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, api.alipan.com, api.bilibili.com, api.caiyunapp.com, api.cc.163.com, api.gotokeep.com, api.live.bilibili.com, api.pinduoduo.com, api.qishui.com, api.udache.com, api.ys7.com, api5-lq.qishui.com, apissl.gifshow.com, apissl.ksapisrv.com, app-v1.ecoliving168.com, app.bilibili.com, appapi.cc.163.com, as.xiaojukeji.com, az*-api-idc.ksapisrv.com, az*-api-js.gifshow.com, az*-api.ksapisrv.com, az*-live.ksapisrv.com, az4-api-idc.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, cc.163.com, cdn-w.caiyunapp.com, ci.xiaohongshu.com, cn-acs.m.cainiao.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, edith.xiaohongshu.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, i.ys7.com, line3-h5-mobile-api.biligame.com, lion.didialift.com, live.bilibili.com, member.alipan.com, mobile.12306.cn, mp.weixin.qq.com, mshare.cc.163.com, poplayer.template.alibaba.com, push.m.youku.com, rec.xiaohongshu.com, res.xiaojukeji.com, starplucker.cyapi.cn, tnc*-*.zijieapi.com, un-acs.youku.com, vv.video.qq.com, webcast-open.douyin.com, weibo.com, www.xiaohongshu.com
+hostname = %APPEND% *-mtop.cainiao.com, *.amap.com, *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, 852b95d36.xwlpk.cn, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, api.alipan.com, api.bilibili.com, api.caiyunapp.com, api.cc.163.com, api.gotokeep.com, api.live.bilibili.com, api.pinduoduo.com, api.qishui.com, api.udache.com, api.ys7.com, api5-lq.qishui.com, apissl.gifshow.com, apissl.ksapisrv.com, app-v1.ecoliving168.com, app.bilibili.com, appapi.cc.163.com, apps.api.ke.com, as.xiaojukeji.com, az*-api-idc.ksapisrv.com, az*-api-js.gifshow.com, az*-api.ksapisrv.com, az*-live.ksapisrv.com, az4-api-idc.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, cc.163.com, cdn-w.caiyunapp.com, ci.xiaohongshu.com, cn-acs.m.cainiao.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, edith.xiaohongshu.com, flowplus.meituan.net, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, i.ys7.com, img.meituan.net, info.mina.xiaoaisound.com, line3-h5-mobile-api.biligame.com, lion.didialift.com, live.bilibili.com, marketing-aibox.v.mitvos.com, member.alipan.com, mobile.12306.cn, mp.weixin.qq.com, mshare.cc.163.com, poplayer.template.alibaba.com, push.m.youku.com, rec.xiaohongshu.com, res.xiaojukeji.com, s3plus.meituan.net, starplucker.cyapi.cn, tnc*-*.zijieapi.com, un-acs.youku.com, vv.video.qq.com, webcast-open.douyin.com, weibo.com, www.xiaohongshu.com
 [Rule]
 DOMAIN,api.biliapi.com,REJECT
 DOMAIN,app.biliapi.com,REJECT
@@ -213,6 +213,20 @@ DOMAIN,monitor.music.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,tmead.y.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,tmeadbak.y.qq.com,REJECT,extended-matching,pre-matching
 DOMAIN,tmeadquic.y.qq.com,REJECT,extended-matching,pre-matching
+DOMAIN,mistat.xiaomi.com,REJECT
+DOMAIN-KEYWORD,p3-pack.byteimg.com,REJECT
+DOMAIN-KEYWORD,p6-pack.byteimg.com,REJECT
+DOMAIN,flowplus.meituan.net,REJECT
+DOMAIN-SUFFIX,analytics.meituan.net,REJECT
+DOMAIN-SUFFIX,meituan.xn,REJECT
+DOMAIN-SUFFIX,meituan.yoga,REJECT
+DOMAIN-SUFFIX,meituangov.cn,REJECT
+DOMAIN-SUFFIX,report.meituan.com,REJECT
+DOMAIN-SUFFIX,wmlog.meituan.com,REJECT
+DOMAIN-SUFFIX,ad.e.waimai.sankuai.com,REJECT
+DOMAIN-SUFFIX,mads.meituan.com,REJECT
+DOMAIN-SUFFIX,dreport.meituan.net,REJECT
+DOMAIN-SUFFIX,d.meituan.net,REJECT
 [Body Rewrite]
 http-response-jq ^https:\/\/api\.bilibili\.com\/x\/pd-proxy\/tracker\? '.data[][]?="stun.chat.bilibili.com:3478"'
 http-response-jq ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(list|show|event\/list2)\? '.data |= with_entries(if .key | IN("show", "event_list") then .value = [] else . end)'
@@ -555,6 +569,16 @@ http-response-jq ^https:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.co
 ^https:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/taskCenter\/task\/report\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.com\/rest\/n\/live\/feed\/info\/simplelive\/card\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/popup data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) data-type=tiny-gif status-code=200
+^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg data-type=tiny-gif status-code=200
+^https?:\/\/img\.meituan\.net\/goodsawardpic\/[a-f0-9]+\.png\.webp data-type=tiny-gif status-code=200
+^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^http:\/\/59\.82\.113\.10\/amdc\/mobileDispatch\?appkey=213807& data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# 美团订单详情页更多推荐
+^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 [Script]
 空降助手 = type=http-request, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$, script-path=https://kelee.one/Resource/JavaScript/Bilibili/Bilibili_proto_request_kokoryh.js, requires-body=true, binary-body-mode=true, argument=[{{{logLevel}}}]
 ProtoBuf处理 = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://kelee.one/Resource/JavaScript/Bilibili/Bilibili_proto_response_kokoryh.js, requires-body=true, binary-body-mode=true, argument="[{{{showUpList}}}, {{{purifyTopReplies}}}, {{{airborne}}}, {{{logLevel}}}]"
@@ -654,3 +678,6 @@ bilibili.protobuf = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|a
 ^https:\/\/api\.ys7\.com\/api\/ads - reject
 ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) - reject
 ^https:\/\/api\.weibo\.cn\/2\/logservice\/service\? - reject
+^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/advertise(?!\/banner) - reject
+^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/payGuide\/userCenter - reject
+^https?:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) - reject
