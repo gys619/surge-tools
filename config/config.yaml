@@ -215,6 +215,16 @@ modules:
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%BF%AB%E6%89%8B%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule"
         # qq音乐
         - "https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/QQ%E9%9F%B3%E4%B9%90%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule"
+        #小爱音箱
+        - "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/split/partX/XiaoAiSpeaker.sgmodule"
+        #懂车帝
+        - "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/split/partD/Dcar.sgmodule"
+        # 贝壳找房
+        - "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/split/partB/BeiKeZhaoFang.sgmodule"
+        # 美团&美团外卖
+        - "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/split/partM/Meituan-MeituanWaimai.sgmodule"
+        # 美团
+        - "https://raw.githubusercontent.com/fmz200/wool_scripts/main/Surge/module/split/partM/Meituan.sgmodule"
         
       exclude_rules:    
         - "example.com"    # 如果不需要排除规则，可以删除此项
