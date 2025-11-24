@@ -1,17 +1,17 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-11-22 01:15:51
+# UPDATED: 2025-11-24 03:18:41
 # DESCRIPTION: AI分流规则
-# HASH: 87ccb41bc12e4d2cb882b7a81368cef5
-# DOMAIN: 47
-# DOMAIN-SUFFIX: 49
+# HASH: 815fb3acc0d9bf83b2b4c04bf4921946
+# DOMAIN: 56
+# DOMAIN-SUFFIX: 98
+# DOMAIN-KEYWORD: 1
 # IP-CIDR: 3
 # IP-CIDR6: 1
-# DOMAIN-KEYWORD: 1
 # IP-ASN: 1
 # AND: 2
-# TOTAL: 104
+# TOTAL: 162
 
 DOMAIN,ai.google.dev
 DOMAIN,aida.googleapis.com
@@ -20,11 +20,15 @@ DOMAIN,aisandbox-pa.googleapis.com
 DOMAIN,aistudio.google.com
 DOMAIN,alkalicore-pa.clients6.google.com
 DOMAIN,alkalimakersuite-pa.clients6.google.com
+DOMAIN,api.github.com
 DOMAIN,api.githubcopilot.com
 DOMAIN,api.hyperbolic.xyz
 DOMAIN,api.x.ai
+DOMAIN,apple-relay.apple.com
+DOMAIN,apple-relay.cloudflare.com
 DOMAIN,bard.google.com
 DOMAIN,browser-intake-datadoghq.com
+DOMAIN,cdn.usefathom.com
 DOMAIN,chat.mistral.ai
 DOMAIN,chat.openai.com.cdn.cloudflare.net
 DOMAIN,chatgpt.livekit.cloud
@@ -33,11 +37,13 @@ DOMAIN,copilot-proxy.githubusercontent.com
 DOMAIN,copilot.microsoft.com
 DOMAIN,deepmind.com
 DOMAIN,deepmind.google
+DOMAIN,gateway.ai.cloudflare.com
 DOMAIN,geller-pa.googleapis.com
 DOMAIN,gemini.google
 DOMAIN,gemini.google.com
 DOMAIN,generativeai.google
 DOMAIN,generativelanguage.googleapis.com
+DOMAIN,guzzoni.smoot.apple.com
 DOMAIN,host.livekit.cloud
 DOMAIN,imagine.meta.com
 DOMAIN,jules.google
@@ -46,6 +52,7 @@ DOMAIN,labs.google
 DOMAIN,makersuite.google.com
 DOMAIN,notebooklm.google
 DOMAIN,notebooklm.google.com
+DOMAIN,o33249.ingest.sentry.io
 DOMAIN,openai-api.arkoselabs.com
 DOMAIN,openai.com.cdn.cloudflare.net
 DOMAIN,openaiapi-site.azureedge.net
@@ -55,65 +62,116 @@ DOMAIN,pplx-res.cloudinary.com
 DOMAIN,proactivebackend-pa.googleapis.com
 DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,robinfrontend-pa.googleapis.com
+DOMAIN,sora-cdn.oaistatic.com
 DOMAIN,static.cloudflareinsights.com
 DOMAIN,sydney.bing.com
 DOMAIN,trae-api-sg.mchost.guru
 DOMAIN,turn.livekit.cloud
+DOMAIN,waa-pa.clients6.google.com
 DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
 DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
+DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,amp-api.apps.apple.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,api.statsig.com
+DOMAIN-SUFFIX,apis.google.com
+DOMAIN-SUFFIX,apple-relay.apple.com
+DOMAIN-SUFFIX,apple-relay.cloudflare.com
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net
+DOMAIN-SUFFIX,apps.mzstatic.com
+DOMAIN-SUFFIX,augment.com
+DOMAIN-SUFFIX,augmentcode.com
 DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,cdn.oaistatic.com
 DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,chorus.sh
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,clipdrop.co
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,codeiumdata.com
+DOMAIN-SUFFIX,cp4.cloudflare.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,diabrowser.engineering
+DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,events.statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,fireworks.ai
+DOMAIN-SUFFIX,gateway.icloud.com
+DOMAIN-SUFFIX,geller-pa.googleapis.com
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN-SUFFIX,grazie.ai
 DOMAIN-SUFFIX,grazie.aws.intellij.net
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,groq.com
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
+DOMAIN-SUFFIX,guzzoni.apple.com
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,hyperbolic.ai
 DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,ingest.us.sentry.io
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,jetbrains.ai
 DOMAIN-SUFFIX,jina.ai
 DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,livekit.cloud
+DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,microsoftonline.com
+DOMAIN-SUFFIX,minimax.io
+DOMAIN-SUFFIX,minimaxi.com
 DOMAIN-SUFFIX,mistral.ai
+DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,observeit.net
+DOMAIN-SUFFIX,openai-api.arkoselabs.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,openart.ai
 DOMAIN-SUFFIX,openrouter.ai
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,perplexity.com
 DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,pplx.ai
+DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com
 DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,siftscience.com
+DOMAIN-SUFFIX,smoot.apple.com
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,stripe.com
 DOMAIN-SUFFIX,together.ai
 DOMAIN-SUFFIX,tokenflux.ai
 DOMAIN-SUFFIX,trae.ai
 DOMAIN-SUFFIX,turn.livekit.cloud
+DOMAIN-SUFFIX,updates.cdn-apple.com
 DOMAIN-SUFFIX,voyageai.com
+DOMAIN-SUFFIX,windsurf.com
 DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,zed.dev
+DOMAIN-KEYWORD,hailuoai
 IP-CIDR,160.79.104.0/23,no-resolve
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
 IP-CIDR6,2607:6bc0::/48,no-resolve
-DOMAIN-KEYWORD,openai
 IP-ASN,20473,no-resolve
 AND, ((DOMAIN-KEYWORD, chatgpt-async-webps-prod-), (DOMAIN-SUFFIX, webpubsub.azure.com))
 AND, ((DOMAIN-KEYWORD, openaicom-api-), (DOMAIN-SUFFIX, azurefd.net))
