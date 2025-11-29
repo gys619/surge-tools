@@ -1,5 +1,5 @@
-#!HASH=4378dcfde9bbe7cb4cb38f73606b23d4
-#规则数量:76
+#!HASH=3bdfe1cd9fe6075c2880f93861a64049
+#规则数量:77
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -47,6 +47,7 @@ DOMAIN,jules.google
 DOMAIN,jules.google.com
 DOMAIN,labs.google
 DOMAIN,aisandbox-pa.googleapis.com
+DOMAIN,antigravity.google
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com

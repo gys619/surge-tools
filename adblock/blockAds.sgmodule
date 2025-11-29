@@ -1,6 +1,6 @@
 #!name=广告拦截&净化合集
-#!desc=🔗 [2025/11/22 00:10:31] (支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
-#!HASH=c984fbf002a6ca037cee0791b835eeb6
+#!desc=🔗 [2025/11/30 01:46:19] (支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
+#!HASH=d0e03bd1c9854aacfed809e4da68523a
 #!author=奶思[https://github.com/fmz200]
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdblockPlus.png
 #!category=奶思的模块
@@ -3217,6 +3217,8 @@ bilibili.protobuf = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|a
 哔哩哔哩漫画 = type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/UCenterConf, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js, requires-body=true, timeout=60
 
 哔哩哔哩漫画 = type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/GetInitInfo, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js, requires-body=true, timeout=60
+
+哔哩哔哩漫画 = type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comment\/Main, script-path=https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js, requires-body=true, timeout=60
 
 # 记录 大家都在看data.recom_cards / 底部按钮data.recom_btns
 薄荷健康 = type=http-response, pattern=^https:\/\/api\.boohee\.com\/meta-interface\/v2\/index\?, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/bohe/bohe_ads.js, requires-body=true, timeout=60
