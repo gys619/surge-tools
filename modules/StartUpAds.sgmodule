@@ -1,6 +1,6 @@
 #!name=StartUpAds
-#!desc=🔗 [2025/11/30 01:46:28] StartUpAds
-#!HASH=072937d086a63f6a5c7615e96793f8e7
+#!desc=🔗 [2025/12/4 09:02:35] StartUpAds
+#!HASH=e53e7bb47e92e3d41c681f6dd4e2e457
 
 [Rule]
 # > 12306
@@ -34,7 +34,7 @@ http-response-jq ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba.*mytab '.dat
 
 [Map Local]
 # > Version
-^https?:\/\/2025.11.29/c402/v2.0.628 data-type=text data=" " status-code=200
+^https?:\/\/2025.12.01/c402/v2.0.629 data-type=text data=" " status-code=200
 
 # > 10
 ^https?:\/\/ftapi\.10jqka\.com\.cn\/futgwapi\/api\/om\/v\d\/ad\/common\/transfer data-type=text data=" " status-code=200
