@@ -2,12 +2,13 @@
 #!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,快手,qq音乐)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2025-11-26 01:19:38
-#!HASH=e82b90bd66486912403d5476b31dca94
+#!updated=2025-12-07 01:28:51
+#!HASH=36b8de26af71ffee3bcae6e890473bc7
 
 [MITM]
 hostname = %APPEND% *-mtop.cainiao.com, *.amap.com, *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, 852b95d36.xwlpk.cn, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, api.alipan.com, api.bilibili.com, api.caiyunapp.com, api.cc.163.com, api.gotokeep.com, api.live.bilibili.com, api.pinduoduo.com, api.qishui.com, api.udache.com, api.ys7.com, api5-lq.qishui.com, apissl.gifshow.com, apissl.ksapisrv.com, app-v1.ecoliving168.com, app.bilibili.com, appapi.cc.163.com, apps.api.ke.com, as.xiaojukeji.com, az*-api-idc.ksapisrv.com, az*-api-js.gifshow.com, az*-api.ksapisrv.com, az*-live.ksapisrv.com, az4-api-idc.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, cc.163.com, cdn-w.caiyunapp.com, ci.xiaohongshu.com, cn-acs.m.cainiao.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, edith.xiaohongshu.com, flowplus.meituan.net, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, i.ys7.com, img.meituan.net, info.mina.xiaoaisound.com, line3-h5-mobile-api.biligame.com, lion.didialift.com, live.bilibili.com, marketing-aibox.v.mitvos.com, member.alipan.com, mobile.12306.cn, mp.weixin.qq.com, mshare.cc.163.com, poplayer.template.alibaba.com, push.m.youku.com, rec.xiaohongshu.com, res.xiaojukeji.com, s3plus.meituan.net, starplucker.cyapi.cn, tnc*-*.zijieapi.com, un-acs.youku.com, vv.video.qq.com, webcast-open.douyin.com, weibo.com, www.xiaohongshu.com
 [Rule]
+DOMAIN,bsbsb.top,DIRECT
 DOMAIN,api.biliapi.com,REJECT
 DOMAIN,app.biliapi.com,REJECT
 DOMAIN,api.biliapi.net,REJECT
