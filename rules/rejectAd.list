@@ -1,5 +1,5 @@
-#!HASH=fa12b220f0da2f21233b967bd05337da
-#规则数量:2742
+#!HASH=26511707484743c475852b2a57baa5fc
+#规则数量:2744
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1954,6 +1954,8 @@ DOMAIN-SUFFIX,a.union.mi.com
 DOMAIN,39d83s.com
 DOMAIN-KEYWORD,mpos-pic.helipay.com
 DOMAIN,mistat.xiaomi.com
+DOMAIN-SUFFIX,adintl.cn
+DOMAIN-SUFFIX,zhangyuyidong.cn
 DOMAIN-SUFFIX,1sapp.com
 DOMAIN-SUFFIX,aiclk.com
 DOMAIN-SUFFIX,adbiding.com
