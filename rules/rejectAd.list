@@ -1,5 +1,5 @@
-#!HASH=26511707484743c475852b2a57baa5fc
-#规则数量:2744
+#!HASH=2b7e46299a9be827eba5d4411c332bc4
+#规则数量:2743
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1516,7 +1516,6 @@ DOMAIN-SUFFIX,gum.criteo.com
 DOMAIN-SUFFIX,smaato.net
 DOMAIN-SUFFIX,spadsync.com
 DOMAIN-SUFFIX,ads.inmobi.com
-DOMAIN-SUFFIX,akamaized.net
 DOMAIN-SUFFIX,spadsync.com
 DOMAIN-SUFFIX,tpc.googlesyndication.com
 DOMAIN-SUFFIX,googleadsserving.cn
