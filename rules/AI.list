@@ -1,5 +1,5 @@
-#!HASH=3bdfe1cd9fe6075c2880f93861a64049
-#规则数量:77
+#!HASH=28acae3c98d80e7d4509a058240b2120
+#规则数量:81
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -47,7 +47,11 @@ DOMAIN,jules.google
 DOMAIN,jules.google.com
 DOMAIN,labs.google
 DOMAIN,aisandbox-pa.googleapis.com
-DOMAIN,antigravity.google
+DOMAIN-SUFFIX,antigravity.google
+DOMAIN-SUFFIX,antigravity-unleash.goog
+DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com
+DOMAIN,daily-cloudcode-pa.googleapis.com
+AND, ((DOMAIN-KEYWORD, antigravity-auto-updater-), (DOMAIN-SUFFIX, run.app))
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com
