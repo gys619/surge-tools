@@ -1,4 +1,4 @@
-#!HASH=24b3775671a3eaf222ff1c901c08f2eb
+#!HASH=e436cc7439d203ac6ec7e1d0de3cb078
 #规则数量:13
 #不支持的规则数量:0
 #已排除的规则数量:0
@@ -20,4 +20,4 @@ DOMAIN-SUFFIX,snssdk.com
 DOMAIN-SUFFIX,toutiao.com
 
 # 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/QuantumultX/DouYin/DouYin.list/_end_/DouYin.list?type=rule-set&target=surge-rule-set&del=true
+#SUBSCRIBED https://script.hub/file/_start_/https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/QuantumultX/DouYin/DouYin.list/_end_/DouYin.list?type=rule-set&target=surge-rule-set&del=true

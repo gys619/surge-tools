@@ -1,6 +1,6 @@
 #!name=HTTPDNS拦截器
-#!desc=🔗 [2026/1/30 16:31:29] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
-#!HASH=86fe2e85c2d9ba750b18a8d732c6ab00
+#!desc=🔗 [01/30/2026, 04:55:52 PM] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
+#!HASH=546915b938fbf01d388c562260880c55
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], VirgilClyne[https://github.com/VirgilClyne]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
 #!tag=去广告, 依赖
@@ -201,4 +201,4 @@ URL-REGEX,"^http:\/\/139\.196\.12\.179:8053\/httpdns\/",REJECT
 hostname = %APPEND% 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:30::1c, 2401:b180:2000:20::10, amdc.alipay.com, appconf.mail.163.com, msglb.91160.com, ucdc2-upaas.uc.cn
 
 # 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx/_end_/Block_HTTPDNS.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true
+#SUBSCRIBED https://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx/_end_/Block_HTTPDNS.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true
