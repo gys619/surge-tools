@@ -1,4 +1,4 @@
-#!HASH=28acae3c98d80e7d4509a058240b2120
+#!HASH=b4aa419445ca4b4e1e97adf2903a3614
 #规则数量:81
 #不支持的规则数量:0
 #已排除的规则数量:0
@@ -88,4 +88,4 @@ DOMAIN,aiplatform.googleapis.com
 DOMAIN-SUFFIX,poe.com
 
 # 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lsr/AI.lsr/_end_/AI.list.txt?type=rule-set&target=surge-rule-set&del=true&jqEnabled=true
+#SUBSCRIBED https://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lsr/AI.lsr/_end_/AI.list.txt?type=rule-set&target=surge-rule-set&del=true&jqEnabled=true

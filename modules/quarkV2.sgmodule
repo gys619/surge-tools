@@ -1,6 +1,6 @@
 #!name=quarkV2
-#!desc=🔗 [2025/4/10 00:04:45] quarkV2
-#!HASH=eaa0f41e53c74e144f8ed2d92758b748
+#!desc=🔗 [01/30/2026, 04:25:43 PM] quarkV2
+#!HASH=5e4cc3c1b0987e02bdb107b8f47deef7
 
 [Script]
 夸克网盘获取token = type=http-response, pattern=^https:\/\/drive-pc\.quark\.cn\/1\/clouddrive\/file\/sort, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
@@ -15,4 +15,4 @@
 hostname = %APPEND% coral2.quark.cn, drive-pc.quark.cn
 
 # 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js/_end_/quarkV2.sgmodule?type=qx-rewrite&target=surge-module&del=true
+#SUBSCRIBED https://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js/_end_/quarkV2.sgmodule?type=qx-rewrite&target=surge-module&del=true

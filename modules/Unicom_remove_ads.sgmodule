@@ -1,6 +1,6 @@
 #!name=中国联通去广告
-#!desc=🔗 [2025/9/18 11:17:35] 移除中国联通APP开屏广告、搜索框推广、主页浮窗和底部推广以及我的页面钱包模块，后续还将继续完善。
-#!HASH=c9dd1559f62b2dd5bf4dd79d6f8a4e4a
+#!desc=🔗 [01/30/2026, 04:25:56 PM] 移除中国联通APP开屏广告、搜索框推广、主页浮窗和底部推广以及我的页面钱包模块，后续还将继续完善。
+#!HASH=a1aa90dd6750f64a0b4c11588c349223
 #!author=wish[https://github.com/mist-whisper]
 #!icon=https://raw.githubusercontent.com/mist-whisper/Icon/master/MyIcon/Unicom.png
 #!tag=去广告
@@ -25,4 +25,4 @@ http-response-jq ^https:\/\/m\.client\.10010\.com\/clientMyPage\/v1\/api\/myWall
 hostname = %APPEND% m.client.10010.com
 
 # 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://raw.githubusercontent.com/mist-whisper/Loon/master/Lpx/Unicom_remove_ads.lpx/_end_/Unicom_remove_ads.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true
+#SUBSCRIBED https://script.hub/file/_start_/https://raw.githubusercontent.com/mist-whisper/Loon/master/Lpx/Unicom_remove_ads.lpx/_end_/Unicom_remove_ads.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true

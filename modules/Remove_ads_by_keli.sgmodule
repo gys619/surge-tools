@@ -1,6 +1,6 @@
 #!name=可莉广告过滤器
-#!desc=🔗 [2025/10/15 07:19:32] 可莉自用的广告过滤器
-#!HASH=4703815cb345a13a72b9ebf7787bc09b
+#!desc=🔗 [01/30/2026, 04:25:51 PM] 可莉自用的广告过滤器
+#!HASH=1659e1f3920425c8cd9ac6245b5ec2de
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/KeLee.png
 #!tag=去广告
@@ -176,4 +176,4 @@ http-response-jq ^https?:\/\/api\.fenxianglife\.com\/njia\/index\/popup\/v2 '.da
 hostname = %APPEND% api.zcool.com.cn, acs.m.goofish.com, acs.m.taobao.com, api-access.pangolin-sdk-toutiao*.com, api-access.pangolin-sdk-toutiao.com, api-mifit*.huami.com, api-mifit-cn2.huami.com, api-mifit.huami.com, api-overmind.youdao.com, api.ahmobile.cn, api.angkeduo.com, api.jr.mi.com, api.m.mi.com, api.pinduoduo.com, api.wfdata.club, apiwz.midukanshu.com, app.zhoudamozi.com, cdke.youdao.com, conf-darwin.xycdn.com, dict.youdao.com, ecard.shenzhentong.com, ether-pack.pangolin-sdk-toutiao.com, gromore.pangolin-sdk-toutiao.com, gw.alicdn.com, gw.chuangkit.com, hfapp-service.qweather.net, home.mi.com, home.umetrip.com, img.allahall.com, img.dailmo.com, iyes.youku.com, lfd?-analytics.bytescm.com, lfd?-cdn-tos.bytescm.com, m.qianbao.qq.com, mercury-gateway.ixiaochuan.cn, mob.mddcloud.com.cn, mobads-pre-config.cdn.bcebos.com, p0.pipi.cn, qiye.gaoding.com, sdk1xyajs.data.kuiniuca.com, sfd?-fe-tos.pglstatp-toutiao.com, sfo.mddcloud.com.cn, shopapi.io.mi.com, shealthyapi.senssun.com, t-dsp.pinduoduo.com, toblog.ctobsnssdk.com, tower.ubixioe.com, umerp.umetrip.com, us.l.qq.com, lanfanapp.com, api.xiachufang.com, api.xiangji.qq.com, video-dsp.pddpic.com, images.pinduoduo.com, client.app.coc.10086.cn, cdn.cmgadx.com, qadx.qinlinad.com, watch.iot.mi.com, cdn.web.chelaile.net.cn, d.socdm.com, m.client.10010.com, cmds.omesoft.com, api.fenxianglife.com
 
 # 🔗 模块链接
-#SUBSCRIBED http://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx/_end_/Remove_ads_by_keli.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true
+#SUBSCRIBED https://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx/_end_/Remove_ads_by_keli.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true
