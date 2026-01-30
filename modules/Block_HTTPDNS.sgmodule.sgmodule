@@ -1,26 +1,22 @@
 #!name=HTTPDNS拦截器
-#!desc=🔗 [2025/7/20 00:09:09] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
-#!HASH=d21ffb71a800c5f30626f52ca484807e
+#!desc=🔗 [2026/1/30 16:31:00] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
+#!HASH=86fe2e85c2d9ba750b18a8d732c6ab00
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], VirgilClyne[https://github.com/VirgilClyne]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
-#!tag=DNS
+#!tag=去广告, 依赖
 #!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2025-06-16 12:29:05
+#!homepage=https://hub.kelee.one
+#!date=2026-01-30 00:55:36
 
 [Rule]
 DOMAIN,yyapp-httpdns.gslb.yy.com,REJECT
 DOMAIN,union-httpdns.gslb.yy.com,REJECT
+DOMAIN,yuyin-httpdns.gslb.yy.com,REJECT
 DOMAIN,httpdns-v6.gslb.yy.com,REJECT
 URL-REGEX,"^http:\/\/103\.44\.58\.64\/md\?",REJECT
 URL-REGEX,"^http:\/\/cdn\.wup\.huya\.com\/launch\/queryHttpDns",REJECT
 DOMAIN,dns2.q2cdn.com,REJECT
 URL-REGEX,"^http:\/\/xmc\.ximalaya\.com\/xmlymain-login-web\/login\/",REJECT
-IP-CIDR,8.134.241.67/32,REJECT,no-resolve
-DOMAIN,httpdns.volcengineapi.com,REJECT
-DOMAIN,dig.bdurl.net,REJECT
-DOMAIN,dig.zjurl.cn,REJECT
-AND,((DOMAIN-KEYWORD,tnc),(AND,((OR,((DOMAIN-KEYWORD,-bjlgy),(DOMAIN-KEYWORD,-alisc),(DOMAIN-KEYWORD,-aliec),(DOMAIN-KEYWORD,-alisg))),(OR,((DOMAIN-SUFFIX,snssdk.com),(DOMAIN-SUFFIX,isnssdk.com),(DOMAIN-SUFFIX,toutiaoapi.com),(DOMAIN-SUFFIX,bytedance.com),(DOMAIN-SUFFIX,zijieapi.com)))))),REJECT
 DOMAIN,dns.weixin.qq.com,REJECT
 DOMAIN,dns.weixin.qq.com.cn,REJECT
 DOMAIN,aedns.weixin.qq.com,REJECT
@@ -86,12 +82,14 @@ URL-REGEX,"^http:\/\/112\.65\.200\.117\/resolve",REJECT
 URL-REGEX,"^http:\/\/112\.64\.218\.119\/resolve",REJECT
 URL-REGEX,"^http:\/\/114\.116\.215\.110\/resolve",REJECT
 URL-REGEX,"^http:\/\/116\.63\.10\.31\/resolve",REJECT
+URL-REGEX,"^http:\/\/203\.119\.206\.8\/\d+\/resolve\?",REJECT
 DOMAIN,httpdns.browser.miui.com,REJECT
 DOMAIN,resolver.msg.xiaomi.net,REJECT
 DOMAIN,httpdns.alicdn.com,REJECT
 DOMAIN,httpdns-api.aliyuncs.com,REJECT
 DOMAIN,httpdns-sc.aliyuncs.com,REJECT
 IP-CIDR,203.107.1.0/24,REJECT,no-resolve
+DOMAIN,ucdc.upaas.quark.cn,REJECT
 DOMAIN,httpdns.danuoyi.tbcache.com,REJECT
 DOMAIN,httpdns.cctv.com,REJECT
 DOMAIN,httpdns-browser.platform.dbankcloud.cn,REJECT
@@ -193,10 +191,14 @@ URL-REGEX,"^http:\/\/139\.196\.12\.179:8053\/httpdns\/",REJECT
 [Map Local]
 ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https?:\/\/amdc\.alipay\.com\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 ^https:\/\/msglb\.91160\.com\/msg\/outer\/broker\/get$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https:\/\/ucdc\d?-upaas\.uc\.cn\/api\/v\d\/dns_query\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 [MITM]
-hostname = %APPEND% 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:30::1c, 2401:b180:2000:20::10, amdc.alipay.com, appconf.mail.163.com, msglb.91160.com
+hostname = %APPEND% 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:30::1c, 2401:b180:2000:20::10, amdc.alipay.com, appconf.mail.163.com, msglb.91160.com, ucdc2-upaas.uc.cn
 
 # 🔗 模块链接
 #SUBSCRIBED http://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx/_end_/Block_HTTPDNS.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true

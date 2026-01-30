@@ -1,12 +1,7 @@
 #!name=墨鱼去开屏
-#!desc=🔗 [2025/11/15 13:58:00] 原脚本https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
-#!HASH=c9d5a8e44f0ef0454aa5b294e40e3602
-
-[Map Local]
-#请使用新地址 https://ddgksf2013.top/rewrite/StartUpAds.conf
-https://please.use.new.address data-type=text data=" " status-code=200
-
-https://new.address.is.https://ddgksf2013.top/rewrite/StartUpAds.conf data-type=text data=" " status-code=200
+#!desc=🔗 [2026/1/30 16:31:13] 原脚本https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
+#!HASH=0eff69aa622cbc40c962452a0c439c39
+#!error=404: Not Found
 
 # 🔗 模块链接
 #SUBSCRIBED http://script.hub/file/_start_/https://gist.githubusercontent.com/ddgksf2013/12ef6aad209155e7eb62c5b00c11b9dd/raw/StartUpAds.conf/_end_/StartUp.sgmodule?n=%E5%A2%A8%E9%B1%BC%E5%8E%BB%E5%BC%80%E5%B1%8F%2B%E5%8E%9F%E8%84%9A%E6%9C%AChttps%3A%2F%2Fraw.githubusercontent.com%2Fddgksf2013%2FRewrite%2Fmaster%2FAdBlock%2FStartUp.conf&type=qx-rewrite&target=surge-module&del=true&jqEnabled=true
