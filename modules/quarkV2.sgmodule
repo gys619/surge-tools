@@ -1,18 +1,11 @@
-#!name=quarkV2
-#!desc=🔗 [01/30/2026, 04:25:43 PM] quarkV2
-#!HASH=5e4cc3c1b0987e02bdb107b8f47deef7
+#!HASH=58c37adad3a85c52eb03adf9324f108a
+quarkV2：Error: Read stream EOF
 
-[Script]
-夸克网盘获取token = type=http-response, pattern=^https:\/\/drive-pc\.quark\.cn\/1\/clouddrive\/file\/sort, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 
-夸克网盘福利日常收录任务 = type=http-response, pattern=^https:\/\/coral2\.quark\.cn\/task\/trigger, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 
-夸克网盘空间签到收录任务 = type=http-request, pattern=^https:\/\/coral2\.quark\.cn\/quark\/(carbon|welfare)\/(v1|v2)\/signIn, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 
-夸克网盘睡眠打卡收录任务 = type=http-request, pattern=^https:\/\/coral2\.quark\.cn\/quark\/welfare\/v2\/sleep\/trigger, script-path=https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js, requires-body=true, timeout=60
 
-[MITM]
-hostname = %APPEND% coral2.quark.cn, drive-pc.quark.cn
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
 
 # 🔗 模块链接
 #SUBSCRIBED https://script.hub/file/_start_/https://gist.githubusercontent.com/Sliverkiss/1589f69e675019b0b685a57a89de9ea5/raw/quarkV2.js/_end_/quarkV2.sgmodule?type=qx-rewrite&target=surge-module&del=true

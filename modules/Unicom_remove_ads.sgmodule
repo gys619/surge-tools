@@ -1,28 +1,11 @@
-#!name=中国联通去广告
-#!desc=🔗 [01/30/2026, 04:25:56 PM] 移除中国联通APP开屏广告、搜索框推广、主页浮窗和底部推广以及我的页面钱包模块，后续还将继续完善。
-#!HASH=a1aa90dd6750f64a0b4c11588c349223
-#!author=wish[https://github.com/mist-whisper]
-#!icon=https://raw.githubusercontent.com/mist-whisper/Icon/master/MyIcon/Unicom.png
-#!tag=去广告
-#!system=ios
-#!system_version=15
-#!loon_version=3.2.9(837)
-#!homepage=https://github.com/mist-whisper/Loon/blob/master/README.md
-#!date=2025-09-12 14:00:00
+#!HASH=1e5a93778bbd232218437900e5dde298
+Unicom_remove_ads.sgmodule：Error: Read stream EOF
 
-[Rule]
-# 开屏广告
-DOMAIN,m1.ad.10010.com,REJECT
 
-[Body Rewrite]
-http-response-jq ^https:\/\/m\.client\.10010\.com\/search_service\/tyfbSearch\/searchDiscoverListExpress '.data = []'
-http-response-jq ^https:\/\/m\.client\.10010\.com\/search_service\/search\/searchScrollWord '.["113000004"] = []'
-http-response-jq ^https:\/\/m\.client\.10010\.com\/clientIndex\/v1\/api\/navHome '.datas.homeTopMenuItems |= map(select(.menuName != "通通" and .menuName != "vowifi" and .menuName != "签到" and .menuName != ""))'
-http-response-jq ^https:\/\/m\.client\.10010\.com\/clientIndex\/homefusion\/fuInter 'del(.["HomeFusion.fuchuangAdv_A8"], .["HomeFusion.bottomLabel"])'
-http-response-jq ^https:\/\/m\.client\.10010\.com\/clientMyPage\/v1\/api\/myWallet '.data.payShowFlag = false'
 
-[MITM]
-hostname = %APPEND% m.client.10010.com
+
+
+Script Hub 重写转换: ❌  可自行翻译错误信息或复制错误信息后点击通知进行反馈
 
 # 🔗 模块链接
 #SUBSCRIBED https://script.hub/file/_start_/https://raw.githubusercontent.com/mist-whisper/Loon/master/Lpx/Unicom_remove_ads.lpx/_end_/Unicom_remove_ads.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true
