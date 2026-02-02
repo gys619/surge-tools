@@ -1,5 +1,5 @@
 #!name=HTTPDNS拦截器
-#!desc=🔗 [02/02/2026, -1:05:42 AM] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
+#!desc=🔗 [02/02/2026, -1:10:34 AM] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
 #!HASH=546915b938fbf01d388c562260880c55
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], VirgilClyne[https://github.com/VirgilClyne]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
