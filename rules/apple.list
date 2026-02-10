@@ -1,14 +1,15 @@
 # NAME: Apple
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2025-10-19 14:38:25
+# UPDATED: 2026-02-10 02:09:46
 # DESCRIPTION: Apple 分流规则，包含 App Store、Apple Music 等服务
-# HASH: 0be6e45e5f0ff1bcd9fbb9f51ed4e4a5
+# HASH: a9cd3c08d984417c861079b34cde1057
 # DOMAIN-KEYWORD: 7
 # IP-CIDR: 10
+# IP-CIDR6: 3
 # USER-AGENT: 23
 # PROCESS-NAME: 13
-# TOTAL: 53
+# TOTAL: 56
 
 DOMAIN-KEYWORD,apple-support.akadns.net
 DOMAIN-KEYWORD,apple.com.akadns.net
@@ -27,6 +28,9 @@ IP-CIDR,198.183.17.0/24,no-resolve
 IP-CIDR,205.180.175.0/24,no-resolve
 IP-CIDR,63.92.224.0/19,no-resolve
 IP-CIDR,65.199.22.0/23,no-resolve
+IP-CIDR6,2403:300::/32,no-resolve
+IP-CIDR6,2620:149::/32,no-resolve
+IP-CIDR6,2a01:b740::/32,no-resolve
 USER-AGENT,*FindMyiPhone?
 USER-AGENT,*Music?
 USER-AGENT,*WeatherFoundation*
