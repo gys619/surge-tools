@@ -1,15 +1,15 @@
 #!name=哔哩哔哩去广告
-#!desc=🔗 [02/02/2026, -1:05:52 AM] 过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数，增加空降助手以便跳过视频中插入的广告。此插件仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。\n\n空降助手是第三方提供的功能，依赖于Android版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关。
-#!HASH=f2098d29adc7405d8ae21accd1071495
+#!desc=🔗 [02/14/2026, 03:40:30 PM] 过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数，增加空降助手以便跳过视频中插入的广告。此插件仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。\n\n空降助手是第三方提供的功能，依赖于Android版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关。
+#!HASH=83bda11adae65de78040ab065c9a15fc
 #!author=kokoryh[https://github.com/kokoryh]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Bilibili.png
 #!openUrl=https://apps.apple.com/app/id736536022
 #!tag=去广告
 #!system=ios
 #!system_version=15
-#!loon_version=3.2.9(837)
+#!loon_version=3.3.8(936)
 #!homepage=https://hub.kelee.one
-#!date=2025-12-20 22:40:36
+#!date=2026-02-12 21:42:00
 #!arguments=displayUpList:"show",purifyComment:true,optimizeRequest:true,sponsorBlock:false,logLevel:"off"
 
 [Rule]
@@ -22,6 +22,9 @@ AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWOR
 
 [URL Rewrite]
 ^https:\/\/api\.bilibili\.com\/pgc\/page\/channel\?(.*)&mobi_app=iphone&(.*)$ https://api.bilibili.com/pgc/page/channel?$1&mobi_app=iphone_i&$2 header
+
+[Header Rewrite]
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(interface\.v1\.(Teenagers\/ModeStatus|Search\/DefaultWords)|view\.v1\.View\/TFInfo|viewunite\.v1\.View\/ViewEndPage)$ header-add 'grpc-status' '0'
 
 [Body Rewrite]
 http-response-jq ^https:\/\/api\.bilibili\.com\/x\/pd-proxy\/tracker\? '.data[][]?="stun.chat.bilibili.com:3478"'
