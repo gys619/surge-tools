@@ -2,8 +2,8 @@
 #!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,快手,qq音乐)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2026-01-04 01:43:25
-#!HASH=fb5d5e5e3a6e6972de44d64493b2d1e6
+#!updated=2026-02-15 02:01:06
+#!HASH=8f518da1816475d70d6c68387dcdabb4
 
 [MITM]
 hostname = %APPEND% *.amap.com, *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, 112.53.55.225, 113.46.225.*, 116.85.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 852b95d36.xwlpk.cn, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, api.alipan.com, api.bilibili.com, api.caiyunapp.com, api.cc.163.com, api.gotokeep.com, api.live.bilibili.com, api.pinduoduo.com, api.qishui.com, api.udache.com, api.ys7.com, api5-lq.qishui.com, apissl.gifshow.com, apissl.ksapisrv.com, app-v1.ecoliving168.com, app.bilibili.com, appapi.cc.163.com, apps.api.ke.com, as.xiaojukeji.com, az*-api-idc.ksapisrv.com, az*-api-js.gifshow.com, az*-api.ksapisrv.com, az*-live.ksapisrv.com, az4-api-idc.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, cc.163.com, cdn-w.caiyunapp.com, ci.xiaohongshu.com, cn-acs.m.cainiao.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, e2e-mtop.cainiao.com, edith.xiaohongshu.com, flowplus.meituan.net, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, i.ys7.com, img.meituan.net, info.mina.xiaoaisound.com, line3-h5-mobile-api.biligame.com, lion.didialift.com, live.bilibili.com, longquan-mtop.cainiao.com, marketing-aibox.v.mitvos.com, member.alipan.com, mobile.12306.cn, mp.weixin.qq.com, mshare.cc.163.com, nbcps-mtop.cainiao.com, netflow-mtop.cainiao.com, poplayer.template.alibaba.com, push.m.youku.com, rec.xiaohongshu.com, res.xiaojukeji.com, s3plus.meituan.net, so.xiaohongshu.com, starplucker.cyapi.cn, tnc*-*.zijieapi.com, un-acs.youku.com, vv.video.qq.com, webcast-open.douyin.com, weibo.com, www.xiaohongshu.com
@@ -233,6 +233,8 @@ DOMAIN-SUFFIX,d.meituan.net,REJECT
 ^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/advertise(?!\/banner) - reject
 ^https?:\/\/(info\.mina\.xiaoaisound|marketing-aibox\.v\.mitvos)\.com\/payGuide\/userCenter - reject
 ^https?:\/\/apps\.api\.ke\.com\/config\/config\/(bootpage|getactivityconfig) - reject
+[Header Rewrite]
+http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.(interface\.v1\.(Teenagers\/ModeStatus|Search\/DefaultWords)|view\.v1\.View\/TFInfo|viewunite\.v1\.View\/ViewEndPage)$ header-add 'grpc-status' '0'
 [Body Rewrite]
 http-response-jq ^https:\/\/api\.bilibili\.com\/x\/pd-proxy\/tracker\? '.data[][]?="stun.chat.bilibili.com:3478"'
 http-response-jq ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(list|show|event\/list2)\? '.data |= with_entries(if .key | IN("show", "event_list") then .value = [] else . end)'
