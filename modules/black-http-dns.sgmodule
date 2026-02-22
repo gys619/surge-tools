@@ -2,11 +2,11 @@
 #!desc=分流规则中含有URL-REGEX类型的MITM模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2026-01-31 01:46:32
-#!HASH=e90eb60a90d084e4dddca4a804e9f58b
+#!updated=2026-02-22 01:56:36
+#!HASH=2e3729975de427275ee3cf367b0c8cd3
 
 [MITM]
-hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 182.256.116.116, 203.107.1.1, 203.107.1.33, 203.107.1.66, 203.107.1.67, 203.107.1.97, 2401:b180:2000:20::10, 2401:b180:2000:30::1c, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com, ucdc2-upaas.uc.cn, zijieapi.com
+hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 182.256.116.116, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com, ucdc2-upaas.uc.cn, zijieapi.com
 [General]
 force-http-engine-hosts = %APPEND% 119.29.29.29:80,dns.weixin.qq.com:443,dns.weixin.qq.com:80,dns.weixin.qq.com:8080
 [Rule]
@@ -141,6 +141,7 @@ URL-REGEX,"^http:\/\/116\.63\.10\.31\/resolve",REJECT
 URL-REGEX,"^http:\/\/203\.119\.206\.8\/\d+\/resolve\?",REJECT
 DOMAIN,httpdns.browser.miui.com,REJECT
 DOMAIN,resolver.msg.xiaomi.net,REJECT
+DOMAIN,amdc.alipay.com,REJECT
 DOMAIN,ucdc.upaas.quark.cn,REJECT
 DOMAIN,httpdns.danuoyi.tbcache.com,REJECT
 DOMAIN,httpdns.cctv.com,REJECT
@@ -200,6 +201,7 @@ URL-REGEX,"^http:\/\/54\.222\.159\.138:8053\/httpdns\/",REJECT
 URL-REGEX,"^http:\/\/101\.42\.130\.147:8053\/httpdns\/",REJECT
 URL-REGEX,"^http:\/\/106\.55\.220\.18:8053\/httpdns\/",REJECT
 URL-REGEX,"^http:\/\/139\.196\.12\.179:8053\/httpdns\/",REJECT
+USER-AGENT,"HttpdnsSDK*",REJECT
 [URL Rewrite]
 "^http:\/\/101\.35\.204\.35\/d" - reject
 "^http:\/\/103\.37\.155\.60\/fetch" - reject
@@ -222,17 +224,9 @@ URL-REGEX,"^http:\/\/139\.196\.12\.179:8053\/httpdns\/",REJECT
 "^https?:\/\/amdc\.alipay\.com\/s?query" - reject
 "^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns" - reject
 "^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns" - reject
-^https?:\/\/203\.107\.1\.1/\d+/ss - reject
-^https?:\/\/203\.107\.1\.33/\d+/ss - reject
-^https?:\/\/203\.107\.1\.66/\d+/ss - reject
-^https?:\/\/203\.107\.1\.67/\d+/ss - reject
-^https?:\/\/203\.107\.1\.97/\d+/ss - reject
-^https?:\/\/2401:b180:2000:30::1c\/\d+\/d - reject
-^https?:\/\/2401:b180:2000:20::10\/\d+\/d - reject
 ^https?:\/\/cdn\.wup\.huya\.com\/monitor\/monitor\.jsp - reject
 ^https:\/\/gslbali\.ximalaya\.com\/linkeye-cloud\/httpdns\/ - reject
 [Map Local]
 ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https?:\/\/amdc\.alipay\.com\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/msglb\.91160\.com\/msg\/outer\/broker\/get$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/ucdc\d?-upaas\.uc\.cn\/api\/v\d\/dns_query\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"

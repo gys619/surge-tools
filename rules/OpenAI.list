@@ -1,18 +1,19 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2026-01-11 01:43:26
+# UPDATED: 2026-02-22 01:56:36
 # DESCRIPTION: AI分流规则
-# HASH: aba7b02f28ce601ca481bd03be2f356d
-# DOMAIN: 58
-# DOMAIN-SUFFIX: 100
+# HASH: 6b7bb33e948b37d59f45048157d36d0b
+# DOMAIN: 63
+# DOMAIN-SUFFIX: 102
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 3
 # IP-CIDR6: 1
 # IP-ASN: 1
 # AND: 3
-# TOTAL: 167
+# TOTAL: 174
 
+DOMAIN,ai-gateway.vercel.sh
 DOMAIN,ai.google.dev
 DOMAIN,aida.googleapis.com
 DOMAIN,aiplatform.googleapis.com
@@ -48,10 +49,12 @@ DOMAIN,generativelanguage.googleapis.com
 DOMAIN,guzzoni.smoot.apple.com
 DOMAIN,host.livekit.cloud
 DOMAIN,imagine.meta.com
+DOMAIN,integrate.api.nvidia.com
 DOMAIN,jules.google
 DOMAIN,jules.google.com
 DOMAIN,labs.google
 DOMAIN,makersuite.google.com
+DOMAIN,models.inference.ai.azure.com
 DOMAIN,notebooklm.google
 DOMAIN,notebooklm.google.com
 DOMAIN,o33249.ingest.sentry.io
@@ -59,11 +62,13 @@ DOMAIN,openai-api.arkoselabs.com
 DOMAIN,openai.com.cdn.cloudflare.net
 DOMAIN,openaiapi-site.azureedge.net
 DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicom.imgix.net
 DOMAIN,openaicomproductionae4b.blob.core.windows.net
 DOMAIN,pplx-res.cloudinary.com
 DOMAIN,proactivebackend-pa.googleapis.com
 DOMAIN,production-openaicom-storage.azureedge.net
 DOMAIN,robinfrontend-pa.googleapis.com
+DOMAIN,router.huggingface.co
 DOMAIN,sora-cdn.oaistatic.com
 DOMAIN,static.cloudflareinsights.com
 DOMAIN,sydney.bing.com
@@ -91,6 +96,7 @@ DOMAIN-SUFFIX,augmentcode.com
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,cdn.oaistatic.com
+DOMAIN-SUFFIX,cerebras.ai
 DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
@@ -102,6 +108,7 @@ DOMAIN-SUFFIX,clipdrop.co
 DOMAIN-SUFFIX,codeium.com
 DOMAIN-SUFFIX,codeiumdata.com
 DOMAIN-SUFFIX,cp4.cloudflare.com
+DOMAIN-SUFFIX,crixet.com
 DOMAIN-SUFFIX,cursor.sh
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
