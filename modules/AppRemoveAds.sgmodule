@@ -2,8 +2,8 @@
 #!desc=app去广告模块(bilibili,微博,菜鸟,12306,淘宝,阿里云盘,拼多多,小红书,高德地图,滴滴出行,彩云天气,闲鱼,keep,微信,爱优腾芒,汽水音乐,微博,快手,qq音乐)
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2026-02-19 01:57:47
-#!HASH=c862da851d7fe5af7c8066f055f1e181
+#!updated=2026-03-04 01:50:56
+#!HASH=aa0994780a57c15d9cb0713d8c0e77df
 
 [MITM]
 hostname = %APPEND% *.amap.com, *.iqiyi.com, *.mgtv.com, *.weibo.cn, *.weibo.com, 112.53.55.225, 113.46.225.*, 116.85.*, 120.241.142.*, 120.241.143.*, 123.207.209.*, 139.199.240.84, 162.14.157.*, 852b95d36.xwlpk.cn, acs.m.goofish.com, acs.m.taobao.com, ad.12306.cn, api.alipan.com, api.bilibili.com, api.caiyunapp.com, api.cc.163.com, api.gotokeep.com, api.live.bilibili.com, api.pinduoduo.com, api.qishui.com, api.udache.com, api.ys7.com, api5-lq.qishui.com, apissl.gifshow.com, apissl.ksapisrv.com, app-v1.ecoliving168.com, app.bilibili.com, appapi.cc.163.com, apps.api.ke.com, as.xiaojukeji.com, az*-api-idc.ksapisrv.com, az*-api-js.gifshow.com, az*-api.ksapisrv.com, az*-live.ksapisrv.com, az4-api-idc.ksapisrv.com, beta-luna.douyin.com, biz.cyapi.cn, bizapi.alipan.com, cc.163.com, cdn-w.caiyunapp.com, ci.xiaohongshu.com, cn-acs.m.cainiao.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, e2e-mtop.cainiao.com, edith.xiaohongshu.com, flowplus.meituan.net, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, i.ys7.com, img.meituan.net, info.mina.xiaoaisound.com, line3-h5-mobile-api.biligame.com, lion.didialift.com, live.bilibili.com, longquan-mtop.cainiao.com, marketing-aibox.v.mitvos.com, member.alipan.com, mobile.12306.cn, mp.weixin.qq.com, mshare.cc.163.com, nbcps-mtop.cainiao.com, netflow-mtop.cainiao.com, poplayer.template.alibaba.com, push.m.youku.com, rec.xiaohongshu.com, res.xiaojukeji.com, s3plus.meituan.net, so.xiaohongshu.com, starplucker.cyapi.cn, tnc*-*.zijieapi.com, un-acs.youku.com, vv.video.qq.com, webcast-open.douyin.com, weibo.com, www.xiaohongshu.com
@@ -23,7 +23,7 @@ DOMAIN,h-adashx.ut.taobao.com,REJECT,extended-matching,pre-matching
 DOMAIN,ut.taobao.com,REJECT,extended-matching,pre-matching
 IP-CIDR,203.107.1.1/24,REJECT,no-resolve,pre-matching
 AND,((URL-REGEX,"^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d(\d)?",extended-matching),(USER-AGENT,"*com.xunmeng.pinduoduo*")),REJECT
-AND,((URL-REGEX,"^http:\/\/\[((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))\]\/d(\d)?\?",extended-matching),(USER-AGENT,"*com.xunmeng.pinduoduo*")),REJECT
+AND,((URL-REGEX,"^http:\/\/\[[0-9a-fA-F:]+\]\/d(\d)?\?",extended-matching),(USER-AGENT,"*com.xunmeng.pinduoduo*")),REJECT
 AND,((DOMAIN,api.pinduoduo.com,extended-matching),(PROTOCOL,QUIC)),REJECT
 DOMAIN,titan.pinduoduo.com,REJECT-NO-DROP,extended-matching,pre-matching
 DOMAIN,xg.pinduoduo.com,REJECT,extended-matching,pre-matching
@@ -449,10 +449,13 @@ http-response-jq ^https:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.co
 ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/guide\/user_banner|v3\/note\/guide) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(?:v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/m5-zb\.amap\.com\/ws\/ride\/home\/page\/get_commuting_card\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/orderList\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/ai\.amap\.com\/v1\/ai_rec\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:main-page-assets|main-page-location|ridewalk-end-fc|usr-profile-fc\/homeV2) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/m5\.amap\.com\/ws\/(?:mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -461,7 +464,6 @@ http-response-jq ^https:\/\/(apissl|az\d-api(-js|-idc)?)\.(gifshow|ksapisrv)\.co
 ^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:order\/car\/(?:feedback\/get_card_questions|feedback\/viptips|king_toolbox_car_bubble|remark\/satisfactionConf|rights_information)|tips\/onscene_visual_optimization) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:pay\/web\/paySuccess\/info\/request|transportation\/diversion\/resource\/driving) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https:\/\/ai\.amap\.com\/v1\/ai_rec\/home_qs\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/lion\.didialift\.com\/broker\/\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
@@ -588,9 +590,9 @@ bilibili.protobuf = type=http-response, pattern=^https:\/\/(grpc\.biliapi\.net|a
 移除阿里云盘广告 = type=http-response, pattern=^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|widgets), script-path=https://kelee.one/Resource/JavaScript/AliYunDrive/AliYunDrive_remove_ads.js, requires-body=true
 移除阿里云盘广告 = type=http-response, pattern=^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list, script-path=https://kelee.one/Resource/JavaScript/AliYunDrive/AliYunDrive_remove_ads.js, requires-body=true
 移除图片和实况照片水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save), script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
-移除整体配置 ui = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system\/service\/ui\/config\?, script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
-移除开屏广告 config = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?, script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
-移除开屏广告 splash_config = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config, script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
+移除界面整体配置 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system\/service\/ui\/config\?, script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
+移除开屏广告 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?, script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
+移除开屏广告 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config, script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
 移除详情页小部件、关注页感兴趣的人 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed), script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
 移除信息流广告 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?, script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
 移除详情页感兴趣的人 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?, script-path=https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body=true
