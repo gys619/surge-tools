@@ -1,5 +1,5 @@
-#!HASH=be42fa4c4e2b43843feefc7526c86934
-#规则数量:94
+#!HASH=19e192a63b2487ae83b4d29460939abe
+#规则数量:93
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -95,10 +95,9 @@ DOMAIN,ai-gateway.vercel.sh
 DOMAIN,router.huggingface.co
 DOMAIN,integrate.api.nvidia.com
 DOMAIN-SUFFIX,kiro.dev
-DOMAIN,aws.amazon.com
-DOMAIN,cerebras.ai
-DOMAIN,minimax.io
-DOMAIN,z.ai
+DOMAIN-SUFFIX,cerebras.ai
+DOMAIN-SUFFIX,minimax.io
+DOMAIN-SUFFIX,z.ai
 
 # 🔗 模块链接
 #SUBSCRIBED https://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lsr/AI.lsr/_end_/AI.list.txt?type=rule-set&target=surge-rule-set&del=true&jqEnabled=true
