@@ -1,17 +1,17 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2026-04-16 02:27:10
+# UPDATED: 2026-04-17 02:23:25
 # DESCRIPTION: AI分流规则
-# HASH: a37d552cd8fc02f313ef50b5e83d109a
-# DOMAIN: 67
-# DOMAIN-SUFFIX: 105
+# HASH: 4772665c902e0e2456b11cee58cc9643
+# DOMAIN: 63
+# DOMAIN-SUFFIX: 106
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 3
 # IP-CIDR6: 1
 # IP-ASN: 1
 # AND: 3
-# TOTAL: 181
+# TOTAL: 178
 
 DOMAIN,ai-gateway.vercel.sh
 DOMAIN,ai.google.dev
@@ -27,11 +27,9 @@ DOMAIN,api.hyperbolic.xyz
 DOMAIN,api.x.ai
 DOMAIN,apple-relay.apple.com
 DOMAIN,apple-relay.cloudflare.com
-DOMAIN,aws.amazon.com
 DOMAIN,bard.google.com
 DOMAIN,browser-intake-datadoghq.com
 DOMAIN,cdn.usefathom.com
-DOMAIN,cerebras.ai
 DOMAIN,chat.mistral.ai
 DOMAIN,chat.openai.com.cdn.cloudflare.net
 DOMAIN,chatgpt.livekit.cloud
@@ -56,7 +54,6 @@ DOMAIN,jules.google
 DOMAIN,jules.google.com
 DOMAIN,labs.google
 DOMAIN,makersuite.google.com
-DOMAIN,minimax.io
 DOMAIN,models.inference.ai.azure.com
 DOMAIN,notebooklm.google
 DOMAIN,notebooklm.google.com
@@ -79,7 +76,6 @@ DOMAIN,trae-api-sg.mchost.guru
 DOMAIN,turn.livekit.cloud
 DOMAIN,waa-pa.clients6.google.com
 DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
-DOMAIN,z.ai
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
 DOMAIN-SUFFIX,aistudio.google.com
@@ -184,6 +180,7 @@ DOMAIN-SUFFIX,updates.cdn-apple.com
 DOMAIN-SUFFIX,voyageai.com
 DOMAIN-SUFFIX,windsurf.com
 DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,z.ai
 DOMAIN-SUFFIX,zed.dev
 DOMAIN-KEYWORD,hailuoai
 IP-CIDR,160.79.104.0/23,no-resolve
