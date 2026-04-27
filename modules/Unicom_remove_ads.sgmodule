@@ -1,9 +1,9 @@
 #!name=中国联通去广告
-#!desc=🔗 [01/30/2026, 04:56:04 PM] 移除中国联通APP开屏广告、搜索框推广、主页浮窗和底部推广以及我的页面钱包模块，后续还将继续完善。
-#!HASH=a1aa90dd6750f64a0b4c11588c349223
+#!desc=🔗 [4/27/26, 10:21:05 PM] 移除中国联通APP开屏广告、搜索框推广、主页浮窗和底部推广以及我的页面钱包模块，后续还将继续完善。
+#!HASH=9e6a4386022974cfe10c432ae108c6a4
 #!author=wish[https://github.com/mist-whisper]
 #!icon=https://raw.githubusercontent.com/mist-whisper/Icon/master/MyIcon/Unicom.png
-#!tag=去广告
+#!category=去广告
 #!system=ios
 #!system_version=15
 #!loon_version=3.2.9(837)

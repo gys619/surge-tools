@@ -1,5 +1,5 @@
-#!HASH=f5f69062439d8f369af15390b5c34875
-#规则数量:2744
+#!HASH=f600f8ad2a137037684e06d49039dfb9
+#规则数量:2748
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -1645,6 +1645,8 @@ DOMAIN-SUFFIX,kkpgv.kankan.com
 DOMAIN-SUFFIX,kkpgv2.kankan.com
 DOMAIN-SUFFIX,cpm.cm.kankan.com
 DOMAIN-SUFFIX,count.cpm.cm.kankan.com
+DOMAIN,analytics.tuhu.com
+DOMAIN,ta.tuhu.cn
 DOMAIN-SUFFIX,urbanairship.com
 DOMAIN-SUFFIX,combine.urbanairship.com
 DOMAIN,safe.ucweb.com
@@ -2378,6 +2380,8 @@ DOMAIN-SUFFIX,cdntips.net
 DOMAIN-SUFFIX,tfogc.com
 AND,((NOT,((DOMAIN,volcengine-kdocs-cache.wpscdn.cn))), (NOT,((DOMAIN,vod-settings.volcvod.com))), (NOT,((DOMAIN,volcengine-kdocs-cache.wpscdn.cn))), (OR,((DOMAIN-KEYWORD,volc))))
 DOMAIN-KEYWORD,umeng
+DOMAIN-SUFFIX,1a-1791.com
+DOMAIN-SUFFIX,rumble.com
 DOMAIN-SUFFIX,ad-stir.com 
 DOMAIN-SUFFIX,adadapted.com 
 DOMAIN-SUFFIX,ads.adadapted.com 
