@@ -2,8 +2,8 @@
 #!desc=分流规则中含有URL-REGEX类型的MITM模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2026-03-10 01:48:54
-#!HASH=ae17c025101ca369652c5101c32dd785
+#!updated=2026-05-19 02:55:31
+#!HASH=1198fee92ba36410be6a07383060d70d
 
 [MITM]
 hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 182.256.116.116, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com, ucdc2-upaas.uc.cn, zijieapi.com
@@ -163,13 +163,16 @@ DOMAIN,httpdns-sdk.n.netease.com,REJECT
 DOMAIN,httpdns.zybang.com,REJECT
 URL-REGEX,"^http:\/\/api\.weibo\.cn\/\d+\/httpdns\/config",REJECT
 URL-REGEX,"^http:\/\/api\.weibo\.cn\/httpdns\/config",REJECT
-URL-REGEX,"^http:\/\/103\.41\.167\.237\/v2\/resolv",REJECT
-IP-CIDR,118.89.204.198/23,REJECT,no-resolve
+URL-REGEX,"^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/v\d\/resolv\?",REJECT
+IP-CIDR,103.41.167.237/32,REJECT,no-resolve
+IP-CIDR,182.61.194.7/32,REJECT,no-resolve
+IP-CIDR6,240c:409f:1000::/128,REJECT,no-resolve
 DOMAIN,hd.xiaojukeji.com,REJECT
 DOMAIN,serveraddr.service.kugou.com,REJECT
 DOMAIN,twns.p2ptun.qq.com,REJECT
 DOMAIN,tp2p.kg.qq.com,REJECT
 IP-CIDR,81.71.61.216/32,REJECT,no-resolve
+DOMAIN,httpdns.immomo.com,REJECT
 URL-REGEX,"^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?):\d+\/httpdns\/",REJECT
 URL-REGEX,"^http:\/\/\[[0-9a-fA-F:]+\]:\d+\/httpdns\/",REJECT
 [URL Rewrite]
