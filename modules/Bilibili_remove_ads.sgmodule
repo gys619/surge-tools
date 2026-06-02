@@ -1,15 +1,15 @@
 #!name=哔哩哔哩去广告
-#!desc=🔗 [2026/5/6 22:31:26] 过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数，增加空降助手以便跳过视频中插入的广告。此插件仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。\n\n空降助手是第三方提供的功能，依赖于Android版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关。
-#!HASH=a50e55e2b259f8a5cab0dd5ccdc44021
+#!desc=🔗 [2026/6/2 11:12:49] 过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数，增加空降助手以便跳过视频中插入的广告。此插件仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。\n\n空降助手是第三方提供的功能，依赖于Android版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关。
+#!HASH=aed1631edd3adb490f200255886a2017
 #!author=kokoryh[https://github.com/kokoryh]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/Bilibili.png
 #!openUrl=https://apps.apple.com/app/id736536022
 #!category=去广告
 #!system=ios
 #!system_version=15
-#!loon_version=3.3.8(936)
+#!loon_version=3.4.0(962)
 #!homepage=https://hub.kelee.one
-#!date=2026-04-30 16:24:57
+#!date=2026-06-01 17:11:35
 #!arguments=displayUpList:"show",purifyComment:true,optimizeRequest:,sponsorBlock:#,logLevel:"off"
 #!arguments-desc=displayUpList: [动态]中[最常访问]的显示方式\nauto：仅当列表中存在直播状态时显示；show：始终显示；hide：始终隐藏。\n\npurifyComment: 移除评论区置顶广告\n移除评论区置顶广告\n\noptimizeRequest: 优化评论区加载异常\n尝试解决评论区加载异常的问题\n\nsponsorBlock: 空降助手\n用于跳过视频中的广告\n\nlogLevel: 日志等级\n脚本的日志输出等级
 
