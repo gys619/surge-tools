@@ -1,12 +1,12 @@
 #!name=HTTPDNS拦截器
-#!desc=🔗 [2026/6/2 11:12:37] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
-#!HASH=62ba5bdefaa7bd34ec829420d513d017
+#!desc=🔗 [2026/6/24 16:16:36] 拦截常见的HTTPDNS服务，以确保这些请求都能够在Loon的DNS框架下工作。
+#!HASH=5bc431a28def380d7f23b496337d939d
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], VirgilClyne[https://github.com/VirgilClyne]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/Other_icon/120px/HTTPDNS.png
-#!category=去广告, 依赖
+#!tag=去广告, 依赖
 #!loon_version=3.4.0(962)
 #!homepage=https://hub.kelee.one
-#!date=2026-06-01 17:11:35
+#!date=2026-06-15 21:46:05
 
 [Rule]
 DOMAIN-KEYWORD,httpdns,REJECT
@@ -112,6 +112,8 @@ DOMAIN,dotserver.douyucdn.cn,REJECT
 DOMAIN,hdns.ksyun.com,REJECT
 DOMAIN,httpdns.push.oppomobile.com,REJECT
 DOMAIN,httpdns.ocloud.oppomobile.com,REJECT
+DOMAIN,cdndns.kwd.inkuai.com,REJECT
+DOMAIN,hdns.k-dyn.com,REJECT
 DOMAIN,kuaishou.httpdns.pro,REJECT
 DOMAIN,httpdns.kwd.inkuai.com,REJECT
 DOMAIN,apidns.kwd.inkuai.com,REJECT
@@ -165,8 +167,10 @@ URL-REGEX,"^http:\/\/\[[0-9a-fA-F:]+\]:\d+\/httpdns\/",REJECT
 
 ^https:\/\/ucdc\d?-upaas\.uc\.cn\/api\/v\d\/dns_query\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
+^https:\/\/gw-cn\.jiaoliuqu\.com\/taqu-im-broadcast-srv\/v\d\/Comet\/get\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
 [MITM]
-hostname = %APPEND% appconf.mail.163.com, msglb.91160.com, ucdc2-upaas.uc.cn
+hostname = %APPEND% appconf.mail.163.com, msglb.91160.com, ucdc2-upaas.uc.cn, gw-cn.jiaoliuqu.com
 
 # 🔗 模块链接
 #SUBSCRIBED https://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx/_end_/Block_HTTPDNS.sgmodule.txt?type=loon-plugin&target=surge-module&del=true&jqEnabled=true

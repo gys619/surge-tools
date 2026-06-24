@@ -1,10 +1,10 @@
 #!name=小米音箱去广告
-#!desc=🔗 [2026/6/2 11:12:48] 移除开屏广告、应用内横幅广告及弹窗广告。
-#!HASH=b3c5606aae5c9c6add63cabb6ae997e0
+#!desc=🔗 [2026/6/24 16:16:48] 移除开屏广告、应用内横幅广告及弹窗广告。
+#!HASH=cf9abd18947c571b144ee4ffbb592e10
 #!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/XiaomiSpeaker.png
 #!openUrl=https://apps.apple.com/app/id1270594280
-#!category=去广告
+#!tag=去广告
 #!loon_version=3.4.0(962)
 #!homepage=https://hub.kelee.one
 #!date=2026-06-01 17:11:35

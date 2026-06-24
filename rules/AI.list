@@ -1,5 +1,5 @@
-#!HASH=19e192a63b2487ae83b4d29460939abe
-#规则数量:93
+#!HASH=de3387bde06b45ad64891efdb4ca0ea2
+#规则数量:95
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -98,6 +98,8 @@ DOMAIN-SUFFIX,kiro.dev
 DOMAIN-SUFFIX,cerebras.ai
 DOMAIN-SUFFIX,minimax.io
 DOMAIN-SUFFIX,z.ai
+DOMAIN,token-plan-sgp.xiaomimimo.com
+DOMAIN,token-plan-ams.xiaomimimo.com
 
 # 🔗 模块链接
 #SUBSCRIBED https://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lsr/AI.lsr/_end_/AI.list.txt?type=rule-set&target=surge-rule-set&del=true&jqEnabled=true
