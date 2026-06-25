@@ -1,17 +1,17 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2026-04-17 02:23:25
+# UPDATED: 2026-06-25 02:55:18
 # DESCRIPTION: AI分流规则
-# HASH: 4772665c902e0e2456b11cee58cc9643
-# DOMAIN: 63
+# HASH: 667f6cb965ee88f35631fd75135a932b
+# DOMAIN: 65
 # DOMAIN-SUFFIX: 106
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 3
 # IP-CIDR6: 1
 # IP-ASN: 1
 # AND: 3
-# TOTAL: 178
+# TOTAL: 180
 
 DOMAIN,ai-gateway.vercel.sh
 DOMAIN,ai.google.dev
@@ -72,6 +72,8 @@ DOMAIN,router.huggingface.co
 DOMAIN,sora-cdn.oaistatic.com
 DOMAIN,static.cloudflareinsights.com
 DOMAIN,sydney.bing.com
+DOMAIN,token-plan-ams.xiaomimimo.com
+DOMAIN,token-plan-sgp.xiaomimimo.com
 DOMAIN,trae-api-sg.mchost.guru
 DOMAIN,turn.livekit.cloud
 DOMAIN,waa-pa.clients6.google.com

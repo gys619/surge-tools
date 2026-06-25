@@ -2,11 +2,11 @@
 #!desc=分流规则中含有URL-REGEX类型的MITM模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2026-05-19 02:55:31
-#!HASH=1198fee92ba36410be6a07383060d70d
+#!updated=2026-06-25 02:55:18
+#!HASH=27efb23a4b3316b1315aa52aa36f472e
 
 [MITM]
-hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 182.256.116.116, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, msglb.91160.com, short.weixin.qq.com, ucdc2-upaas.uc.cn, zijieapi.com
+hostname = %APPEND% *.httpdns.pro, 101.35.204.35, 103.37.155.60, 110.76.8.150, 114.110.96.26, 119.29.29.29, 119.29.29.98, 119.29.29.99, 180.76.76.112, 182.256.116.116, amdc-sibling.alipay.com.cn, amdc.alipay.com, api.weibo.cn, appconf.mail.163.com, dns.jd.com, dns.weixin.qq.com, gw-cn.jiaoliuqu.com, msglb.91160.com, short.weixin.qq.com, ucdc2-upaas.uc.cn, zijieapi.com
 [General]
 force-http-engine-hosts = %APPEND% 119.29.29.29:80,dns.weixin.qq.com:443,dns.weixin.qq.com:80,dns.weixin.qq.com:8080
 [Rule]
@@ -152,6 +152,8 @@ DOMAIN,httpdns.push.heytapmobi.com,REJECT
 DOMAIN,dotserver.douyucdn.cn,REJECT
 DOMAIN,hdns.ksyun.com,REJECT
 DOMAIN,httpdns.ocloud.oppomobile.com,REJECT
+DOMAIN,cdndns.kwd.inkuai.com,REJECT
+DOMAIN,hdns.k-dyn.com,REJECT
 DOMAIN,kuaishou.httpdns.pro,REJECT
 DOMAIN,httpdns.kwd.inkuai.com,REJECT
 DOMAIN,apidns.kwd.inkuai.com,REJECT
@@ -203,3 +205,4 @@ URL-REGEX,"^http:\/\/\[[0-9a-fA-F:]+\]:\d+\/httpdns\/",REJECT
 ^https?:\/\/appconf\.mail\.163\.com\/mailmaster\/api\/http\/urlConfig\.do$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/msglb\.91160\.com\/msg\/outer\/broker\/get$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 ^https:\/\/ucdc\d?-upaas\.uc\.cn\/api\/v\d\/dns_query\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/gw-cn\.jiaoliuqu\.com\/taqu-im-broadcast-srv\/v\d\/Comet\/get\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
