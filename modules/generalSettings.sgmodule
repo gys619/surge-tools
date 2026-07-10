@@ -2,12 +2,13 @@
 #!desc=通用设置模块
 #!author=gys619
 #!repo=https://github.com/gys619/surge-tools
-#!updated=2026-07-09 02:41:36
-#!HASH=5836f71669cc8999b19f552860802bca
+#!updated=2026-07-10 02:43:16
+#!HASH=48e649599b7ab53c2a9afb92c763dd5b
 
 [MITM]
 hostname = %APPEND% *.httpdns.pro, 119.29.29.98, 119.29.29.99, amdc-sibling.alipay.com.cn, amdc.alipay.com, buy.itunes.apple.com, dns.jd.com, gateway.icloud.com, gateway.icloud.com.cn, ios.chat.openai.com, weather-data.apple.com
 [General]
+tun-excluded-routes = %APPEND% 239.255.255.250/32
 skip-proxy = %APPEND% *.local, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, captive.apple.com, e.crashlytics.com, fe80::/10, gate.lagou.com, localhost, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, passenger.t3go.cn, www.abchina.com.cn, www.baidu.com, wxh.wo.cn, yunbusiness.ccb.com
 # > 跳过代理
 # 跳过某个域名或者 IP 段，这些目标主机将不会由 Surge Proxy 处理。
