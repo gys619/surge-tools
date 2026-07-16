@@ -1,5 +1,5 @@
-#!HASH=de3387bde06b45ad64891efdb4ca0ea2
-#规则数量:95
+#!HASH=50b13a74470549fe5d2e0bd6eb0d24fc
+#规则数量:98
 #不支持的规则数量:0
 #已排除的规则数量:0
 
@@ -22,6 +22,7 @@ DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,chatgpt.site
 DOMAIN,api.githubcopilot.com
 DOMAIN,copilot-proxy.githubusercontent.com
 DOMAIN,copilot.microsoft.com
@@ -30,6 +31,7 @@ DOMAIN,api.githubcopilot.com
 DOMAIN,models.inference.ai.azure.com
 DOMAIN,ai.google.dev
 DOMAIN,aida.googleapis.com
+DOMAIN,aicode.googleapis.com
 DOMAIN,aistudio.google.com
 DOMAIN,alkalicore-pa.clients6.google.com
 DOMAIN,alkalimakersuite-pa.clients6.google.com
@@ -100,6 +102,7 @@ DOMAIN-SUFFIX,minimax.io
 DOMAIN-SUFFIX,z.ai
 DOMAIN,token-plan-sgp.xiaomimimo.com
 DOMAIN,token-plan-ams.xiaomimimo.com
+DOMAIN-SUFFIX,agnes-ai.com
 
 # 🔗 模块链接
 #SUBSCRIBED https://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lsr/AI.lsr/_end_/AI.list.txt?type=rule-set&target=surge-rule-set&del=true&jqEnabled=true

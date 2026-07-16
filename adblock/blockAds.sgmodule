@@ -1,6 +1,6 @@
 #!name=广告拦截&净化合集
-#!desc=🔗 [2026/6/24 16:16:42] (支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
-#!HASH=3e2afd61e10a4d42c817d55f8decc73e
+#!desc=🔗 [2026/7/16 12:46:07] (支持约730款APP/小程序)针对部分APP和小程序广告进行拦截，某些APP要清除缓存或者重新安装拦截广告才会生效！规则明细可以查看本插件的注释
+#!HASH=23b48fa3b4d1865f71b64258095fe222
 #!author=奶思[https://github.com/fmz200]
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdblockPlus.png
 #!category=奶思的模块
@@ -3606,25 +3606,25 @@ NetEaseCloudMusic_foll = type=http-response, pattern=^https?:\/\/(ipv4|interface
 小芒APP主页广告 = type=http-response, pattern=https://mgesq.api.mgtv.com/dsl/index.+, script-path=https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmApp.js, requires-body=true, timeout=60
 
 # 商品信息流广告
-商品信息流广告 = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/, script-path=https://klraw.pages.dev/kelv1n1n/script/refs/heads/main/js/goofish.js?token=209863, requires-body=true
+商品信息流广告 = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/, script-path=https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js, requires-body=true
 
 # 定位地区页面的信息流广告
-定位地区页面的信息流广告 = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/, script-path=https://klraw.pages.dev/kelv1n1n/script/refs/heads/main/js/goofish.js?token=209863, requires-body=true
+定位地区页面的信息流广告 = type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/, script-path=https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js, requires-body=true
 
 # 个人主页
-个人主页 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/, script-path=https://klraw.pages.dev/kelv1n1n/script/refs/heads/main/js/goofish.js?token=209863, requires-body=true
+个人主页 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/, script-path=https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js, requires-body=true
 
 # 首页顶部频道菜单
-首页顶部频道菜单 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/1\.0, script-path=https://klraw.pages.dev/kelv1n1n/script/refs/heads/main/js/goofish.js?token=209863, requires-body=true
+首页顶部频道菜单 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/1\.0, script-path=https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js, requires-body=true
 
 # 商品详情页周边推荐
-商品详情页周边推荐 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.nearby\.itemdetail\.enter\/1\.0, script-path=https://klraw.pages.dev/kelv1n1n/script/refs/heads/main/js/goofish.js?token=209863, requires-body=true
+商品详情页周边推荐 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.nearby\.itemdetail\.enter\/1\.0, script-path=https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js, requires-body=true
 
 # 搜索结果信息流广告
-搜索结果信息流广告 = type=http-response, pattern=^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/, script-path=https://klraw.pages.dev/kelv1n1n/script/refs/heads/main/js/goofish.js?token=209863, requires-body=true
+搜索结果信息流广告 = type=http-response, pattern=^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/, script-path=https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js, requires-body=true
 
 # 同城页横幅广告
-同城页横幅广告 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section, script-path=https://klraw.pages.dev/kelv1n1n/script/refs/heads/main/js/goofish.js?token=209863, requires-body=true
+同城页横幅广告 = type=http-response, pattern=^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.flow\.plat\.section, script-path=https://raw.githubusercontent.com/ishowshu/qx/refs/heads/main/script/goofish.js, requires-body=true
 
 # > 香蕉是一种水果
 香蕉是一种水果 = type=http-response, pattern=^https?:\/\/.+?\.(pipi|fuli|xiang(jiao|xiang))apps\.com\/(ucp\/index|getGlobalData|(\/|)vod\/reqplay\/), script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js, requires-body=true, timeout=60
