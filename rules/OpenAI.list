@@ -1,20 +1,21 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2026-07-10 02:43:15
+# UPDATED: 2026-07-17 02:24:09
 # DESCRIPTION: AI分流规则
-# HASH: 667f6cb965ee88f35631fd75135a932b
-# DOMAIN: 65
-# DOMAIN-SUFFIX: 106
+# HASH: 70af06d08e655d396b77df066800ff88
+# DOMAIN: 66
+# DOMAIN-SUFFIX: 108
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 3
 # IP-CIDR6: 1
 # IP-ASN: 1
 # AND: 3
-# TOTAL: 180
+# TOTAL: 183
 
 DOMAIN,ai-gateway.vercel.sh
 DOMAIN,ai.google.dev
+DOMAIN,aicode.googleapis.com
 DOMAIN,aida.googleapis.com
 DOMAIN,aiplatform.googleapis.com
 DOMAIN,aisandbox-pa.googleapis.com
@@ -78,6 +79,7 @@ DOMAIN,trae-api-sg.mchost.guru
 DOMAIN,turn.livekit.cloud
 DOMAIN,waa-pa.clients6.google.com
 DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
+DOMAIN-SUFFIX,agnes-ai.com
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
 DOMAIN-SUFFIX,aistudio.google.com
@@ -102,6 +104,7 @@ DOMAIN-SUFFIX,cerebras.ai
 DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,chatgpt.site
 DOMAIN-SUFFIX,chorus.sh
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com
