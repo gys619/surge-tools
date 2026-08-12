@@ -1,4 +1,4 @@
-#!HASH=f600f8ad2a137037684e06d49039dfb9
+#!HASH=64921d2e5ddc0a9c376310653a956131
 #规则数量:2748
 #不支持的规则数量:0
 #已排除的规则数量:0
@@ -2755,4 +2755,4 @@ DOMAIN-SUFFIX,d8.zedo.com
 DOMAIN-SUFFIX,z1.zedo.com
 
 # 🔗 模块链接
-#SUBSCRIBED https://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list/_end_/rejectAd.list?type=rule-set&target=surge-rule-set&del=true
+#SUBSCRIBED http://script.hub/file/_start_/https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/rejectAd.list/_end_/rejectAd.list?type=rule-set&target=surge-rule-set&del=true

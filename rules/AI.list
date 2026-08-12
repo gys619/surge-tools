@@ -1,4 +1,4 @@
-#!HASH=50b13a74470549fe5d2e0bd6eb0d24fc
+#!HASH=de8119eef64404a65e5e387afed538be
 #规则数量:98
 #不支持的规则数量:0
 #已排除的规则数量:0
@@ -105,4 +105,4 @@ DOMAIN,token-plan-ams.xiaomimimo.com
 DOMAIN-SUFFIX,agnes-ai.com
 
 # 🔗 模块链接
-#SUBSCRIBED https://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lsr/AI.lsr/_end_/AI.list.txt?type=rule-set&target=surge-rule-set&del=true&jqEnabled=true
+#SUBSCRIBED http://script.hub/file/_start_/https://kelee.one/Tool/Loon/Lsr/AI.lsr/_end_/AI.list.txt?type=rule-set&target=surge-rule-set&del=true&jqEnabled=true
