@@ -1,17 +1,17 @@
 # NAME: AI
 # AUTHOR: gys619
 # REPO: https://github.com/gys619/surge-tools
-# UPDATED: 2026-07-17 02:24:09
+# UPDATED: 2026-08-27 07:09:44
 # DESCRIPTION: AI分流规则
-# HASH: 70af06d08e655d396b77df066800ff88
+# HASH: 0ff9388e9aa33ba73ea06a9ab1c58b16
 # DOMAIN: 66
-# DOMAIN-SUFFIX: 108
+# DOMAIN-SUFFIX: 107
 # DOMAIN-KEYWORD: 1
 # IP-CIDR: 3
 # IP-CIDR6: 1
 # IP-ASN: 1
 # AND: 3
-# TOTAL: 183
+# TOTAL: 182
 
 DOMAIN,ai-gateway.vercel.sh
 DOMAIN,ai.google.dev
@@ -120,7 +120,6 @@ DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,diabrowser.engineering
 DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,events.statsigapi.net
-DOMAIN-SUFFIX,exa.ai
 DOMAIN-SUFFIX,featuregates.org
 DOMAIN-SUFFIX,fireworks.ai
 DOMAIN-SUFFIX,gateway.icloud.com
